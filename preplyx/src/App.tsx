@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate, Outlet } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import DashboardLayout from './components/DashboardLayout';
 import Login from './pages/Login';
@@ -27,7 +27,8 @@ import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import { getStoredSettings } from './lib/storage';
 
-export default function App() {
+// Wrapper to apply side-effects at boot inside the router context
+function AppRoot() {
   useEffect(() => {
     // Automatically apply stored dark mode theme on app boot
     getStoredSettings();
@@ -35,44 +36,60 @@ export default function App() {
 
   return (
     <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/onboarding" element={<ProtectedRoute><Onboarding /></ProtectedRoute>} />
-          <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/admin/dashboard" element={<AdminDashboard />} />
-
-          {/* Protected Student Dashboard Routes */}
-          <Route element={<ProtectedRoute />}>
-            <Route path="/dashboard" element={<DashboardLayout />}>
-              <Route index element={<Dashboard />} />
-              <Route path="categories" element={<Navigate to="/dashboard/practice" replace />} />
-              <Route path="practice" element={<Practice />} />
-              <Route path="practice/:exam/:subject" element={<CbtExamRunner />} />
-              <Route path="multi-subject-exam" element={<MultiSubjectExam />} />
-              <Route path="challenge" element={<Challenge />} />
-              <Route path="mistakes" element={<MistakeCenter />} />
-              <Route path="onboarding" element={<Onboarding />} />
-              <Route path="history" element={<History />} />
-              <Route path="result" element={<Result />} />
-              <Route path="review" element={<Review />} />
-              <Route path="leaderboard" element={<Leaderboard />} />
-              <Route path="analytics" element={<Analytics />} />
-              <Route path="achievements" element={<Achievements />} />
-              <Route path="wallet" element={<Wallet />} />
-              <Route path="profile" element={<Profile />} />
-              <Route path="settings" element={<Settings />} />
-              <Route path="notifications" element={<Notifications />} />
-            </Route>
-          </Route>
-
-          <Route path="*" element={<Navigate to="/dashboard" replace />} />
-        </Routes>
-      </BrowserRouter>
+      <Outlet />
     </AuthProvider>
   );
+}
+
+const router = createBrowserRouter([
+  {
+    element: <AppRoot />,
+    children: [
+      { path: '/', element: <Navigate to="/dashboard" replace /> },
+      { path: '/login', element: <Login /> },
+      { path: '/register', element: <Register /> },
+      { path: '/forgot-password', element: <ForgotPassword /> },
+      { path: '/onboarding', element: <ProtectedRoute><Onboarding /></ProtectedRoute> },
+      { path: '/admin', element: <Navigate to="/admin/login" replace /> },
+      { path: '/admin/login', element: <AdminLogin /> },
+      { path: '/admin/dashboard', element: <AdminDashboard /> },
+
+      // Protected Student Dashboard Routes
+      {
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: '/dashboard',
+            element: <DashboardLayout />,
+            children: [
+              { index: true, element: <Dashboard /> },
+              { path: 'categories', element: <Navigate to="/dashboard/practice" replace /> },
+              { path: 'practice', element: <Practice /> },
+              { path: 'practice/:exam/:subject', element: <CbtExamRunner /> },
+              { path: 'multi-subject-exam', element: <MultiSubjectExam /> },
+              { path: 'challenge', element: <Challenge /> },
+              { path: 'mistakes', element: <MistakeCenter /> },
+              { path: 'onboarding', element: <Onboarding /> },
+              { path: 'history', element: <History /> },
+              { path: 'result', element: <Result /> },
+              { path: 'review', element: <Review /> },
+              { path: 'leaderboard', element: <Leaderboard /> },
+              { path: 'analytics', element: <Analytics /> },
+              { path: 'achievements', element: <Achievements /> },
+              { path: 'wallet', element: <Wallet /> },
+              { path: 'profile', element: <Profile /> },
+              { path: 'settings', element: <Settings /> },
+              { path: 'notifications', element: <Notifications /> },
+            ],
+          },
+        ],
+      },
+
+      { path: '*', element: <Navigate to="/dashboard" replace /> },
+    ],
+  },
+]);
+
+export default function App() {
+  return <RouterProvider router={router} />;
 }
