@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import './Support.css';
 
-import { API_BASE_URL } from '../config/api';
+import { API_BASE_URL, getAdminAuthHeaders } from '../config/api';
 
 /* ── Types ── */
 interface User {
@@ -31,45 +31,10 @@ interface SupportTicket {
   updatedAt: string;
 }
 
-const DEFAULT_TICKETS: SupportTicket[] = [
-  {
-    _id: 'tk_101',
-    user: { _id: 'u_101', name: 'Amina Muhammad', email: 'amina.m@gmail.com' },
-    subject: 'Issue unlocking JAMB CBT Full Package',
-    message: 'Hello Support, I made a wallet deposit of ₦2,500 via bank transfer to unlock the JAMB 2025 CBT practice bundle, but the portal still says locked. Please check my transaction ID #TX9841.',
-    status: 'open',
-    priority: 'high',
-    createdAt: '2026-02-11T10:15:00Z',
-    updatedAt: '2026-02-11T10:15:00Z',
-  },
-  {
-    _id: 'tk_102',
-    user: { _id: 'u_102', name: 'Chidi Okonkwo', email: 'chidi.okonkwo@yahoo.com' },
-    subject: 'WAEC Physics Question #42 Diagram Error',
-    message: 'Good day admin, during my WAEC 2024 Physics CBT simulation practice, question number 42 on circuit diagrams had a broken image link. Please inspect the image asset.',
-    status: 'in-progress',
-    priority: 'medium',
-    adminReply: 'Thanks Chidi! Our team is reviewing the diagram asset for WAEC 2024 Physics Question #42.',
-    createdAt: '2026-02-10T14:30:00Z',
-    updatedAt: '2026-02-10T16:00:00Z',
-  },
-  {
-    _id: 'tk_103',
-    user: { _id: 'u_103', name: 'Folake Adebayo', email: 'folake.ade@outlook.com' },
-    subject: 'Request for NECO 2025 Past Questions Addition',
-    message: 'Hi team, will the latest NECO 2025 exam past questions be added before the main exams in May? Thanks for your awesome platform!',
-    status: 'resolved',
-    priority: 'low',
-    adminReply: 'Hello Folake! Yes, NECO 2025 past questions are currently being proofread and will be live next week.',
-    createdAt: '2026-02-08T09:00:00Z',
-    updatedAt: '2026-02-09T11:20:00Z',
-  }
-];
-
 export const Support: React.FC = () => {
-  const [tickets, setTickets] = useState<SupportTicket[]>(DEFAULT_TICKETS);
+  const [tickets, setTickets] = useState<SupportTicket[]>([]);
   const [refreshing, setRefreshing] = useState(false);
-  const [activeTicketId, setActiveTicketId] = useState<string | null>('tk_101');
+  const [activeTicketId, setActiveTicketId] = useState<string | null>(null);
   const [replyText, setReplyText] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
@@ -77,16 +42,18 @@ export const Support: React.FC = () => {
   const fetchTickets = useCallback(async (silent = false) => {
     if (silent) setRefreshing(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/admin/support/tickets`);
+      const res = await fetch(`${API_BASE_URL}/admin/support/tickets`, {
+        headers: getAdminAuthHeaders()
+      });
       if (res.ok) {
         const data = await res.json();
-        if (Array.isArray(data) && data.length > 0) {
+        if (Array.isArray(data)) {
           setTickets(data);
-          if (!activeTicketId) setActiveTicketId(data[0]._id);
+          if (data.length > 0 && !activeTicketId) setActiveTicketId(data[0]._id);
         }
       }
     } catch (error) {
-      // Keeps DEFAULT_TICKETS fallback
+      // Keep state
     } finally {
       setRefreshing(false);
     }
@@ -118,7 +85,7 @@ export const Support: React.FC = () => {
 
       const res = await fetch(`${API_BASE_URL}/admin/support/tickets/${activeTicket._id}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...getAdminAuthHeaders() },
         body: JSON.stringify(payload),
       });
 

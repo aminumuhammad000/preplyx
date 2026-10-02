@@ -16,7 +16,7 @@ import {
 import './Wallet.css';
 
 /* ── Config ── */
-import { API_BASE_URL } from '../config/api';
+import { API_BASE_URL, getAdminAuthHeaders } from '../config/api';
 const PAGE_SIZE = 10;
 
 /* ── Types ── */
@@ -52,138 +52,17 @@ interface WalletConfig {
 
 type ToastState = { message: string; type: 'success' | 'error' } | null;
 
-const DEFAULT_STATS: WalletStats = {
-  totalDeposits: 12500000,
-  totalVirtualAccounts: 4820,
-  totalUnlocks: 4350000
+const INITIAL_STATS: WalletStats = {
+  totalDeposits: 0,
+  totalVirtualAccounts: 0,
+  totalUnlocks: 0
 };
 
-const DEFAULT_TRANSACTIONS: Transaction[] = [
-  {
-    _id: 'tx_9841001',
-    user: { name: 'Amina Muhammad', email: 'amina.m@gmail.com' },
-    type: 'funding',
-    amount: 5000,
-    description: 'Virtual Bank Transfer Deposit (VTStack)',
-    reference: 'VTS_9841001',
-    status: 'completed',
-    balanceBefore: 1500,
-    balanceAfter: 6500,
-    createdAt: '2026-02-11T11:30:00Z'
-  },
-  {
-    _id: 'tx_9841002',
-    user: { name: 'Chidi Okonkwo', email: 'chidi.okonkwo@yahoo.com' },
-    type: 'spending',
-    amount: 200,
-    description: 'Unlocked JAMB 2025 Physics CBT Package',
-    reference: 'EXAM_UNLK_42',
-    status: 'completed',
-    balanceBefore: 1200,
-    balanceAfter: 1000,
-    createdAt: '2026-02-11T10:15:00Z'
-  },
-  {
-    _id: 'tx_9841003',
-    user: { name: 'Folake Adebayo', email: 'folake.ade@outlook.com' },
-    type: 'bonus',
-    amount: 500,
-    description: 'Welcome Account Registration Bonus',
-    reference: 'BONUS_NEW_ACC',
-    status: 'completed',
-    balanceBefore: 0,
-    balanceAfter: 500,
-    createdAt: '2026-02-10T16:00:00Z'
-  },
-  {
-    _id: 'tx_9841004',
-    user: { name: 'Emeka Nwosu', email: 'emeka.nwosu@gmail.com' },
-    type: 'spending',
-    amount: 500,
-    description: 'Unlocked WAEC Full Simulation Pass',
-    reference: 'EXAM_UNLK_99',
-    status: 'completed',
-    balanceBefore: 2500,
-    balanceAfter: 2000,
-    createdAt: '2026-02-09T14:20:00Z'
-  },
-  {
-    _id: 'tx_9841005',
-    user: { name: 'Blessing Danjuma', email: 'blessing.d@gmail.com' },
-    type: 'funding',
-    amount: 10000,
-    description: 'Paystack Card Deposit (Mastercard)',
-    reference: 'PSTK_9918231',
-    status: 'completed',
-    balanceBefore: 450,
-    balanceAfter: 10450,
-    createdAt: '2026-02-09T09:45:00Z'
-  },
-  {
-    _id: 'tx_9841006',
-    user: { name: 'Tunde Bakare', email: 'tunde.b@hotmail.com' },
-    type: 'spending',
-    amount: 200,
-    description: 'Unlocked Post-UTME Mathematics Mock',
-    reference: 'EXAM_UNLK_108',
-    status: 'completed',
-    balanceBefore: 1800,
-    balanceAfter: 1600,
-    createdAt: '2026-02-08T18:10:00Z'
-  },
-  {
-    _id: 'tx_9841007',
-    user: { name: 'Nkechi Eze', email: 'nkechi.eze@gmail.com' },
-    type: 'funding',
-    amount: 3000,
-    description: 'Virtual Bank Transfer Deposit (VTStack)',
-    reference: 'VTS_9841007',
-    status: 'pending',
-    balanceBefore: 200,
-    balanceAfter: 200,
-    createdAt: '2026-02-08T12:00:00Z'
-  },
-  {
-    _id: 'tx_9841008',
-    user: { name: 'Usman Ibrahim', email: 'usman.i@gmail.com' },
-    type: 'spending',
-    amount: 350,
-    description: 'NECO Chemistry & Biology Past Questions',
-    reference: 'EXAM_UNLK_112',
-    status: 'completed',
-    balanceBefore: 1200,
-    balanceAfter: 850,
-    createdAt: '2026-02-07T15:30:00Z'
-  },
-  {
-    _id: 'tx_9841009',
-    user: { name: 'Kemi Olaniyan', email: 'kemi.o@yahoo.com' },
-    type: 'funding',
-    amount: 2000,
-    description: 'Paystack Bank Transfer',
-    reference: 'PSTK_4412098',
-    status: 'failed',
-    balanceBefore: 100,
-    balanceAfter: 100,
-    createdAt: '2026-02-07T10:05:00Z'
-  },
-  {
-    _id: 'tx_9841010',
-    user: { name: 'David Mark', email: 'david.mark@outlook.com' },
-    type: 'bonus',
-    amount: 500,
-    description: 'Referral Rewards Bonus (3 Friends Joined)',
-    reference: 'BONUS_REF_3X',
-    status: 'completed',
-    balanceBefore: 700,
-    balanceAfter: 1200,
-    createdAt: '2026-02-06T14:15:00Z'
-  }
-];
+const DEFAULT_TRANSACTIONS: Transaction[] = [];
 
 export const Wallet: React.FC = () => {
   // Stats & Transactions
-  const [stats, setStats] = useState<WalletStats>(DEFAULT_STATS);
+  const [stats, setStats] = useState<WalletStats>(INITIAL_STATS);
   const [transactions, setTransactions] = useState<Transaction[]>(DEFAULT_TRANSACTIONS);
   
   // Loading states
@@ -227,13 +106,15 @@ export const Wallet: React.FC = () => {
 
   const fetchStats = useCallback(async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/admin/wallet/stats`);
+      const res = await fetch(`${API_BASE_URL}/admin/wallet/stats`, {
+        headers: getAdminAuthHeaders(),
+      });
       if (res.ok) {
         const data = await res.json();
         setStats(data);
       }
     } catch {
-      // Keeps DEFAULT_STATS
+      // Keeps INITIAL_STATS
     }
   }, []);
 
@@ -247,21 +128,23 @@ export const Wallet: React.FC = () => {
       if (typeFilter !== 'All') params.append('type', typeFilter.toLowerCase());
       if (statusFilter !== 'All') params.append('status', statusFilter.toLowerCase());
 
-      const res = await fetch(`${API_BASE_URL}/admin/wallet/transactions?${params.toString()}`);
+      const res = await fetch(`${API_BASE_URL}/admin/wallet/transactions?${params.toString()}`, {
+        headers: getAdminAuthHeaders(),
+      });
       if (res.ok) {
         const data = await res.json();
-        if (data.transactions && data.transactions.length > 0) {
-          setTransactions(data.transactions);
-        }
+        setTransactions(Array.isArray(data.transactions) ? data.transactions : []);
       }
     } catch {
-      // Keeps DEFAULT_TRANSACTIONS
+      // Keeps real transactions
     }
   }, [page, debouncedSearch, typeFilter, statusFilter]);
 
   const fetchConfig = useCallback(async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/admin/wallet/config`);
+      const res = await fetch(`${API_BASE_URL}/admin/wallet/config`, {
+        headers: getAdminAuthHeaders(),
+      });
       if (res.ok) {
         const data = await res.json();
         setFeeConfig({

@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import './Simulation.css';
 
-import { API_BASE_URL } from '../config/api';
+import { API_BASE_URL, getAdminAuthHeaders } from '../config/api';
 
 /* ── Types ── */
 interface User {
@@ -40,63 +40,18 @@ interface Stats {
   passRate: number;
 }
 
-const DEFAULT_STATS: Stats = {
-  totalSessions: 98450,
-  avgScore: 74.5,
-  avgTime: 2712,
-  passRate: 78.2
+const INITIAL_STATS: Stats = {
+  totalSessions: 0,
+  avgScore: 0,
+  avgTime: 0,
+  passRate: 0
 };
 
-const DEFAULT_SESSIONS: ExamSession[] = [
-  {
-    _id: 'sim_9801',
-    user: { _id: 'u_101', name: 'Amina Muhammad', email: 'amina.m@gmail.com' },
-    exam: 'JAMB',
-    subject: 'Mathematics',
-    score: 85,
-    total: 100,
-    percentage: 85,
-    timeSpentSeconds: 2530,
-    createdAt: '2026-02-11T13:10:00Z'
-  },
-  {
-    _id: 'sim_9802',
-    user: { _id: 'u_102', name: 'Chidi Okonkwo', email: 'chidi.okonkwo@yahoo.com' },
-    exam: 'WAEC',
-    subject: 'Physics',
-    score: 68,
-    total: 100,
-    percentage: 68,
-    timeSpentSeconds: 3270,
-    createdAt: '2026-02-11T12:00:00Z'
-  },
-  {
-    _id: 'sim_9803',
-    user: { _id: 'u_103', name: 'Folake Adebayo', email: 'folake.ade@outlook.com' },
-    exam: 'NECO',
-    subject: 'English Language',
-    score: 45,
-    total: 100,
-    percentage: 45,
-    timeSpentSeconds: 3480,
-    createdAt: '2026-02-11T11:15:00Z'
-  },
-  {
-    _id: 'sim_9804',
-    user: { _id: 'u_104', name: 'Emeka Nwosu', email: 'emeka.nwosu@gmail.com' },
-    exam: 'JAMB',
-    subject: 'Chemistry',
-    score: 92,
-    total: 100,
-    percentage: 92,
-    timeSpentSeconds: 2115,
-    createdAt: '2026-02-10T16:45:00Z'
-  }
-];
+const DEFAULT_SESSIONS: ExamSession[] = [];
 
 export const Simulation: React.FC = () => {
   const [sessions, setSessions]       = useState<ExamSession[]>(DEFAULT_SESSIONS);
-  const [stats, setStats]             = useState<Stats>(DEFAULT_STATS);
+  const [stats, setStats]             = useState<Stats>(INITIAL_STATS);
   const [refreshing, setRefreshing]   = useState(false);
 
   // Pagination & Filters
@@ -120,18 +75,20 @@ export const Simulation: React.FC = () => {
         exam: filterExam,
         subject: filterSubject,
       });
-      const res = await fetch(`${API_BASE_URL}/admin/simulations?${q.toString()}`);
+      const res = await fetch(`${API_BASE_URL}/admin/simulations?${q.toString()}`, {
+        headers: getAdminAuthHeaders()
+      });
       if (res.ok) {
         const data = await res.json();
-        if (data.sessions && data.sessions.length > 0) {
+        if (data.sessions !== undefined) {
           setSessions(data.sessions);
-          setStats(data.stats || DEFAULT_STATS);
+          setStats(data.stats || INITIAL_STATS);
           setTotalPages(data.totalPages || 1);
-          setTotalRecords(data.total || data.sessions.length);
+          setTotalRecords(data.total !== undefined ? data.total : data.sessions.length);
         }
       }
     } catch {
-      // Keeps DEFAULT_SESSIONS
+      // Keep state
     } finally {
       setRefreshing(false);
     }

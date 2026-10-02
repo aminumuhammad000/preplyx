@@ -14,7 +14,7 @@ import './Dashboard.css';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { useNavigate } from 'react-router-dom';
 
-import { API_BASE_URL } from '../config/api';
+import { API_BASE_URL, getAdminAuthHeaders } from '../config/api';
 
 interface DashboardStats {
   totalStudents: number;
@@ -35,41 +35,34 @@ const formatCurrency = (amount: number) => {
   return `₦ ${amount.toLocaleString()}`;
 };
 
-const defaultStats: DashboardStats = {
-  totalStudents: 12840,
-  activeToday: 1420,
-  totalQuestions: 45200,
-  totalSubjects: 16,
-  totalRevenue: 12500000,
-  depositsToday: 480000,
-  totalUnlocks: 14200,
-  totalSessions: 98450,
-  totalExams: 48,
-  recentTransactions: [
-    { _id: 'tx_1', user: { name: 'Amina Muhammad' }, type: 'funding', amount: 25000, status: 'completed' },
-    { _id: 'tx_2', user: { name: 'Chidi Okonkwo' }, type: 'unlock', description: 'JAMB CBT Unlock', amount: 2500, status: 'completed' },
-    { _id: 'tx_3', user: { name: 'Folake Adebayo' }, type: 'funding', amount: 10000, status: 'completed' },
-    { _id: 'tx_4', user: { name: 'Usman Garba' }, type: 'unlock', description: 'WAEC Package', amount: 5000, status: 'completed' },
-    { _id: 'tx_5', user: { name: 'Blessing Ekong' }, type: 'funding', amount: 50000, status: 'pending' },
-  ]
+const emptyStats: DashboardStats = {
+  totalStudents: 0,
+  activeToday: 0,
+  totalQuestions: 0,
+  totalSubjects: 0,
+  totalRevenue: 0,
+  depositsToday: 0,
+  totalUnlocks: 0,
+  totalSessions: 0,
+  totalExams: 0,
+  recentTransactions: []
 };
 
 export const Dashboard: React.FC = () => {
   const navigate = useNavigate();
-  const [stats, setStats] = useState<DashboardStats>(defaultStats);
+  const [stats, setStats] = useState<DashboardStats>(emptyStats);
   useEffect(() => {
     const fetchDashboard = async () => {
       try {
-        const res = await fetch(`${API_BASE_URL}/admin/dashboard`);
+        const res = await fetch(`${API_BASE_URL}/admin/dashboard`, {
+          headers: getAdminAuthHeaders(),
+        });
         if (res.ok) {
           const data = await res.json();
-          setStats(prev => ({
-            ...prev,
-            ...data
-          }));
+          setStats(data);
         }
       } catch (error) {
-        // Keeps robust default fallback stats if backend API is offline
+        console.error('[Dashboard] Failed to fetch server stats:', error);
       }
     };
     fetchDashboard();

@@ -20,7 +20,7 @@ import {
 import './Exams.css';
 
 /* ── Config ── */
-import { API_BASE_URL } from '../config/api';
+import { API_BASE_URL, getAdminAuthHeaders } from '../config/api';
 
 const EXAM_COLORS = [
   '#7B2FF7', '#0284c7', '#059669', '#16a34a',
@@ -63,56 +63,7 @@ const EMPTY_FORM: FormData = {
   subjects: [],
 };
 
-const DEFAULT_EXAMS: ExamData[] = [
-  {
-    _id: 'ex_jamb',
-    name: 'JAMB',
-    displayName: 'Joint Admissions & Matriculation Board (UTME)',
-    description: 'Standard Nigerian university entrance computerized examination with full past questions and timing simulation.',
-    color: '#7B2FF7',
-    years: '2000 – 2025',
-    subjects: ['English', 'Mathematics', 'Physics', 'Chemistry', 'Biology', 'Economics', 'Government', 'CRS'],
-    liveQuestionCount: 45200,
-    liveSessionCount: 98450,
-    createdAt: '2026-01-01T00:00:00Z',
-  },
-  {
-    _id: 'ex_waec',
-    name: 'WAEC',
-    displayName: 'West African Senior School Certificate Examination',
-    description: 'Official WAEC SSCE past questions covering core science, arts, and commercial subjects with detailed explanations.',
-    color: '#0ea5e9',
-    years: '1998 – 2025',
-    subjects: ['English', 'Mathematics', 'Physics', 'Chemistry', 'Biology', 'Literature', 'Commerce', 'Accounting'],
-    liveQuestionCount: 38100,
-    liveSessionCount: 62300,
-    createdAt: '2026-01-02T00:00:00Z',
-  },
-  {
-    _id: 'ex_neco',
-    name: 'NECO',
-    displayName: 'National Examinations Council (SSCE)',
-    description: 'National SSCE examination question bank designed for senior secondary school practice.',
-    color: '#10b981',
-    years: '2004 – 2025',
-    subjects: ['English', 'Mathematics', 'Physics', 'Chemistry', 'Biology', 'Civic Education', 'Agricultural Science'],
-    liveQuestionCount: 28400,
-    liveSessionCount: 41200,
-    createdAt: '2026-01-03T00:00:00Z',
-  },
-  {
-    _id: 'ex_post_utme',
-    name: 'POST-UTME',
-    displayName: 'University Post-UTME Screening CBT',
-    description: 'Institution-specific Post-UTME screening questions for UNILAG, OAU, UI, UNIBEN, ABU, and UNN.',
-    color: '#f59e0b',
-    years: '2012 – 2025',
-    subjects: ['English', 'Mathematics', 'General Paper', 'Physics', 'Chemistry', 'Biology'],
-    liveQuestionCount: 19800,
-    liveSessionCount: 29400,
-    createdAt: '2026-01-04T00:00:00Z',
-  }
-];
+const DEFAULT_EXAMS: ExamData[] = [];
 
 /* ══════════════════════════════════════
    MAIN COMPONENT
@@ -142,15 +93,17 @@ export const Exams: React.FC = () => {
   const fetchExams = useCallback(async (silent = false) => {
     if (silent) setRefreshing(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/admin/exams`);
+      const res = await fetch(`${API_BASE_URL}/admin/exams`, {
+        headers: getAdminAuthHeaders()
+      });
       if (res.ok) {
         const data = await res.json();
-        if (Array.isArray(data) && data.length > 0) {
+        if (Array.isArray(data)) {
           setExams(data);
         }
       }
     } catch {
-      // Keeps DEFAULT_EXAMS fallback
+      // Keep state
     } finally {
       setRefreshing(false);
     }
@@ -234,7 +187,7 @@ export const Exams: React.FC = () => {
 
       const res = await fetch(url, {
         method: isCreate ? 'POST' : 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...getAdminAuthHeaders() },
         body: JSON.stringify(form),
       });
 
@@ -283,7 +236,10 @@ export const Exams: React.FC = () => {
     if (!deleteTarget) return;
     setDeleting(true);
     try {
-      await fetch(`${API_BASE_URL}/admin/exams/${deleteTarget._id}`, { method: 'DELETE' });
+      await fetch(`${API_BASE_URL}/admin/exams/${deleteTarget._id}`, {
+        method: 'DELETE',
+        headers: getAdminAuthHeaders()
+      });
     } catch {
       // ignore
     } finally {

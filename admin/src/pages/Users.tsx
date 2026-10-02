@@ -25,7 +25,7 @@ import {
 } from 'lucide-react';
 import './Users.css';
 
-import { API_BASE_URL } from '../config/api';
+import { API_BASE_URL, getAdminAuthHeaders } from '../config/api';
 const PAGE_SIZE = 10;
 
 /* ── Types ── */
@@ -44,16 +44,7 @@ type FilterType = 'all' | 'active' | 'suspended';
 type ToastState = { message: string; type: 'success' | 'error' } | null;
 
 /* ── Sample Fallback Data ── */
-const DEFAULT_USERS: User[] = [
-  { _id: 'u_101', name: 'Amina Muhammad', email: 'amina.m@gmail.com', phone: '+234 803 123 4567', role: 'student', status: 'active', createdAt: '2026-01-15T10:30:00Z', subscription: { plan: 'pro' } },
-  { _id: 'u_102', name: 'Chidi Okonkwo', email: 'chidi.okonkwo@yahoo.com', phone: '+234 812 987 6543', role: 'student', status: 'active', createdAt: '2026-02-01T14:20:00Z', subscription: { plan: 'basic' } },
-  { _id: 'u_103', name: 'Folake Adebayo', email: 'folake.ade@outlook.com', phone: '+234 705 444 3322', role: 'student', status: 'active', createdAt: '2026-02-10T09:15:00Z', subscription: { plan: 'premium' } },
-  { _id: 'u_104', name: 'Usman Garba', email: 'usman.garba@gmail.com', phone: '+234 809 111 2233', role: 'student', status: 'suspended', createdAt: '2025-11-20T16:45:00Z', subscription: { plan: 'free' } },
-  { _id: 'u_105', name: 'Blessing Ekong', email: 'blessing.e@hotmail.com', phone: '+234 816 555 7788', role: 'student', status: 'active', createdAt: '2026-02-14T11:00:00Z', subscription: { plan: 'pro' } },
-  { _id: 'u_106', name: 'Ibrahim Musa', email: 'musa.ibrahim@gmail.com', phone: '+234 802 333 4455', role: 'student', status: 'active', createdAt: '2026-01-05T08:30:00Z', subscription: { plan: 'basic' } },
-  { _id: 'u_107', name: 'Grace John', email: 'grace.john@live.com', phone: '+234 703 888 9900', role: 'student', status: 'active', createdAt: '2026-02-18T15:10:00Z', subscription: { plan: 'premium' } },
-  { _id: 'u_108', name: 'David Adeleke', email: 'david.adeleke@gmail.com', phone: '+234 814 222 1100', role: 'student', status: 'suspended', createdAt: '2025-12-12T13:00:00Z', subscription: { plan: 'free' } },
-];
+const DEFAULT_USERS: User[] = [];
 
 /* ── Helpers ── */
 const AVATAR_CLASSES = ['um-avatar-a', 'um-avatar-b', 'um-avatar-c', 'um-avatar-d', 'um-avatar-e'];
@@ -110,7 +101,7 @@ export const Users: React.FC = () => {
     try {
       const res = await fetch(`${API_BASE_URL}/admin/users/credit`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: getAdminAuthHeaders(),
         body: JSON.stringify({
           userId: creditModalUser?._id,
           email: creditModalUser?.email,
@@ -137,15 +128,16 @@ export const Users: React.FC = () => {
   const fetchUsers = useCallback(async (silent = false) => {
     if (silent) setRefreshing(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/admin/users`);
+      const res = await fetch(`${API_BASE_URL}/admin/users`, {
+        headers: getAdminAuthHeaders(),
+      });
       if (res.ok) {
         const data = await res.json();
-        if (Array.isArray(data) && data.length > 0) {
-          setUsers(data);
-        }
+        const userList = Array.isArray(data) ? data : (Array.isArray(data?.users) ? data.users : []);
+        setUsers(userList);
       }
-    } catch {
-      // Keeps DEFAULT_USERS fallback
+    } catch (error) {
+      console.error('[Users] Failed to fetch server users:', error);
     } finally {
       setRefreshing(false);
     }
@@ -166,7 +158,7 @@ export const Users: React.FC = () => {
     try {
       const res = await fetch(`${API_BASE_URL}/admin/users/${userId}/status`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: getAdminAuthHeaders(),
         body: JSON.stringify({ status }),
       });
       if (res.ok) {
@@ -189,7 +181,10 @@ export const Users: React.FC = () => {
   const deleteUser = async (user: User) => {
     setDeleting(true);
     try {
-      await fetch(`${API_BASE_URL}/admin/users/${user._id}`, { method: 'DELETE' });
+      await fetch(`${API_BASE_URL}/admin/users/${user._id}`, {
+        method: 'DELETE',
+        headers: getAdminAuthHeaders()
+      });
     } catch {
       // ignore
     } finally {

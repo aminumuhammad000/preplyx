@@ -15,7 +15,7 @@ import {
 import './Settings.css';
 
 /* ── Config ── */
-import { API_BASE_URL } from '../config/api';
+import { API_BASE_URL, getAdminAuthHeaders } from '../config/api';
 
 /* ── Types ── */
 interface SystemSettings {
@@ -126,7 +126,9 @@ export const Settings: React.FC = () => {
   // Fetch Settings from backend
   const fetchSettings = useCallback(async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/admin/settings`);
+      const res = await fetch(`${API_BASE_URL}/admin/settings`, {
+        headers: getAdminAuthHeaders()
+      });
       if (res.ok) {
         const data = await res.json();
         setSettings(prev => ({
@@ -168,7 +170,7 @@ export const Settings: React.FC = () => {
       setSaving(true);
       const res = await fetch(`${API_BASE_URL}/admin/settings`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...getAdminAuthHeaders() },
         body: JSON.stringify(settings)
       });
 
@@ -189,7 +191,7 @@ export const Settings: React.FC = () => {
       setTestingAi(true);
       const res = await fetch(`${API_BASE_URL}/admin/settings/test-ai`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...getAdminAuthHeaders() },
         body: JSON.stringify({
           anthropicAuthToken: settings.anthropicAuthToken,
           anthropicBaseUrl: settings.anthropicBaseUrl,

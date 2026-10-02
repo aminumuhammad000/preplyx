@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import './Questions.css';
 
-import { API_BASE_URL } from '../config/api';
+import { API_BASE_URL, getAdminAuthHeaders } from '../config/api';
 
 const POLL_INTERVAL_MS = 15_000; // 15 seconds
 
@@ -79,51 +79,8 @@ const DEFAULT_SUBJECTS_LIST = [
   'Computer Studies'
 ];
 
-const DEFAULT_QUESTIONS: QuestionData[] = [
-  {
-    _id: 'q_101',
-    exam: 'JAMB',
-    subject: 'Mathematics',
-    year: 2026,
-    text: 'Solve for x in the equation: 3x - 9 = 0',
-    options: ['1', '2', '3', '4'],
-    correctAnswer: '3',
-    explanation: '3x - 9 = 0 => 3x = 9 => x = 3.'
-  },
-  {
-    _id: 'q_102',
-    exam: 'WAEC',
-    subject: 'English Language',
-    year: 2025,
-    text: 'Choose the word that is nearest in meaning to the underlined word: The candidate gave a MODEST response.',
-    options: ['Humble', 'Arrogant', 'Loud', 'Careless'],
-    correctAnswer: 'Humble',
-    explanation: 'Modest means humble or unassuming in behavior.'
-  },
-  {
-    _id: 'q_103',
-    exam: 'NECO',
-    subject: 'Physics',
-    year: 2024,
-    text: 'What is the SI unit of electrical resistance?',
-    options: ['Volt', 'Ampere', 'Ohm', 'Watt'],
-    correctAnswer: 'Ohm',
-    explanation: 'Resistance is measured in Ohms (Ω) according to Ohm\'s law V = IR.'
-  },
-  {
-    _id: 'q_104',
-    exam: 'JAMB',
-    subject: 'Chemistry',
-    year: 2026,
-    text: 'Which element has the atomic number 6?',
-    options: ['Hydrogen', 'Carbon', 'Oxygen', 'Nitrogen'],
-    correctAnswer: 'Carbon',
-    explanation: 'Carbon has 6 protons, giving it an atomic number of 6.'
-  }
-];
-
 export const Questions: React.FC = () => {
-  const [questions, setQuestions]           = useState<QuestionData[]>(DEFAULT_QUESTIONS);
+  const [questions, setQuestions]           = useState<QuestionData[]>([]);
   const [selectableSubjects, setSelectableSubjects] = useState<string[]>(DEFAULT_SUBJECTS_LIST);
   const [toast, setToast]                   = useState<ToastState>(null);
   const [loading, setLoading]               = useState(false);
@@ -133,7 +90,7 @@ export const Questions: React.FC = () => {
   // Pagination & Filtering
   const [page, setPage]                     = useState(1);
   const [totalPages, setTotalPages]         = useState(1);
-  const [totalQuestions, setTotalQuestions] = useState(DEFAULT_QUESTIONS.length);
+  const [totalQuestions, setTotalQuestions] = useState(0);
   const [search, setSearch]                 = useState('');
   const [filterExam, setFilterExam]         = useState('All');
   const [filterSubject, setFilterSubject]   = useState('All');
@@ -173,7 +130,9 @@ export const Questions: React.FC = () => {
   /* ── Fetch Dynamic Subjects List ── */
   const fetchSubjectsList = useCallback(async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/admin/subjects`);
+      const res = await fetch(`${API_BASE_URL}/admin/subjects`, {
+        headers: getAdminAuthHeaders()
+      });
       if (res.ok) {
         const data = await res.json();
         if (Array.isArray(data) && data.length > 0) {
@@ -201,7 +160,9 @@ export const Questions: React.FC = () => {
         subject: filterSubject,
         search
       });
-      const res = await fetch(`${API_BASE_URL}/admin/questions?${q.toString()}`);
+      const res = await fetch(`${API_BASE_URL}/admin/questions?${q.toString()}`, {
+        headers: getAdminAuthHeaders()
+      });
       if (res.ok) {
         const data = await res.json();
         if (data.questions !== undefined) {
@@ -212,7 +173,7 @@ export const Questions: React.FC = () => {
         }
       }
     } catch {
-      // Keeps DEFAULT_QUESTIONS
+      // Keep state
     } finally {
       setLoading(false);
     }
@@ -283,7 +244,7 @@ export const Questions: React.FC = () => {
       
       const res = await fetch(url, {
         method: isCreate ? 'POST' : 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...getAdminAuthHeaders() },
         body: JSON.stringify(form)
       });
 
@@ -325,7 +286,10 @@ export const Questions: React.FC = () => {
     if (!deleteTarget) return;
     setDeleting(true);
     try {
-      await fetch(`${API_BASE_URL}/admin/questions/${deleteTarget._id}`, { method: 'DELETE' });
+      await fetch(`${API_BASE_URL}/admin/questions/${deleteTarget._id}`, {
+        method: 'DELETE',
+        headers: getAdminAuthHeaders()
+      });
       setQuestions(prev => prev.filter(q => q._id !== deleteTarget._id));
       showToast('Question deleted', 'success');
     } catch {
@@ -347,7 +311,10 @@ export const Questions: React.FC = () => {
     if (e.target.files && e.target.files[0]) {
       setScanState('scanning');
       try {
-        const res = await fetch(`${API_BASE_URL}/admin/questions/scan`, { method: 'POST' });
+        const res = await fetch(`${API_BASE_URL}/admin/questions/scan`, {
+          method: 'POST',
+          headers: getAdminAuthHeaders()
+        });
         if (res.ok) {
           const data = await res.json();
           setScannedResults(data.questions.map((q: any) => ({ ...q, year: CURRENT_YEAR })));
@@ -529,7 +496,7 @@ export const Questions: React.FC = () => {
 
       const res = await fetch(`${API_BASE_URL}/admin/questions/bulk`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...getAdminAuthHeaders() },
         body: JSON.stringify(payload)
       });
 

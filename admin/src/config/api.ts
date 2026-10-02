@@ -7,3 +7,17 @@ export const getApiBaseUrl = (): string => {
 };
 
 export const API_BASE_URL = getApiBaseUrl();
+
+/**
+ * Returns authorization and content-type headers for admin API requests.
+ */
+export const getAdminAuthHeaders = (): Record<string, string> => {
+  const token = typeof window !== 'undefined'
+    ? (localStorage.getItem('adminToken') || localStorage.getItem('preplyx_token') || '')
+    : '';
+
+  return {
+    'Content-Type': 'application/json',
+    ...(token ? { 'Authorization': `Bearer ${token}` } : {})
+  };
+};

@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import './Subjects.css';
 
-import { API_BASE_URL } from '../config/api';
+import { API_BASE_URL, getAdminAuthHeaders } from '../config/api';
 
 const ICON_MAP: Record<string, React.FC<any>> = {
   Calculator, BookType, Zap, FlaskConical, Leaf, BarChart3, Landmark, Vote, Sprout, BookText, Briefcase, ShoppingCart,
@@ -39,140 +39,7 @@ interface FormData {
 
 type ToastState = { message: string; type: 'success' | 'error' } | null;
 
-const DEFAULT_SUBJECTS: SubjectData[] = [
-  {
-    _id: 'sub_101',
-    name: 'Mathematics',
-    code: 'MTH101',
-    categories: ['Science', 'General', 'Commercial'],
-    examBoards: ['JAMB', 'WAEC', 'NECO'],
-    icon: 'Calculator',
-    tips: 'Algebra, Trigonometry, Calculus, Statistics, Geometry',
-    liveQuestionCount: 4250,
-    createdAt: '2026-01-15T00:00:00Z'
-  },
-  {
-    _id: 'sub_102',
-    name: 'English Language',
-    code: 'ENG101',
-    categories: ['General', 'Art'],
-    examBoards: ['JAMB', 'WAEC', 'NECO'],
-    icon: 'BookType',
-    tips: 'Comprehension, Lexis & Structure, Oral English, Summary Writing',
-    liveQuestionCount: 3890,
-    createdAt: '2026-01-15T00:00:00Z'
-  },
-  {
-    _id: 'sub_103',
-    name: 'Physics',
-    code: 'PHY101',
-    categories: ['Science'],
-    examBoards: ['JAMB', 'WAEC', 'NECO'],
-    icon: 'Zap',
-    tips: 'Mechanics, Optics, Electricity, Quantum Physics, Waves',
-    liveQuestionCount: 2950,
-    createdAt: '2026-01-16T00:00:00Z'
-  },
-  {
-    _id: 'sub_104',
-    name: 'Chemistry',
-    code: 'CHM101',
-    categories: ['Science'],
-    examBoards: ['JAMB', 'WAEC', 'NECO'],
-    icon: 'FlaskConical',
-    tips: 'Organic Chemistry, Stoichiometry, Periodic Table, Electrolysis',
-    liveQuestionCount: 3120,
-    createdAt: '2026-01-16T00:00:00Z'
-  },
-  {
-    _id: 'sub_105',
-    name: 'Biology',
-    code: 'BIO101',
-    categories: ['Science'],
-    examBoards: ['JAMB', 'WAEC', 'NECO'],
-    icon: 'Leaf',
-    tips: 'Cell Biology, Genetics, Ecology, Anatomy, Physiology',
-    liveQuestionCount: 3400,
-    createdAt: '2026-01-17T00:00:00Z'
-  },
-  {
-    _id: 'sub_106',
-    name: 'Economics',
-    code: 'ECO101',
-    categories: ['Commercial', 'Art'],
-    examBoards: ['JAMB', 'WAEC', 'NECO'],
-    icon: 'TrendingUp',
-    tips: 'Microeconomics, Macroeconomics, Inflation, Banking & Trade',
-    liveQuestionCount: 2180,
-    createdAt: '2026-01-18T00:00:00Z'
-  },
-  {
-    _id: 'sub_107',
-    name: 'Government',
-    code: 'GOV101',
-    categories: ['Art'],
-    examBoards: ['JAMB', 'WAEC', 'NECO'],
-    icon: 'Landmark',
-    tips: 'Constitution, Political Systems, Foreign Policy, Public Admin',
-    liveQuestionCount: 1950,
-    createdAt: '2026-01-19T00:00:00Z'
-  },
-  {
-    _id: 'sub_108',
-    name: 'Literature in English',
-    code: 'LIT101',
-    categories: ['Art'],
-    examBoards: ['JAMB', 'WAEC', 'NECO'],
-    icon: 'BookText',
-    tips: 'African Drama, Prose, Poetry Analysis, Literary Devices',
-    liveQuestionCount: 1820,
-    createdAt: '2026-01-20T00:00:00Z'
-  },
-  {
-    _id: 'sub_109',
-    name: 'Commerce',
-    code: 'COM101',
-    categories: ['Commercial'],
-    examBoards: ['JAMB', 'WAEC', 'NECO'],
-    icon: 'ShoppingCart',
-    tips: 'Trade, Stock Exchange, Business Law, Advertising & Warehousing',
-    liveQuestionCount: 1640,
-    createdAt: '2026-01-21T00:00:00Z'
-  },
-  {
-    _id: 'sub_110',
-    name: 'Agricultural Science',
-    code: 'AGR101',
-    categories: ['Science', 'General'],
-    examBoards: ['JAMB', 'WAEC', 'NECO'],
-    icon: 'Sprout',
-    tips: 'Crop Production, Animal Husbandry, Soil Science, Agronomy',
-    liveQuestionCount: 1450,
-    createdAt: '2026-01-22T00:00:00Z'
-  },
-  {
-    _id: 'sub_111',
-    name: 'Civic Education',
-    code: 'CVE101',
-    categories: ['General'],
-    examBoards: ['WAEC', 'NECO'],
-    icon: 'Shield',
-    tips: 'Human Rights, Citizenship, Democracy, Values & Ethics',
-    liveQuestionCount: 1720,
-    createdAt: '2026-01-23T00:00:00Z'
-  },
-  {
-    _id: 'sub_112',
-    name: 'Computer Studies',
-    code: 'CMP101',
-    categories: ['Science', 'General'],
-    examBoards: ['JAMB', 'WAEC', 'NECO'],
-    icon: 'Cpu',
-    tips: 'Data Processing, Algorithms, Hardware Systems, Networking',
-    liveQuestionCount: 2100,
-    createdAt: '2026-01-24T00:00:00Z'
-  }
-];
+const DEFAULT_SUBJECTS: SubjectData[] = [];
 
 const EMPTY_FORM: FormData = {
   name: '',
@@ -212,13 +79,15 @@ export const Subjects: React.FC = () => {
   const fetchSubjects = useCallback(async (silent = false) => {
     if (silent) setRefreshing(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/admin/subjects`);
+      const res = await fetch(`${API_BASE_URL}/admin/subjects`, {
+        headers: getAdminAuthHeaders()
+      });
       if (res.ok) {
         const data = await res.json();
-        if (Array.isArray(data) && data.length > 0) setSubjects(data);
+        if (Array.isArray(data)) setSubjects(data);
       }
     } catch {
-      // Keeps DEFAULT_SUBJECTS
+      // Keep state
     } finally {
       setRefreshing(false);
     }
@@ -311,7 +180,7 @@ export const Subjects: React.FC = () => {
 
       const res = await fetch(url, {
         method: isCreate ? 'POST' : 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...getAdminAuthHeaders() },
         body: JSON.stringify(form),
       });
 
@@ -368,7 +237,10 @@ export const Subjects: React.FC = () => {
     if (!deleteTarget) return;
     setDeleting(true);
     try {
-      await fetch(`${API_BASE_URL}/admin/subjects/${deleteTarget._id}`, { method: 'DELETE' });
+      await fetch(`${API_BASE_URL}/admin/subjects/${deleteTarget._id}`, {
+        method: 'DELETE',
+        headers: getAdminAuthHeaders()
+      });
       setSubjects(prev => prev.filter(s => s._id !== deleteTarget._id));
       showToast('Subject deleted successfully', 'success');
       setDeleteTarget(null);

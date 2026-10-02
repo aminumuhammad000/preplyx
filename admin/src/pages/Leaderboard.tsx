@@ -5,7 +5,7 @@ import {
 } from 'lucide-react';
 import './Leaderboard.css';
 
-import { API_BASE_URL } from '../config/api';
+import { API_BASE_URL, getAdminAuthHeaders } from '../config/api';
 
 interface LeaderboardEntry {
   rank: number;
@@ -34,7 +34,9 @@ export const Leaderboard: React.FC = () => {
       if (!silent) setLoading(true);
       else setRefreshing(true);
 
-      const res = await fetch(`${API_BASE_URL}/leaderboard?filter=${timeFilter}`);
+      const res = await fetch(`${API_BASE_URL}/leaderboard?filter=${timeFilter}`, {
+        headers: getAdminAuthHeaders()
+      });
       if (!res.ok) {
         throw new Error(`Server returned status ${res.status}`);
       }

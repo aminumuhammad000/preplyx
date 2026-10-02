@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import './Notifications.css';
 
-import { API_BASE_URL } from '../config/api';
+import { API_BASE_URL, getAdminAuthHeaders } from '../config/api';
 
 /* ── Types ── */
 interface Broadcast {
@@ -28,35 +28,8 @@ interface Broadcast {
 
 type ToastState = { message: string; type: 'success' | 'error' } | null;
 
-const DEFAULT_BROADCASTS: Broadcast[] = [
-  {
-    _id: 'bc_101',
-    title: 'JAMB 2025 CBT Simulator Update',
-    message: 'All 2025 UTME subject question banks and updated timer settings are now live on your dashboard.',
-    type: 'info',
-    targetAudience: 'all',
-    createdAt: '2026-02-11T12:00:00Z',
-  },
-  {
-    _id: 'bc_102',
-    title: 'Scheduled System Maintenance',
-    message: 'The CBT simulator server will undergo a brief 15-minute maintenance check tomorrow at 2:00 AM WAT.',
-    type: 'warning',
-    targetAudience: 'all',
-    createdAt: '2026-02-10T18:30:00Z',
-  },
-  {
-    _id: 'bc_103',
-    title: 'Weekend Wallet Bonus Offer',
-    message: 'Fund your Preplyx wallet this weekend and receive a 20% bonus on all exam bundle unlocks!',
-    type: 'promo',
-    targetAudience: 'active',
-    createdAt: '2026-02-08T09:15:00Z',
-  }
-];
-
 export const Notifications: React.FC = () => {
-  const [history, setHistory]         = useState<Broadcast[]>(DEFAULT_BROADCASTS);
+  const [history, setHistory]         = useState<Broadcast[]>([]);
   const [refreshing, setRefreshing]   = useState(false);
   const [sending, setSending]         = useState(false);
   const [toast, setToast]             = useState<ToastState>(null);
@@ -73,21 +46,24 @@ export const Notifications: React.FC = () => {
     if (silent) setRefreshing(true);
     try {
       const [historyRes, usersRes] = await Promise.all([
-        fetch(`${API_BASE_URL}/admin/notifications`),
-        fetch(`${API_BASE_URL}/admin/users`)
+        fetch(`${API_BASE_URL}/admin/notifications`, { headers: getAdminAuthHeaders() }),
+        fetch(`${API_BASE_URL}/admin/users`, { headers: getAdminAuthHeaders() })
       ]);
       
       if (historyRes.ok) {
         const data = await historyRes.json();
-        if (Array.isArray(data) && data.length > 0) {
+        if (Array.isArray(data)) {
           setHistory(data);
         }
       }
       if (usersRes.ok) {
-        setUsers(await usersRes.json());
+        const usersData = await usersRes.json();
+        if (Array.isArray(usersData)) {
+          setUsers(usersData);
+        }
       }
     } catch {
-      // Keeps DEFAULT_BROADCASTS fallback
+      // Keep state
     } finally {
       setRefreshing(false);
     }
@@ -114,7 +90,7 @@ export const Notifications: React.FC = () => {
     try {
       const res = await fetch(`${API_BASE_URL}/admin/notifications/broadcast`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...getAdminAuthHeaders() },
         body: JSON.stringify({ 
           title, 
           message, 

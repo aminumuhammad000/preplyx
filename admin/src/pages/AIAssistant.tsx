@@ -25,7 +25,7 @@ import './AIAssistant.css';
 import { ChatInterface } from '../components/ChatInterface';
 import '../components/ChatInterface.css';
 
-import { API_BASE_URL } from '../config/api';
+import { API_BASE_URL, getAdminAuthHeaders } from '../config/api';
 
 /* ── Extended Types ── */
 interface AIProvider {
@@ -178,7 +178,9 @@ export const AIAssistant: React.FC = () => {
     try {
       let keys: Record<string, any> = {};
       try {
-        const res = await fetch(`${API_BASE_URL}/admin/settings`);
+        const res = await fetch(`${API_BASE_URL}/admin/settings`, {
+          headers: getAdminAuthHeaders()
+        });
         if (res.ok) {
           const config = await res.json();
           keys = config.aiProviderKeys || {};
@@ -221,7 +223,7 @@ export const AIAssistant: React.FC = () => {
     try {
       const res = await fetch(`${API_BASE_URL}/admin/settings/test-ai`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...getAdminAuthHeaders() },
         body: JSON.stringify({
           providerId: provider.id,
           apiKey: provider.apiKey
@@ -291,7 +293,7 @@ export const AIAssistant: React.FC = () => {
       
       await fetch(`${API_BASE_URL}/admin/settings`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...getAdminAuthHeaders() },
         body: JSON.stringify({
           aiProviderKeys: keys,
           geminiApiKey: keys['gemini'] || '',
@@ -325,7 +327,7 @@ export const AIAssistant: React.FC = () => {
       
       await fetch(`${API_BASE_URL}/admin/settings`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...getAdminAuthHeaders() },
         body: JSON.stringify({
           aiProviderKeys: keys,
           geminiApiKey: keys['gemini'] || '',
