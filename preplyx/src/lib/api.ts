@@ -1,6 +1,8 @@
 // API utility functions to connect to backend server
 
 import { API_BASE_URL } from '../config/api';
+import { getAlocQuestions, isAlocConfigured } from './aloc';
+
 
 // Helper function to check if backend is available
 export async function checkBackendHealth(): Promise<boolean> {
@@ -124,6 +126,22 @@ class ApiClient {
     year?: string;
     limit?: number;
   }, token?: string): Promise<Question[]> {
+
+    // ── Primary: ALOC API ────────────────────────────────────────────────────
+    // If ALOC is configured, fetch from their enriched question bank first.
+    if (isAlocConfigured()) {
+      try {
+        const alocResults = await getAlocQuestions(params);
+        if (alocResults && alocResults.length > 0) {
+          return alocResults;
+        }
+      } catch (err) {
+        // ALOC failed (no results for this filter, quota, etc.) — fall through to own backend
+        console.warn('[ALOC] Falling back to Preplyx backend:', (err as Error).message);
+      }
+    }
+
+    // ── Fallback: Preplyx own backend ────────────────────────────────────────
     const queryParams = new URLSearchParams();
     if (params.exam) queryParams.append('exam', params.exam);
     if (params.subject) queryParams.append('subject', params.subject);
@@ -138,6 +156,7 @@ class ApiClient {
 
     return this.request<Question[]>(endpoint, { headers });
   }
+
 
   // Auth endpoints
   async register(userData: {
