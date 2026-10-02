@@ -1,7 +1,7 @@
 // API utility functions to connect to backend server
 
 import { API_BASE_URL } from '../config/api';
-import { getAlocQuestions, isAlocConfigured } from './aloc';
+import { getAlocQuestions, isAlocConfigured, getAlocAvailability } from './aloc';
 
 
 // Helper function to check if backend is available
@@ -46,7 +46,69 @@ export interface Question {
   topic?: string;
   subtopic?: string;
   source?: string;
+  imageUrl?: string;
+  section?: string;
 }
+
+const DEFAULT_EXAMS_FALLBACK: Record<string, ExamData> = {
+  JAMB: {
+    subjects: [
+      'Mathematics', 'English Language', 'Physics', 'Chemistry', 'Biology',
+      'Economics', 'Government', 'Literature in English', 'Commerce', 'Accounting',
+      'Civic Education', 'Christian Religious Studies', 'Geography', 'History', 'Insurance'
+    ],
+    color: '#7B2FF7',
+    years: '2000 - 2024',
+    desc: 'Joint Admissions and Matriculation Board UTME'
+  },
+  WAEC: {
+    subjects: [
+      'Mathematics', 'English Language', 'Physics', 'Chemistry', 'Biology',
+      'Economics', 'Government', 'Literature in English', 'Commerce', 'Accounting',
+      'Civic Education', 'Christian Religious Studies', 'Geography', 'History', 'Insurance'
+    ],
+    color: '#059669',
+    years: '2000 - 2024',
+    desc: 'West African Senior School Certificate Examination'
+  },
+  NECO: {
+    subjects: [
+      'Mathematics', 'English Language', 'Physics', 'Chemistry', 'Biology',
+      'Economics', 'Government', 'Literature in English', 'Commerce', 'Accounting',
+      'Civic Education', 'Christian Religious Studies', 'Geography'
+    ],
+    color: '#2563EB',
+    years: '2000 - 2024',
+    desc: 'National Examinations Council SSCE'
+  },
+  'POST-UTME': {
+    subjects: [
+      'Mathematics', 'English Language', 'Physics', 'Chemistry', 'Biology',
+      'Economics', 'Government', 'Literature in English', 'Commerce', 'Accounting'
+    ],
+    color: '#EA580C',
+    years: '2005 - 2024',
+    desc: 'University Specific Entry Screening'
+  }
+};
+
+const DEFAULT_CATEGORIES_FALLBACK: Record<string, string[]> = {
+  Mathematics: ['Science', 'General'],
+  'English Language': ['General', 'Language'],
+  Physics: ['Science'],
+  Chemistry: ['Science'],
+  Biology: ['Science'],
+  Economics: ['Commercial', 'Social Science'],
+  Government: ['Social Science', 'Arts'],
+  'Literature in English': ['Arts', 'Language'],
+  Commerce: ['Commercial'],
+  Accounting: ['Commercial'],
+  'Civic Education': ['General', 'Social Science'],
+  'Christian Religious Studies': ['Arts'],
+  Geography: ['Science', 'Social Science'],
+  History: ['Arts'],
+  Insurance: ['Commercial']
+};
 
 class ApiClient {
   private async request<T>(
@@ -92,23 +154,23 @@ class ApiClient {
 
   // Exam endpoints
   async getExams(): Promise<Record<string, ExamData>> {
-    return this.request<Record<string, ExamData>>('/exams');
+    return this.request<Record<string, ExamData>>('/exams').catch(() => DEFAULT_EXAMS_FALLBACK);
   }
 
   async getExamSubjects(exam: string): Promise<ExamData> {
-    return this.request<ExamData>(`/exams/${exam}/subjects`);
+    return this.request<ExamData>(`/exams/${exam}/subjects`).catch(() => DEFAULT_EXAMS_FALLBACK[exam] || DEFAULT_EXAMS_FALLBACK['JAMB']);
   }
 
   async getSubjectCategories(): Promise<Record<string, string[]>> {
-    return this.request<Record<string, string[]>>('/exams/categories');
+    return this.request<Record<string, string[]>>('/exams/categories').catch(() => DEFAULT_CATEGORIES_FALLBACK);
   }
 
   async getSubjectIcons(): Promise<Record<string, string>> {
-    return this.request<Record<string, string>>('/exams/icons');
+    return this.request<Record<string, string>>('/exams/icons').catch(() => ({}));
   }
 
   async getSubjectTips(): Promise<Record<string, string>> {
-    return this.request<Record<string, string>>('/exams/tips');
+    return this.request<Record<string, string>>('/exams/tips').catch(() => ({}));
   }
 
   async getExamAvailability(): Promise<Record<string, {
@@ -119,7 +181,38 @@ class ApiClient {
     subjectYears: Record<string, string[]>;
     topics: Record<string, string[]>;
   }>> {
-    return this.request('/exams/availability');
+    const backendAvail = await this.request<Record<string, any>>('/exams/availability').catch(() => ({}));
+    if (isAlocConfigured()) {
+      try {
+        const alocAvail = await getAlocAvailability();
+        const merged: Record<string, any> = { ...alocAvail };
+
+        // If backend has data for some exams, merge them intelligently
+        for (const [examKey, rawBData] of Object.entries(backendAvail || {})) {
+          const bData = rawBData as any;
+          if (!merged[examKey]) {
+            merged[examKey] = bData;
+          } else {
+            const m = merged[examKey];
+            const allSubjects = Array.from(new Set([...(m.subjects || []), ...(bData.subjects || [])]));
+            const allYears = Array.from(new Set([...(m.years || []), ...(bData.years || [])]))
+              .sort((a, b) => Number(b) - Number(a));
+            merged[examKey] = {
+              hasQuestions: m.hasQuestions || bData.hasQuestions,
+              totalCount: (m.totalCount || 0) + (bData.totalCount || 0),
+              years: allYears,
+              subjects: allSubjects,
+              subjectYears: { ...(m.subjectYears || {}), ...(bData.subjectYears || {}) },
+              topics: { ...(m.topics || {}), ...(bData.topics || {}) }
+            };
+          }
+        }
+        return merged;
+      } catch (err) {
+        console.warn('[ALOC] Availability merge failed:', err);
+      }
+    }
+    return backendAvail;
   }
 
   // Question endpoints

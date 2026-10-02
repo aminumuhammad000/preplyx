@@ -12,6 +12,12 @@ export interface Question {
   };
   correct_answer: 'A' | 'B' | 'C' | 'D';
   explanation: string;
+  imageUrl?: string;
+  topic?: string;
+  subtopic?: string;
+  source?: string;
+  cognitiveTrap?: string;
+  conceptSummary?: string;
 }
 
 const templates: Record<string, { q: string, opts: string[], ans: number, exp: string }[]> = {

@@ -78,6 +78,8 @@ export interface PrepQuestion {
   topic?: string;
   subtopic?: string;
   source?: string;
+  imageUrl?: string;
+  section?: string;
 }
 
 // ── ALOC Raw Types ────────────────────────────────────────────────────────────
@@ -103,6 +105,8 @@ export interface AlocQuestion {
   topic?: string;
   subtopic?: string;
   difficultyScore?: number;
+  imageUrl?: string | null;
+  section?: string | null;
   metadata?: {
     topic?: string;
     subtopic?: string;
@@ -186,6 +190,8 @@ export function normalizeAlocQuestion(
     topic,
     subtopic,
     source:        'ALOC_API',
+    imageUrl:      q.imageUrl || undefined,
+    section:       q.section || undefined,
   };
 }
 
@@ -371,8 +377,120 @@ export async function getAlocQuestions(params: {
   });
 }
 
+// ── L0: Availability & Subject Catalog ─────────────────────────────────────────
+
+export interface AlocCatalogSubject {
+  name: string;
+  displayName: string;
+  code: string;
+  category: string;
+  aliases: string[];
+  questionCount: number;
+  examTypes: string[];
+  yearRange: {
+    min: number;
+    max: number;
+  };
+}
+
+export const STATIC_ALOC_CATALOG: AlocCatalogSubject[] = [
+  { name: 'mathematics', displayName: 'Mathematics', code: 'MTH', category: 'sciences', aliases: ['math', 'maths'], questionCount: 1209, examTypes: ['jamb', 'post_utme', 'waec', 'neco'], yearRange: { min: 2000, max: 2024 } },
+  { name: 'english-language', displayName: 'English Language', code: 'ENG', category: 'languages', aliases: ['english', 'use-of-english'], questionCount: 1798, examTypes: ['jamb', 'waec', 'neco', 'post_utme'], yearRange: { min: 2000, max: 2024 } },
+  { name: 'physics', displayName: 'Physics', code: 'PHY', category: 'sciences', aliases: ['phy'], questionCount: 1196, examTypes: ['jamb', 'post_utme', 'waec', 'neco'], yearRange: { min: 2004, max: 2024 } },
+  { name: 'chemistry', displayName: 'Chemistry', code: 'CHE', category: 'sciences', aliases: ['chem'], questionCount: 794, examTypes: ['jamb', 'post_utme', 'waec', 'neco'], yearRange: { min: 2001, max: 2024 } },
+  { name: 'biology', displayName: 'Biology', code: 'BIO', category: 'sciences', aliases: ['bio'], questionCount: 383, examTypes: ['jamb', 'post_utme', 'waec', 'neco'], yearRange: { min: 2003, max: 2024 } },
+  { name: 'economics', displayName: 'Economics', code: 'ECN', category: 'commercial', aliases: ['econ'], questionCount: 655, examTypes: ['jamb', 'post_utme', 'waec', 'neco'], yearRange: { min: 2001, max: 2024 } },
+  { name: 'government', displayName: 'Government', code: 'GOV', category: 'social-sciences', aliases: ['govt'], questionCount: 1491, examTypes: ['jamb', 'neco', 'post_utme', 'waec'], yearRange: { min: 1988, max: 2024 } },
+  { name: 'literature-in-english', displayName: 'Literature in English', code: 'LIT', category: 'arts', aliases: ['literature'], questionCount: 557, examTypes: ['jamb', 'post_utme', 'waec', 'neco'], yearRange: { min: 2006, max: 2024 } },
+  { name: 'commerce', displayName: 'Commerce', code: 'COMM', category: 'commercial', aliases: ['com'], questionCount: 886, examTypes: ['jamb', 'neco', 'waec', 'post_utme'], yearRange: { min: 1990, max: 2024 } },
+  { name: 'accounting', displayName: 'Accounting', code: 'ACC', category: 'commercial', aliases: ['accounts'], questionCount: 1435, examTypes: ['jamb', 'post_utme', 'waec', 'neco'], yearRange: { min: 1997, max: 2024 } },
+  { name: 'civic-education', displayName: 'Civic Education', code: 'CIV', category: 'social-sciences', aliases: ['civics'], questionCount: 436, examTypes: ['neco', 'waec', 'jamb'], yearRange: { min: 2011, max: 2024 } },
+  { name: 'christian-religious-studies', displayName: 'Christian Religious Studies', code: 'CRK', category: 'arts', aliases: ['crs'], questionCount: 1017, examTypes: ['jamb', 'post_utme', 'waec', 'neco'], yearRange: { min: 2005, max: 2024 } },
+  { name: 'geography', displayName: 'Geography', code: 'GEO', category: 'social-sciences', aliases: ['geog'], questionCount: 436, examTypes: ['jamb', 'post_utme', 'waec', 'neco'], yearRange: { min: 2006, max: 2024 } },
+  { name: 'history', displayName: 'History', code: 'HIS', category: 'arts', aliases: [], questionCount: 50, examTypes: ['waec', 'jamb', 'neco'], yearRange: { min: 2010, max: 2024 } },
+  { name: 'insurance', displayName: 'Insurance', code: 'INSU', category: 'general', aliases: [], questionCount: 342, examTypes: ['waec', 'jamb', 'neco'], yearRange: { min: 2010, max: 2024 } }
+];
+
+let cachedAlocCatalog: AlocCatalogSubject[] | null = null;
+
+export async function fetchAlocCatalog(): Promise<AlocCatalogSubject[]> {
+  if (cachedAlocCatalog) return cachedAlocCatalog;
+  try {
+    const res = await alocRequest<{ data: AlocCatalogSubject[] }>('/subjects');
+    if (res.data && Array.isArray(res.data) && res.data.length > 0) {
+      cachedAlocCatalog = res.data;
+      return res.data;
+    }
+  } catch (err) {
+    console.warn('[ALOC] Catalog fetch error, using static catalog:', (err as Error).message);
+  }
+  cachedAlocCatalog = STATIC_ALOC_CATALOG;
+  return STATIC_ALOC_CATALOG;
+}
+
+export async function getAlocAvailability(): Promise<Record<string, {
+  hasQuestions: boolean;
+  totalCount: number;
+  years: string[];
+  subjects: string[];
+  subjectYears: Record<string, string[]>;
+  topics: Record<string, string[]>;
+}>> {
+  const catalog = await fetchAlocCatalog();
+  const examKeys = ['JAMB', 'WAEC', 'NECO', 'POST-UTME'];
+  const availability: Record<string, any> = {};
+
+  const ALL_EXAM_YEARS: string[] = Array.from({ length: 15 }, (_, i) => String(2024 - i)); // 2024 down to 2010
+
+  for (const examKey of examKeys) {
+    const examSlug = EXAM_MAP[examKey] || examKey.toLowerCase();
+    
+    // Select subjects matching this exam slug (or all subjects if none specific)
+    const matchingSubjects = catalog.filter(sub => 
+      sub.examTypes.includes(examSlug) || sub.examTypes.length > 0
+    );
+
+    const subjectDisplayNames = matchingSubjects.map(s => s.displayName);
+    const subjectYears: Record<string, string[]> = {};
+    const topics: Record<string, string[]> = {};
+
+    let totalCount = 0;
+    const yearsSet = new Set<string>();
+
+    for (const sub of matchingSubjects) {
+      totalCount += sub.questionCount || 0;
+      const minYr = Math.max(sub.yearRange?.min || 2005, 2000);
+      const maxYr = Math.min(sub.yearRange?.max || 2024, 2024);
+      const subYearList: string[] = [];
+      for (let y = maxYr; y >= minYr; y--) {
+        subYearList.push(String(y));
+        yearsSet.add(String(y));
+      }
+      subjectYears[sub.displayName] = subYearList.length > 0 ? subYearList : ALL_EXAM_YEARS;
+      topics[sub.displayName] = ['General', 'Past Papers', 'Revision Topics'];
+    }
+
+    const sortedYears = Array.from(yearsSet).sort((a, b) => Number(b) - Number(a));
+
+    availability[examKey] = {
+      hasQuestions: true,
+      totalCount: totalCount > 0 ? totalCount : 10000,
+      years: sortedYears.length > 0 ? sortedYears : ALL_EXAM_YEARS,
+      subjects: subjectDisplayNames.length > 0 ? subjectDisplayNames : [
+        'Mathematics', 'English Language', 'Physics', 'Chemistry', 'Biology',
+        'Economics', 'Government', 'Literature in English', 'Commerce', 'Accounting'
+      ],
+      subjectYears,
+      topics
+    };
+  }
+
+  return availability;
+}
+
 // ── Utility ───────────────────────────────────────────────────────────────────
 
 /** Returns true if the ALOC API key is configured. */
 export const isAlocConfigured = (): boolean =>
   Boolean(ALOC_KEY && ALOC_KEY.length > 10);
+

@@ -82,12 +82,15 @@ export default function MultiSubjectExam() {
             map[subject] = fetched.map((q: any) => ({
               id: q._id || q.id,
               year: q.year || year,
+              title: q.section || q.title || undefined,
+              description: q.section || q.description || undefined,
               question: q.text || q.question,
               options: Array.isArray(q.options)
                 ? { A: q.options[0] || '', B: q.options[1] || '', C: q.options[2] || '', D: q.options[3] || '' }
                 : q.options,
               correct_answer: (q.correctAnswer || q.correct_answer || 'A') as any,
               explanation: q.explanation || '',
+              imageUrl: q.imageUrl || undefined,
               topic: q.topic,
               subtopic: q.subtopic,
               source: q.source || (q.id && String(q.id).includes('-') ? 'ALOC_API' : 'Past Question Bank'),
@@ -828,6 +831,23 @@ export default function MultiSubjectExam() {
               <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-main)', marginBottom: '16px', lineHeight: 1.5 }}>
                 {currentQ.question}
               </div>
+
+              {/* Question Diagram / Image */}
+              {currentQ.imageUrl && (
+                <div style={{ marginBottom: '20px', textAlign: 'center' }}>
+                  <img
+                    src={currentQ.imageUrl}
+                    alt="Question Diagram"
+                    style={{
+                      maxWidth: '100%',
+                      maxHeight: '340px',
+                      borderRadius: '10px',
+                      border: '1px solid #e2e8f0',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
+                    }}
+                  />
+                </div>
+              )}
 
               {/* Compact AI Concept Action Pill */}
               <div style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '8px' }}>
