@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import {
   FileQuestion, Scan, Search, Plus, Trash2, CheckCircle, X,
   UploadCloud, CheckCircle2, ChevronLeft, ChevronRight, BookOpen, GraduationCap,
-  Lightbulb, Calendar, RefreshCw, AlertTriangle, Edit3
+  Lightbulb, Calendar, RefreshCw, AlertTriangle, Edit3, Download, FileJson, FileSpreadsheet, ChevronDown
 } from 'lucide-react';
 import './Questions.css';
 
@@ -163,6 +163,9 @@ export const Questions: React.FC = () => {
   // Delete
   const [deleteTarget, setDeleteTarget]     = useState<QuestionData | null>(null);
   const [deleting, setDeleting]             = useState(false);
+
+  // Template dropdown
+  const [templateDropdownOpen, setTemplateDropdownOpen] = useState(false);
 
   const availableExams = ['All', 'JAMB', 'WAEC', 'NECO', 'POST-UTME'];
   const availableSubjects = ['All', ...selectableSubjects];
@@ -562,6 +565,66 @@ export const Questions: React.FC = () => {
     document.body.removeChild(link);
   };
 
+  const downloadJSONSingleTemplate = () => {
+    const template = {
+      exam: "JAMB",
+      subject: "Mathematics",
+      year: 2026,
+      text: "Solve for x in the equation: 3x - 9 = 0",
+      options: ["1", "2", "3", "4"],
+      correctAnswer: "3",
+      explanation: "3x = 9 → x = 3. Dividing both sides by 3 gives x = 3."
+    };
+    const blob = new Blob([JSON.stringify(template, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'single_question_template.json');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const downloadJSONBulkTemplate = () => {
+    const template = [
+      {
+        exam: "JAMB",
+        subject: "Mathematics",
+        year: 2026,
+        text: "Solve for x in the equation: 3x - 9 = 0",
+        options: ["1", "2", "3", "4"],
+        correctAnswer: "3",
+        explanation: "3x = 9 → x = 3."
+      },
+      {
+        exam: "WAEC",
+        subject: "English Language",
+        year: 2025,
+        text: "Choose the word nearest in meaning to 'HAPPY'",
+        options: ["Sad", "Joyful", "Angry", "Tired"],
+        correctAnswer: "Joyful",
+        explanation: "Joyful is a synonym for happy — both mean feeling great pleasure."
+      },
+      {
+        exam: "NECO",
+        subject: "Physics",
+        year: 2024,
+        text: "What is the SI unit of electrical resistance?",
+        options: ["Volt", "Ampere", "Ohm", "Watt"],
+        correctAnswer: "Ohm",
+        explanation: "Resistance is measured in Ohms (Ω) according to Ohm's law V = IR."
+      }
+    ];
+    const blob = new Blob([JSON.stringify(template, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'bulk_questions_template.json');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const filteredQuestions = questions.filter(q => {
     const searchLow = search.toLowerCase();
     const matchesSearch = !searchLow || q.text.toLowerCase().includes(searchLow) || q.subject.toLowerCase().includes(searchLow);
@@ -596,6 +659,75 @@ export const Questions: React.FC = () => {
             <RefreshCw size={13} className={loading ? 'um-spin' : ''} />
             <span>Refresh</span>
           </button>
+
+          {/* Download Templates Dropdown */}
+          <div style={{ position: 'relative' }}>
+            <button
+              className="view-all-btn"
+              onClick={() => setTemplateDropdownOpen(o => !o)}
+              title="Download question templates"
+            >
+              <Download size={13} />
+              <span>Templates</span>
+              <ChevronDown size={11} />
+            </button>
+            {templateDropdownOpen && (
+              <>
+                {/* backdrop to close */}
+                <div
+                  style={{ position: 'fixed', inset: 0, zIndex: 40 }}
+                  onClick={() => setTemplateDropdownOpen(false)}
+                />
+                <div style={{
+                  position: 'absolute', top: 'calc(100% + 6px)', right: 0, zIndex: 50,
+                  background: 'var(--bg-card, #fff)', borderRadius: 10,
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.13)', border: '1px solid var(--border-color, #e5e7eb)',
+                  minWidth: 220, overflow: 'hidden'
+                }}>
+                  <div style={{ padding: '8px 12px 6px', fontSize: 11, fontWeight: 700, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', borderBottom: '1px solid var(--border-color, #e5e7eb)' }}>
+                    Download Templates
+                  </div>
+                  <button
+                    onClick={() => { downloadCSVTemplate(); setTemplateDropdownOpen(false); }}
+                    style={{ display: 'flex', alignItems: 'center', gap: 10, width: '100%', padding: '10px 14px', background: 'none', border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, color: 'var(--text-primary)', textAlign: 'left' }}
+                    onMouseEnter={e => (e.currentTarget.style.background = 'var(--bg-hover, #f3f4f6)')}
+                    onMouseLeave={e => (e.currentTarget.style.background = 'none')}
+                  >
+                    <FileSpreadsheet size={15} color="#10b981" />
+                    <div>
+                      <div>CSV Template</div>
+                      <div style={{ fontSize: 11, color: 'var(--text-secondary)', fontWeight: 400 }}>Bulk import via spreadsheet</div>
+                    </div>
+                  </button>
+                  <button
+                    onClick={() => { downloadJSONSingleTemplate(); setTemplateDropdownOpen(false); }}
+                    style={{ display: 'flex', alignItems: 'center', gap: 10, width: '100%', padding: '10px 14px', background: 'none', border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, color: 'var(--text-primary)', textAlign: 'left' }}
+                    onMouseEnter={e => (e.currentTarget.style.background = 'var(--bg-hover, #f3f4f6)')}
+                    onMouseLeave={e => (e.currentTarget.style.background = 'none')}
+                  >
+                    <FileJson size={15} color="#7B2FF7" />
+                    <div>
+                      <div>JSON — Single Question</div>
+                      <div style={{ fontSize: 11, color: 'var(--text-secondary)', fontWeight: 400 }}>One question object template</div>
+                    </div>
+                  </button>
+                  <button
+                    onClick={() => { downloadJSONBulkTemplate(); setTemplateDropdownOpen(false); }}
+                    style={{ display: 'flex', alignItems: 'center', gap: 10, width: '100%', padding: '10px 14px', background: 'none', border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, color: 'var(--text-primary)', textAlign: 'left', borderTop: '1px solid var(--border-color, #e5e7eb)' }}
+                    onMouseEnter={e => (e.currentTarget.style.background = 'var(--bg-hover, #f3f4f6)')}
+                    onMouseLeave={e => (e.currentTarget.style.background = 'none')}
+                  >
+                    <FileJson size={15} color="#0ea5e9" />
+                    <div>
+                      <div>JSON — Bulk Questions</div>
+                      <div style={{ fontSize: 11, color: 'var(--text-secondary)', fontWeight: 400 }}>Array of multiple questions</div>
+                    </div>
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+
           <button className="view-all-btn" onClick={openImporter}>
             <UploadCloud size={13} />
             <span>Import CSV</span>
@@ -1005,16 +1137,32 @@ export const Questions: React.FC = () => {
                 </div>
                 <h4>Click or drag CSV file to import</h4>
                 <p style={{ fontSize: 12, color: 'var(--text-secondary)' }}>Supports <strong>.csv</strong> formatted exam datasets with year tags.</p>
-                <button 
-                  type="button" 
-                  className="btn btn-outline mt-2"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    downloadCSVTemplate();
-                  }}
-                >
-                  Download CSV Template
-                </button>
+                <div style={{ display: 'flex', gap: 8, marginTop: 10, flexWrap: 'wrap', justifyContent: 'center' }} onClick={e => e.stopPropagation()}>
+                  <button
+                    type="button"
+                    className="btn btn-outline"
+                    style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12 }}
+                    onClick={downloadCSVTemplate}
+                  >
+                    <FileSpreadsheet size={13} color="#10b981" /> CSV Template
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-outline"
+                    style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12 }}
+                    onClick={downloadJSONSingleTemplate}
+                  >
+                    <FileJson size={13} color="#7B2FF7" /> JSON Single
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-outline"
+                    style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12 }}
+                    onClick={downloadJSONBulkTemplate}
+                  >
+                    <FileJson size={13} color="#0ea5e9" /> JSON Bulk
+                  </button>
+                </div>
                 <input type="file" ref={csvInputRef} style={{display: 'none'}} accept=".csv" onChange={handleCSVUpload} />
               </div>
             )}
