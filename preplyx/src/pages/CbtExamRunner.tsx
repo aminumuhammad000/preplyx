@@ -6,6 +6,7 @@ import {
   Info, ChevronDown, AlertTriangle, Send, X, Clock, RefreshCw, Loader2 
 } from 'lucide-react';
 import { saveActiveSession, getActiveSession, clearActiveSession, saveCompletedSession } from '@/lib/storage';
+import { saveQuestionSet, getQuestionSet, savePendingAnswer } from '@/lib/offlineDB';
 import { api } from '@/lib/api';
 import { useAuth } from '@/context/AuthContext';
 import ScientificCalculator from '@/components/ScientificCalculator';
@@ -50,6 +51,18 @@ export default function CbtExamRunner() {
   const [pendingResumeSession, setPendingResumeSession] = useState<any>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmittingExam, setIsSubmittingExam] = useState(false);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
 
   // Block in-app navigation (sidebar links, browser back, etc.) during active exam
   const blocker = useBlocker(({ currentLocation, nextLocation }) =>
@@ -105,8 +118,50 @@ export default function CbtExamRunner() {
         }));
         
         setQuestions(transformedQuestions);
+
+        // Save to IndexedDB for offline use
+        const setId = `${exam}_${subject}_${year}`;
+        await saveQuestionSet({
+          setId,
+          exam,
+          subject,
+          year,
+          downloadedAt: Date.now(),
+          questions: (fetchedQuestions || []).map((q: any) => ({
+            id: q.id || q._id,
+            text: q.text || q.question,
+            options: Array.isArray(q.options) ? q.options : Object.values(q.options),
+            correctAnswer: q.correctAnswer || q.correct_answer,
+            explanation: q.explanation
+          }))
+        });
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Failed to fetch questions');
+        // Try loading from IndexedDB before showing an error
+        try {
+          const setId = `${exam}_${subject}_${year}`;
+          const cached = await getQuestionSet(setId);
+          if (cached && cached.questions.length > 0) {
+            const transformedCached = cached.questions.map((q: any) => ({
+              id: q.id,
+              question: q.text,
+              options: Array.isArray(q.options)
+                ? [
+                    { id: 'A', text: q.options[0] },
+                    { id: 'B', text: q.options[1] },
+                    { id: 'C', text: q.options[2] },
+                    { id: 'D', text: q.options[3] }
+                  ]
+                : Object.entries(q.options || {}).map(([key, val]) => ({ id: key, text: val })),
+              correctAnswer: q.correctAnswer,
+              explanation: q.explanation
+            }));
+            setQuestions(transformedCached);
+          } else {
+            setError(err instanceof Error ? err.message : 'Failed to fetch questions');
+          }
+        } catch {
+          setError(err instanceof Error ? err.message : 'Failed to fetch questions');
+        }
       } finally {
         setLoading(false);
       }
@@ -114,6 +169,7 @@ export default function CbtExamRunner() {
 
     fetchQuestions();
   }, [exam, subject, token]);
+
 
   useEffect(() => {
     if (sessionLoaded || loading || questions.length === 0) return;

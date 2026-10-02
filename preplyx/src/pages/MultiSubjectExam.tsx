@@ -6,6 +6,7 @@ import {
   LogOut, FileText, Info, AlertTriangle, Send 
 } from 'lucide-react';
 import { saveActiveSession, getActiveSession, clearActiveSession, saveCompletedSession } from '@/lib/storage';
+import { saveQuestionSet, getQuestionSet, savePendingAnswer } from '@/lib/offlineDB';
 import { generateQuestions, Question } from '@/lib/questionGenerator';
 import { api } from '@/lib/api';
 import { useAuth } from '@/context/AuthContext';
@@ -34,6 +35,18 @@ export default function MultiSubjectExam() {
   const [currentSubject, setCurrentSubject] = useState(subjects[0] || '');
   const [showSubjectSwitcher, setShowSubjectSwitcher] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
   
   const [allQuestions, setAllQuestions] = useState<Record<string, Question[]>>({});
   
@@ -59,11 +72,48 @@ export default function MultiSubjectExam() {
               cognitiveTrap: q.cognitiveTrap,
               conceptSummary: q.conceptSummary
             }));
+
+            // Save to IndexedDB for offline use
+            const setId = `${exam}_${subject}_${year}`;
+            await saveQuestionSet({
+              setId,
+              exam,
+              subject,
+              year,
+              downloadedAt: Date.now(),
+              questions: fetched.map((q: any) => ({
+                id: q.id || q._id,
+                text: q.text || q.question,
+                options: Array.isArray(q.options) ? q.options : Object.values(q.options),
+                correctAnswer: q.correctAnswer || q.correct_answer,
+                explanation: q.explanation
+              }))
+            });
           } else {
             map[subject] = generateQuestions(subject, 60, year);
           }
         } catch {
-          map[subject] = generateQuestions(subject, 60, year);
+          // Try loading from IndexedDB before falling back to generated questions
+          try {
+            const setId = `${exam}_${subject}_${year}`;
+            const cached = await getQuestionSet(setId);
+            if (cached && cached.questions.length > 0) {
+              map[subject] = cached.questions.map((q: any) => ({
+                id: q.id,
+                year,
+                question: q.text,
+                options: Array.isArray(q.options)
+                  ? { A: q.options[0] || '', B: q.options[1] || '', C: q.options[2] || '', D: q.options[3] || '' }
+                  : q.options,
+                correct_answer: (q.correctAnswer || 'A') as any,
+                explanation: q.explanation || '',
+              }));
+            } else {
+              map[subject] = generateQuestions(subject, 60, year);
+            }
+          } catch {
+            map[subject] = generateQuestions(subject, 60, year);
+          }
         }
       }
       setAllQuestions(map);
@@ -71,6 +121,7 @@ export default function MultiSubjectExam() {
 
     loadSubjectQuestions();
   }, [subjects, exam, year, token]);
+
 
   const [currentQIndex, setCurrentQIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -240,7 +291,18 @@ export default function MultiSubjectExam() {
       }
       return prev;
     });
+
+    // Persist answer to IndexedDB for offline sync
+    savePendingAnswer({
+      setId: `${exam}_${currentSubject}_${year}`,
+      questionId: currentQ.id,
+      selectedAnswer: optionId,
+      exam,
+      subject: currentSubject,
+      year
+    }).catch(() => {/* silent fail */});
   };
+
 
   const handleReportQuestion = async () => {
     if (!token || !currentQ) return;
@@ -410,6 +472,18 @@ export default function MultiSubjectExam() {
   return (
     <div style={{ animation: 'fadeIn 0.4s ease-out', position: 'relative', zIndex: 1 }}>
       <DynamicFocusBackground />
+
+      {/* Offline Indicator Banner */}
+      {!isOnline && (
+        <div style={{
+          position: 'fixed', top: 0, left: 0, right: 0, zIndex: 9999,
+          background: '#f59e0b', color: '#000', textAlign: 'center',
+          padding: '6px', fontSize: '13px', fontWeight: 600
+        }}>
+          📴 Offline — answers are being saved locally and will sync when you reconnect.
+        </div>
+      )}
+
       {/* Exam Header */}
       <div style={{
         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
