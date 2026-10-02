@@ -1,4 +1,4 @@
-﻿exam,subject,year,text,option_a,option_b,option_c,option_d,option_e,correct_answer,explanation
+exam,subject,year,text,option_a,option_b,option_c,option_d,option_e,correct_answer,explanation
 JAMB,Mathematics,1983,"If M represents the median and D the mode of the
 measurements 5, 9, 3, 5, 8 then (M,D) is","(6,5)","(5,8)","(5,7)","(5,5)","(7,5)",,
 JAMB,Mathematics,1983,"A construction company is owned by two partners X
@@ -15,8 +15,6 @@ x3 – 2x2 – 5x + 6, find the other roots",-3 and 2,–2 and 2,3 and –2,1 an
 JAMB,Mathematics,1983,"If x is jointly proportional to the cube of y and the
 fourth power of z. In what ratio is x increased or
 decreased when y is halved and z is doubled?",4:1 increase,2:1 increase,1:4 decrease,1: 1 no change,3: 4 decrease,,
-JAMB,Mathematics,1983,"P
-Q",,,,,,,
 JAMB,Mathematics,1983,"Given that cos z = L, where z is an acute angle find an
 expression for Co +Z - cosecz
 sec Z  + tan z",l - L,L2-√1−L2,"-L-√1−L
@@ -33,33 +31,12 @@ av    =  3     2V   +  T
 1- V
 a
 2T",3av/(1-v),2v(1-v)2 - a2v2/2a2v2 - (1-V)2,2v(1 - v)2  + a3v2/ 2a2v2 + (1 - v)2,2v(1 - v)2 - a4v3/2a3v3 - (1 - v)3,2v(1-v)3 - a4v3/2a3v3 + (1-v)3,,
-JAMB,Mathematics,1983,"Additional
-Mathematics
-Biology
-(2 -24)
-x
-O
-(3 -18)
-x
-O
-x
-O
-Geography
-(2 +12)
-x
-O
-History
-( +12)
-x
-O
-French",,,,,,,
 JAMB,Mathematics,1983,The value of (0.303)3 – (0.02)3 is,0.019,0.0019,0.00019,0.000019,0.000035,,
 JAMB,Mathematics,1983,"y varies partly as the square of x and y partly as the
 inverse of the square root of x. write down the
 expression for y if y = 2 when x = 1 and y = 6 when x =
 4",x/ (x - 3)(x + 7),(x + 3) (x + 7)/x,"x/(x - 3) (x -
 7)",x/(x + 3) (x + 7),x/(x + 4) (x + 7),,
-JAMB,Mathematics,1983,,0.019,0.0019,0.00019,0.000019,0.000035,,
 JAMB,Mathematics,1983,"The lengths of the sides of a right-angled triangle at (3x
 + 1)cm, (3x - 1)cm and x cm.",2,6,18,12,0,,
 JAMB,Mathematics,1983,"The scores of a set of a final year students in the first
@@ -71,8 +48,6 @@ paper
 are
 41,29,55,21,47,70,70,40,43,56,73,23,50,50. find the median
 of the scores.",47,481/2,50,48,49,,
-JAMB,Mathematics,1983,,0.019,0.0019,0.00019,0.000019,0.000035,,
-JAMB,Mathematics,1983,,,,,,,,
 JAMB,Mathematics,1983,"P
 0
 R
@@ -89,9 +64,6 @@ JAMB,Mathematics,1983,Simplify log10a1/2 + 1/4log10a – 1/12log10a7,1,7/6log10a
 JAMB,Mathematics,1983,"If w varies inversely  as V and u varies directly  as w3,
 find the relationship between u and V given that u = 1,
 when V = 2",u = 8V3,u = 2   V,V = 8/u2,V = 8u2,U = 8/v3,,
-JAMB,Mathematics,1983,"Solve the simultaneous equations for x
-x2 + y – 8 = 0
-y + 5x – 2 = 0",,,,,,,
 JAMB,Mathematics,1983,"Find the missing value in the following table.
 x
 -2
@@ -230,10 +202,8 @@ the
 following
 24.57,25.63,25.32,26.01,25.77",25.12,25.30,25.26,25.50q,"25.73
 Mathematics 1984",,
-JAMB,Mathematics,1983,,,,,,,,
 JAMB,Mathematics,1983,",50. find the median
 of the scores.",47,481/2,50,48,49,,
-JAMB,Mathematics,1984,Simplify (2/3 – 1/5) – 1/3 of 2/5,,,,,,,
 JAMB,Mathematics,1984,"If 263 + 441 = 714, what number base has been used?",12,11,10,9,8,,
 JAMB,Mathematics,1984,"0.00014323/1.940000 = k x 10n where 1 £ k < 10 and n is
 a whole number. The values of K and are",7.381 and –11,2.34 and 10,3.87 and 2,7.831 and –11,5.41 and –2,,
@@ -247,13 +217,6 @@ JAMB,Mathematics,1984,"A man invested a total of #50,000 in two companies. If
 these companies pay dividend of 6% and 8%
 respectively, how much did he invest at 8% if the total
 yield is #3.700?","#15,000","#29,600","#21,400","#27,800","#35,000",,
-JAMB,Mathematics,1984,"B.
-7",,,1/3,3,1/5,,
-JAMB,Mathematics,1984,,,,,,,,
-JAMB,Mathematics,1984,,,,,,8,,
-JAMB,Mathematics,1984,,,,,9,8,,
-JAMB,Mathematics,1984,,,,10,9,8,,
-JAMB,Mathematics,1984,,,11,10,9,8,,
 JAMB,Mathematics,1984,"Rationalize
 (5√5 - 7√5)(/√7 - √5",-2√35,4√7 - 6√5,-√35,4√7 - 8√5,√35,,
 JAMB,Mathematics,1984,"Simplify
@@ -284,10 +247,8 @@ JAMB,Mathematics,1984,"Tunde and Shola can do a piece of work in 18days.
 Tunde can do it alone in x days, whilst Shola takes 15
 days longer to do it alone. Which of the following
 equations is satisfied by x?",x2 – 5x – 18 = 0,x2 – 20x + 360 = 0,x2 - 21x – 270 = 0,2x2 + 42x – 190 = 0,3x2 – 31x + 150 = 0,,
-JAMB,Mathematics,1984,,,,,,41,,
 JAMB,Mathematics,1984,"The quadratic equation whose roots are 1 -   13 and 1 +
 13 is",x2 + (1 - √13)x + 1 + √13 = 0,x2 + (1 - √13)x + 1 - √13 = 0,x2 + 2x + 12 = 0,x2 – 2x + 12 = 0,x2 – 2x – 12 = 0,,
-JAMB,Mathematics,1984,,,,36,22,41,,
 JAMB,Mathematics,1984,"P
 5 cm
 Q
@@ -318,12 +279,6 @@ JAMB,Mathematics,1984,"If a = 2x/1 – x and b = 1 + x / 1 – x
 then a2 – b2 in the simplest form is",3x+1/(x-1),3x2-1/(x-1)2,3x2+1/(1-x)2,5x2-1/(1-x)2,5x2 -2x -1/(1-x)2,,
 JAMB,Mathematics,1984,"Simplifty (1  +   1    )   (x+2)
 (       x+1)",(x2 - 1)(x + 2),x2 (x + 2)/x + 1,x2 - (x + 2),2x(x + 2),2x(x + 2)/x + 1,,
-JAMB,Mathematics,1984,"5
-30
-6
-35
-7
-20",30,35,55,62,92,,
 JAMB,Mathematics,1984,"Find the integral values of x which satisfy the
 inequalities –3 < 2 –5x < 12","-2, -1","–2, 2","–1, 0","0,1","1,2",,
 JAMB,Mathematics,1984,"r
@@ -339,8 +294,6 @@ r
 Find the area of the shaded portion of the semi – circular
 figure above.",r2/4(4p - 3    3),r2/4(2p + 3   3),1/2r2p,1/8r   3,"r2/8(4p + 3   3)
 P",,
-JAMB,Mathematics,1984,,,,,,,,
-JAMB,Mathematics,1984,,,,,22,41,,
 JAMB,Mathematics,1984,"The cumulative frequency function of the data below
 is given by the frequency y = cf(x). what is cf(5)?
 Scores(n)
@@ -355,12 +308,10 @@ Frequency(f)
 35
 7
 20",30,35,55,62,92,,
-JAMB,Mathematics,1984,,,24,36,22,41,,
 JAMB,Mathematics,1984,"A right circular cone has a base radius r cm and a vertical
 2y0. the height of the cone is",r tan y0cm,r sin y0cm,r cot y0cm,r cos y0cm,r cosec y0cm,,
 JAMB,Mathematics,1984,"Two fair dice are rolled. What is the probability that
 both show up the same number of point?",1/36,7/36,½,1/3,1/6,,
-JAMB,Mathematics,1984,,,,,,,,
 JAMB,Mathematics,1984,"y = x +
 2
 1
@@ -429,22 +380,11 @@ frequency
 3.65-3.75
 4
 What is the mean diameter of the copper sphere?",3.40cm,3.58cm,3.56cm,3.62cm,3.63cm,,
-JAMB,Mathematics,1984,"What is the obtuse angle formed when the point U is
-U
-T
-V
-R
-S
-P
-O
-Mathematics 1985",,,,,,,
 JAMB,Mathematics,1984,"What is the acute angle formed when the point V joined
 to Q?","3/2B.
 2/3",300,2,3,18,,
 JAMB,Mathematics,1985,"Arrange the following numbers in ascending order of
 magnitude    6/7,13/15,0.865",6/7 < 0.865 < 13/15,6/7 < 13/15 < 0.865,13/15 < 6/7 < 0.865,13/15 < 0.865 < 6/7,0.865 < 6/7 < 13/15,,
-JAMB,Mathematics,1985,"B.
-2/3",,,2,3,18,,
 JAMB,Mathematics,1985,"In the equation below,  solve for x if all the numbers are in
 base 2?
 11/x = 1000/(x + 101)",101,11,110,111,10,,
@@ -458,20 +398,15 @@ JAMB,Mathematics,1985,"Simplify 1/2 + 1
 1
 2 - --------------
 4 +1/5",¾,–1/3,169/190,13/15,121/169,,
-JAMB,Mathematics,1985,"If three number p,q,r are in the ratio 6:4:5 find the value
-of (3q – q)/(4q + r)",,,,,,,
 JAMB,Mathematics,1985,"Without using tables, evaluate  Log24 + Log42 – Log255",½,1/5,0,5,2,,
 JAMB,Mathematics,1985,"John gives one third of his money to Janet who has
 #105.00. He then finds that his money is reduced to
 one-fourth of what Janet now has. Find how much
 money John had at first.",#45.00,#48.00,#52.00,#58.00,#60.00,,
-JAMB,Mathematics,1985,00/(x + 101),101,11,110,111,10,,
 JAMB,Mathematics,1985,/x = 1000/(x + 101),101,11,110,111,10,,
 JAMB,Mathematics,1985,"221/2% of the Nigerian Naira is equal to 171/10% of a foreign
 currency M. what is the conversion rate of the M to the
 Naira?",1M = 15/57N,1M = 211/57N,1M = 118/57N,1M = 381/4N,1M = 3843/4N,,
-JAMB,Mathematics,1985,"If three number p,q,r are in the ratio 6:4:5 find the value
-of (3q – q)/(4q + r)",,,,,,,
 JAMB,Mathematics,1985,If ex= 1 + x + x2/12 + x3/1.2.3 + ….. find 1/e1/2,1 - x   + x2 - x2 +...,"1 + x +  x2  + x2
 2     123  24 3
 2   1.22   23.3",1 + x   + x2 - x2 +...,"1 -  x +  x2  -  x2   +
@@ -484,22 +419,17 @@ of food is partly constant and partly inversely
 proportional to the number of people. If the cost per
 head for 100people is 30k and the cost for 40 people is
 60k, find the cost for 50 people",15k,45k,20k,50k,40k,,
-JAMB,Mathematics,1985,,,,,,,,
-JAMB,Mathematics,1985,,,,,,,,
 JAMB,Mathematics,1985,Factorize abx2 + 8y – 4bx –2axy,(ax - 4) (bx – 2y),(ax + b) (x – 8y),(ax – 2y) (by – 4),(abx - 4) (x – 2y),(bx - 4) (ax – 2y),,
 JAMB,Mathematics,1985,"At what real value of x do the curves whose equations
 are y = x3 + x and y = x2 + 1 intersect?",-2,2,–1,0,1,,
 JAMB,Mathematics,1985,"If the quadrilateral function 3x2 – 7x + R is a perfect
 square find R",49/24,49/3,49/6,49/12,49/36,,
-JAMB,Mathematics,1985,,,,,,37,,
 JAMB,Mathematics,1985,"Solve for (x,y) in the equations
 2x + y = 4: x2 + xy = -12","(6, -8); (-2,8)","(3, -4); (-1, 4)","(8, -4); (-1, 4)","(-8, 6);(8, -2)","(-4, 3);(4, -1)",,
 JAMB,Mathematics,1985,"Solve the simultaneous equations
 2x – 3y + 10 = 10x – 6y = 5","x = 21/2, y = 31/3","x = 31/2, y = 21/3","x = 21/4, y = 3","x = 31/2, y = 21/5","x = 21/2, y = 21/3",,
-JAMB,Mathematics,1985,If f(x - 2) = 4x2 + x + 7 find f(1),,,,,,,
 JAMB,Mathematics,1985,"In DXYZ, XY = 13cm, YZ = 9cm, XZ = 11cm and XYZ =
 q0. find cos  q0",4/39,43/39,209/286,1/6,43/78,,
-JAMB,Mathematics,1985,,,,7,46,17,,
 JAMB,Mathematics,1985,"Find the number of goals scored by a football team in
 20matches is shown below
 No . of goals
@@ -532,13 +462,11 @@ from the integers between 1 and 10 inclusive is either a
 prime or a multiple of 3?",7/10,3/5,4/5,½,3/10,,
 JAMB,Mathematics,1985,"Find the area of a regular hexagon inscribed in a circle
 of radius 8cm.",16√3cm2,96√3cm2,192.3cm2,16cm2,32cm2,,
-JAMB,Mathematics,1985,,,,,,,,
 JAMB,Mathematics,1985,"If cosq = √3/2 and 0 is less than 900, calculate
 cot (90 - q) / sin2q",4√3/3,4√3,√3/2,1/√3,2/√3,,
 JAMB,Mathematics,1985,"A solid sphere of radius 4cm has mass of 64kg. What will
 be the mass of a shell of the same metal whose internal
 and external radii are 2cm and 3cm respectively?",5kg,16kg,19kg,25kg,48kg,,
-JAMB,Mathematics,1985,,,,,22,37,,
 JAMB,Mathematics,1985,"M
 N
 K
@@ -578,10 +506,6 @@ O
 3
 In the figure above the area of the shaded segment is",3p,9    3/4,3(p - 3    3/4),3(    3 - p)/4,"p + 9    3/4
 Mathematics 1986",,
-JAMB,Mathematics,1985,"In a class of 120students, 18 of them scored an A grade in",,,,,,,
-JAMB,Mathematics,1985,,,219,217p3/4(     2p + 2),210p3/4(1 +     2),29(     2 + 1),,
-JAMB,Mathematics,1985,,,,,52,54,,
-JAMB,Mathematics,1986,,,x2 + 1,x2 + 4,1,x2 - 4,,
 JAMB,Mathematics,1986,"If Musa scored 75 in Biology instead of 57, his
 average mark in four subjects would have been 60.
 what was his total mark?",282,240,222,210,,,
@@ -614,27 +538,20 @@ JAMB,Mathematics,1986,"Simplify   (      1
 1    ) x -1/√3
 (√5 + √3    −  √5 − √3)",√3/√5,–2/√3,–2,–1,,,
 JAMB,Mathematics,1986,Find n if Log24 + Log2Z – Log2n = -1,10,14,27,28,,,
-JAMB,Mathematics,1986,,,25,30,50,,,
 JAMB,Mathematics,1986,"If x varies directly as y3 and x = 2 when y = 1, find x
 when y = 5",2,10,125,250,,,
 JAMB,Mathematics,1986,"Factorize completely.
 3a + 125ax3",(2a + 5x2)(4 + 25ax),a(2 + 5x)(4 – 10x + 25ax2),(2a + 5x)(4  - 10ax + 25ax2),a(2 + 5x)(4 + 10ax + 25ax2),,,
-JAMB,Mathematics,1986,,,16,14,12,,,
 JAMB,Mathematics,1986,"Find all the numbers x which satisfy the inequality 1/
 3(x + 1) – 1 > 1/5 (x + 4)",x < 11,x < -1,x > 6,x > 11,,,
-JAMB,Mathematics,1986,,,30,48,60,,,
 JAMB,Mathematics,1986,Solve the equation 3x2 + 6x – 2 = 0,"x = -1,±√3/3","x = -1,±√15/√3","x = -2, ±2√3/3","x = -2, ±2√15/3",,,
 JAMB,Mathematics,1986,Simplify.    1/ 5x +5    + 1/7x + 7,12/35+7,1/35(x+1),12x/35(x+1),12/35x + 35,,,
 JAMB,Mathematics,1986,"The curve y = -x2 + 3x + 4 intersects the coordinate axes
 at","(4,0)(0,0)(-1,0)","(-4,0)(0,4)(1,1)","(0,0)(0,1)(1,0)","(0,4)(4,0)(-1,0)",,,
 JAMB,Mathematics,1986,Factorize (4a + 3)2 – (3a - 2)2,(a + 1)(a + 5),(a - 5)(7a - 1),(a + 5)(7a + 1),a(7a + 1),,,
-JAMB,Mathematics,1986,,,,30,50,,,
 JAMB,Mathematics,1986,Simplify  1/ x - 2     + 1/ x + 2 + 2x / x2 - 4,2x/ (x-2) (x+2) (x2 - 4),2x/x2 - 4,x/x2 - 4,4x/ x2 - 4,,,
-JAMB,Mathematics,1986,,,,,,,,
-JAMB,Mathematics,1986,,,,,,,,
 JAMB,Mathematics,1986,"a/b –c/d = k, find the value of
 (3a2 – ac + c2)/(3b2 – bd + d2) in term of k",3k2,3k – k2,17k2/4,k2,,,
-JAMB,Mathematics,1986,,,,48,60,,,
 JAMB,Mathematics,1986,"A regular polygon on n sides has 1600 as the size each
 interior. Find n.",18,16,14,12,,,
 JAMB,Mathematics,1986,"If cos q = a/b, find 1 + tan2q",b2/a2,a2/b2,(a2 + b2) / (b2 – a2),(2a2 + b2)/ (a2 + b2),,,
@@ -696,7 +613,6 @@ In the figure above      PQT is isosceles. PQ = QT. SRQ
 TSR.",200,550,75,1400,,,
 JAMB,Mathematics,1986,"Find the total surface are of a solid cone of radius 2 3cm
 and slanting side 4    3cm",8√3cm2,24cm2,15√3cm2,36cm2,,,
-JAMB,Mathematics,1986,,,,,,,,
 JAMB,Mathematics,1986,"65
 O
 35
@@ -727,11 +643,9 @@ JAMB,Mathematics,1986,"Find the median of the numbers 89, 141, 130, 161, 120,
 JAMB,Mathematics,1986,"Find the probability that a number selected at random
 from 40 to 50 is a prime",3/11,5/11,3/10,"4/11
 Mathematics 1987",,,
-JAMB,Mathematics,1986,,,,,42,,,
 JAMB,Mathematics,1986,"A man kept 6black, 5 brown and 7 purple shirts in a
 drawer. What is the probability of his picking a purple
 shirt with his eyes closed?",1/7,11/18,7/18,7/11,,,
-JAMB,Mathematics,1986,,,,,,,,
 JAMB,Mathematics,1987,Convert 241 in base 5 to base 8,718,1078,1768,2418,,,
 JAMB,Mathematics,1987,"Find the least length of a rod which can be cut into
 exactly equal strips, each of either 40cm or 48cm in
@@ -746,7 +660,6 @@ JAMB,Mathematics,1987,"A  train moves from P to Q at an average speed of 90km/
 hr and immediately returns from O to P through the
 same route and at an average speed of 45km/h. find the
 average speed for the centre journey.",55 00km/hr,60 00km/hr,67.50km/hr,75 00km/hr,,,
-JAMB,Mathematics,1987,,,3/32,6,85,,,
 JAMB,Mathematics,1987,"Two brothers invested a total of #5,000.00 on a farm
 project. The farm yield was sold for # 15, 000.00 at the
 end of the season. If the profit was shared in the ratio
@@ -796,25 +709,13 @@ JAMB,Mathematics,1987,"Find two values of y which satisfy the simultaneous
 equations x + y  = 5, x2 – 2y2 = 1","12, -2","–12, 12","–12, 2","2, -2",,,
 JAMB,Mathematics,1987,"An (n - 2)2 sided figure has n diagonals find the number
 n of diagonals for a 25 sided figure",7,8,9,10,,,
-JAMB,Mathematics,1987,,,,,20,,,
 JAMB,Mathematics,1987,Solve the inequality x – 1 > 4(x + 2),x > -3,x < -3,2 < x < 3,–3 < x < -2,,,
-JAMB,Mathematics,1987,,,,,33,,,
 JAMB,Mathematics,1987,"The minimum value of y in the equation
 y = x2 – 6x + 8 is",8,3,0,–1,,,
 JAMB,Mathematics,1987,"Find the sum of the first 21 terms of the progression –
 10, -8, -6,….",180,190,200,210,,,
 JAMB,Mathematics,1987,"Find the eleventh term of the progression 4, 8, 16,..",213,212,211,"210
 Q",,,
-JAMB,Mathematics,1987,"x
-O
-R
-T
-30
-O
-P
-In the diagram above, POQ is a diameter, O is the centre
-of the circle and TP is a tangent. Find the value of x.",,400,450,"500
-P",,,
 JAMB,Mathematics,1987,"Q
 R
 S
@@ -822,7 +723,6 @@ T
 In the diagram above, QR//TS, QR:TS = 2:3. find the
 ratio of the area of triangle PQR to the area of the
 trapezium QRST",4:9,4:5,1:3,2:3,,,
-JAMB,Mathematics,1987,,,,,,,,
 JAMB,Mathematics,1987,"16 cm
 9 cm
 X
@@ -889,8 +789,6 @@ or equal to x, find CF(6)",40,38,33,5,,,
 JAMB,Mathematics,1987,"Find the probability of selecting a figure which is
 parallelogram from a square, a rectangle, a rhombus, a
 kite and a trapezium",3/5,2/5,4/5,1/5,,,
-JAMB,Mathematics,1988,Simplify   (1 1  / (2÷ 1  of 32),,,,,,,
-JAMB,Mathematics,1988,,,,2,0.2,,,
 JAMB,Mathematics,1988,"A 5.0g of salts was weighed by Tunde as 5.1g. what is
 the percentage error?",20,2,2,0.2,,,
 JAMB,Mathematics,1988,"Find correct to one decimal place,
@@ -899,7 +797,6 @@ JAMB,Mathematics,1988,"Two sisters, Taiwo and Kehinde, own a store. The ratio
 of Taiwo’s share to Kehind’s is 11:9. later Kehinde sells
 2/3 of her share to Taiwo for #720.00. Find the value of
 the store.","#1,080.00","#2,400.00","#3,000.00","#3,600.00",,,
-JAMB,Mathematics,1988,,,3/32,6,85,,,
 JAMB,Mathematics,1988,"A taxpayer is allowed 1/8th of his income tax free, and
 pays 20% on the remainder. If he pays #490. 00 tax,
 what is his income?",#560.00,"#2,450.00","#2,800.00","#3,920.00",,,
@@ -921,7 +818,6 @@ JAMB,Mathematics,1988,"If 1/p = (a2 + 2ab + b2)
 a - b                             a2 - b2",a - b,a2 - b2,,,
 JAMB,Mathematics,1988,"If x varies inversely as the cube root of y and x = 1 when
 y = 8 find y when x = 3",1/3,2/3,8/27,4/9,,,
-JAMB,Mathematics,1988,"If a = -3, b = 2, c = 4, calculate     (a3-b3-c1/2)",,,,,,,
 JAMB,Mathematics,1988,If g(y) = y – 3/11 + 11/ y2 – 9 what is g(y + 3)?,y      +    11,"y   +   11
 11        y(y+6)                                    11    y(y+3)",y + 30   +   11,"y + 3 +     11
 11        y(y+3)                                 11    y(y-6)",,,
@@ -931,19 +827,9 @@ JAMB,Mathematics,1988,"Simplify    (x - y)
 JAMB,Mathematics,1988,"Solve the following equation for x
 x2  + 2x   + 1   =   o
 r2            r1",r2,1/r2,–1/r2,1/r,,,
-JAMB,Mathematics,1988,,,2,2,0.2,,,
 JAMB,Mathematics,1988,"Given value that     3x – 5y – 3 = 0
 2y – 6x + 5 = 0
 the value of (x, y) is","(-1/8, 19/24)","(8, 24/10)","(-8, 24/19)","(19/24, -1/8)",,,
-JAMB,Mathematics,1988,"The solution of the quadratic equation
-bx2 + qx + b = 0
-A    -b±√b2 − 4ac
-B  -b± p2− 4pb
-2a                                         2a
-C    -q±√q2 - 4bp
-D   -q±√p2 - 4bp
-2p
-2p",,,,,,,
 JAMB,Mathematics,1988,"Simplify       1           +           1
 (x2+5x+6)        (x2 + 3x + 2)",x + 3,"1
 (x+1) (x+2)                                  (x+1) x+2) x+3)",2,"4
@@ -958,27 +844,16 @@ JAMB,Mathematics,1988,"What is the solution of the equation
 x2 – x – 1 = 0?",x = 1.6 and x = -0.6,x = -1.6 and x = 0.6,x = 1.6 and x = 0.6,x = -1.6 and x = -0.6,,,
 JAMB,Mathematics,1988,"For what values of  x is the curve
 y = (x2 + 3) / (x + 4)",-3 < x< 0,–3 < x < 0,0 < x < 3,0 < x < 3,,,
-JAMB,Mathematics,1988,,,30,33,90,,,
 JAMB,Mathematics,1988,"If the sum of the 8th and 9th terms of an arithmetic
 progression is 72 and the 4th term is –6, find the common
 difference.",4,8,62/3,91/3,,,
 JAMB,Mathematics,1988,"If 7 and 189 are the first and fourth terms of a geometric
 progression respectively find the sum of the first three
 terms of the progression.",182,91,63,28,,,
-JAMB,Mathematics,1988,,,,33,90,,,
-JAMB,Mathematics,1988,"S
-T
-o
-x
-P
-Q
-3x
-o",,,,,,,
 JAMB,Mathematics,1988,"For which of the following exterior angles is a regular
 polygon possible?
 i  350
 ii  180     iii.  1150",i and ii,ii only,ii and iii,iii only,,,
-JAMB,Mathematics,1988,,,,,90,,,
 JAMB,Mathematics,1988,"A quadrilateral of a circle of radius 6cm is cut away
 from each corner of a rectangle 25cm long and 18cm
 wide. Find the perimeter of the remaining figure",38cm,(38 + 12p)cm,(86 - 12p)cm,"(86 - 6p)cm
@@ -994,7 +869,6 @@ In the figure above STQ = SRP, PT = TQ = 6cm and QS
 = 5cm. Find SR.",47/5,5,37/5,22/5,,,
 JAMB,Mathematics,1988,"Four interior angles o f a pentagon are 900 – x0,  900 + x0,
 100 – 2x0, 1100 + 2x0. find the fifth interior angle.",1100,1200,1300,1400,,,
-JAMB,Mathematics,1988,,,–37/5,37/5,–37,,,
 JAMB,Mathematics,1988,"Z
 55
 O
@@ -1070,27 +944,16 @@ JAMB,Mathematics,1989,"Simplify   4 -   1
 JAMB,Mathematics,1989,Find p in terms of q if Log3p + 3log3q = 3,(3)3,"(q)1/3
 (q)                                       (3)",(q)3,"(3)1/3
 (3)                                       (q)",,,
-JAMB,Mathematics,1989,,,,,,,,
-JAMB,Mathematics,1989,"Make R the subject of the formula
-S = √(2R +Τ  )
-(3RT)",R =      T,"T
-(TS2 - 1)                    2(TS2 - 1)
-C    R =     T",,"T
-(TS2 + 1)
-2(TS2 + 1)",,,
 JAMB,Mathematics,1989,"Find the value of the expression
 32    -     64     81      when x = -3/4
 81x3        xx2      16",101/2,101/6,33/8,–131/2,,,
-JAMB,Mathematics,1989,,,,14,12,,,
 JAMB,Mathematics,1989,"If f(x) = 2x2 + 5x + 3, find f(x + 1)",2x2 – x,2x2 – x + 10,4x2 + 3x + 2,4x2 + 3x + 12,,,
 JAMB,Mathematics,1989,"Solve the positive number x such that
 2(x3 – x2 – 2x) = 1",4,3,2,1,,,
 JAMB,Mathematics,1989,"Simplify  (32x - 4x2)
 (2x + 18)",2(x - 9),2(9 + x ),81 – x2,–2(x - 9),,,
 JAMB,Mathematics,1989,Factorize completely y3 – 4xy + xy3 – 4y,(x + xy)(y + 2)(y - 2),(y + xy)(y + 2)(y - 2),y(1 + x)(y + 2)(y - 2),y(1 - x)(y + 2)(y - 2),,,
-JAMB,Mathematics,1989,,,15,14,12,,,
 JAMB,Mathematics,1989,Factorize 4a2 + 12ab – c2+ 9b2,4a(a – 3b) + (3b - c)2,(2a + 3b – c )(2a + 3b + c),(2a – 3b -c)(2a –3b + c),4a(a – 3b) +  (3b +c)2,,,
-JAMB,Mathematics,1989,,,,,20,,,
 JAMB,Mathematics,1989,"Solve the pair of equation for x and y respectively
 2x-1 – 3y-1 = 4
 4x-1 + y-1 = 1","-1,2","1,2","2,1","2,-1",,,
@@ -1132,7 +995,6 @@ the curve is equal to zero are",c.d.f.i.l,b.e.g.j.m,a.b.c.d.f.i.j.l.,c.d.f.h.i.l
 JAMB,Mathematics,1989,"The sum of the first two terms of a geometric progression
 is x and the sum of the last two terms is y. if there are n
 terms in all, then the common ratio is",x/y,y/x,(x/y)1/2,(y/x)1/2,,,
-JAMB,Mathematics,1989,,,,22,20,,,
 JAMB,Mathematics,1989,"N
 Q
 R
@@ -1246,16 +1108,13 @@ JAMB,Mathematics,1990,"Three children shared a basket of mangoes in such a
 way that the first child took ¼ of the mangoes and the
 second ¾ of the remainder. What fraction of the
 mangoes did the third child take?",3/16,7/16,9/16,13/16,,,
-JAMB,Mathematics,1990,,,11,27,51,,,
 JAMB,Mathematics,1990,"Three brothers in a business deal share the profit at the
 end of contract. The first received 1/3 of the profit and
 the second 2/3 of the remainder. If the third received
 the remaining #12.000.00, how much profit did they
 share?","#60,000.00","#54,000.00","#48,000.00","#42,000.00",,,
 JAMB,Mathematics,1990,Simplify √ 160r2 + √ (71r4 + √100r3,9r2,12    3r,13r,13r,,,
-JAMB,Mathematics,1990,,,,,,,,
 JAMB,Mathematics,1990,Simplify 3Log69 + Log612 + Log664 – Log672,5,7776,Log631,(7776)6,,,
-JAMB,Mathematics,1990,,,,27,51,,,
 JAMB,Mathematics,1990,"If a = 2, b = -2 and c = -1/2,
 evaluate (ab2 – bc2) (a2c - abc)",0,–28,–30,–34,,,
 JAMB,Mathematics,1990,"Y varies inversely as x2 and X varies directly as Z2. find
@@ -1279,24 +1138,13 @@ JAMB,Mathematics,1990,"The lengths of the sides of a right-angled triangle are
 xcm. (3x-1)cm and (3x + 1)cm. Find x",5,7,8,12,,,
 JAMB,Mathematics,1990,"The perimeter of a rectangular lawn is 24m, if the area of
 the lawn is 35m2, how wide is the lawn?",5m,7m,12m,14m,,,
-JAMB,Mathematics,1990,"A carpainter charges #40.00 per day for himself and
-#10.00 per day for his assistant. If a fleet of a cars were
-painted for #2,000.00 and the painter worked 10 days
-more than his assistant, how much did the assistant
-receive?",#32.00,#320.00,,,,,
 JAMB,Mathematics,1990,"Simplify           x         +       y      -     x2
 (x+y)          (x-y)         (x2  - y2)",x2,"y2
 x2  -  y2                       x2 - y2",x,"y
 x2 - y2                          x2 - y2",,,
 JAMB,Mathematics,1990,"Given that x2 + y2 + z2 = 194, calculate z if x = 7 and√ y = 3",√10,8,12.2,13.4,,,
-JAMB,Mathematics,1990,,,,,51,,,
 JAMB,Mathematics,1990,"Find the sum of the first 18 terms of the progression 3,
 6, 12 ………..",3(217 - 1),3(218 ) - 1 ),3(218 + 1),3(218 - 1),,,
-JAMB,Mathematics,1990,"y
-x
--1
-0
-2",,,,,,,
 JAMB,Mathematics,1990,At what value of x is the function x2 + x + 1 minimum?,-1,–1/2,½,1,,,
 JAMB,Mathematics,1990,"Q
 R
@@ -1369,10 +1217,6 @@ metal used in making 3m of the pipe",153πcm3,207πcm3,"15,300πcm3","20,700πcm
 JAMB,Mathematics,1990,"If the height of two circular cylinders are in the ratio 2:3
 and their base radii are in the ratio 9. what is the ratio of
 their volume",27:32,27:23,23:32,21:27,,,
-JAMB,Mathematics,1990,"4 cm
-6 cm
-6 cm
-Find the curved surface area of the frustrum in the  figure.",16     10cm,20     10,24,,,,
 JAMB,Mathematics,1990,"The locus of a point which moves so that it is
 equidistant from two intersecting straight lines is the",perpendicular bisector of the two lines,angle bisector of the two lines,bisector of the two lines,line parallel to the two lines,,,
 JAMB,Mathematics,1990,"4, 16, 30, 20, 10, 14 and 26 are represented on a pie chart.
@@ -1391,23 +1235,15 @@ from 41 to 56 is a multiple of 9",1/9,2/15,3/16,7/8,,,
 JAMB,Mathematics,1991,Simplify 31/3 – 11/4 x 2/3 + 12/5,217/30,39/10,41/10,4 11/36,,,
 JAMB,Mathematics,1991,"If 2257 is the result of subtracting 4577 from 7056 in base
 n, find n.",8,9,10,11,,,
-JAMB,Mathematics,1991,,-3,–3/5,3/5,3,,,
 JAMB,Mathematics,1991,Express 62/3 as a decimal correct to 3 significant figures.,20.6,20.667,20.67,20.7,,,
 JAMB,Mathematics,1991,"Factory P produces 20,000 bags of cement per day while
 factory Q produces 15,000 bags per day. If P reduces
 production by 5% and Q increases production by 5%
 determine the effective loss in the number of bags
 produced per day by the two factories.",250,750,1000,1250,,,
-JAMB,Mathematics,1991,"Musa borrows #10.00 at 2% per month interest and
-repays #8.00 after 4 months. However much does he
-still owe?",#10.80,#10.67,#2.67,,,,
 JAMB,Mathematics,1991,"If 3 gallons of spirit containing 20% water are added to
 5gallons of another spirit containing 15% water, what
 percentage of the mixture is water?",24/5%,167/8%,181/8%,187/8%,,,
-JAMB,Mathematics,1991,,,,,,,,
-JAMB,Mathematics,1991,,,,,,,,
-JAMB,Mathematics,1991,,,,,,,,
-JAMB,Mathematics,1991,,,,,,,,
 JAMB,Mathematics,1991,Multiply (x2 –3x - + 1)2 by (x - a),x3 – (3 - a)x2 + (1 + 3a)x –1,x3 – (3 - a)x2 + 3ax – a,x3 – (3 - a)x2 + (1 + 3a) – a,x3+ (3 - a)x2+ (1 + 3a) - a,,,
 JAMB,Mathematics,1991,"Evaluate  (Xy2 - X2y)
 (x2 - xy)
@@ -1426,16 +1262,11 @@ JAMB,Mathematics,1991,Which of the following is a factor of rs + tr – pt –ps
 JAMB,Mathematics,1991,"Find the two values of y which satisfy the simultaneous
 equation  3x + y = 8
 x2 + xy = 6",-1 and 5,–5 and 1,1 and 5,1 and 1,,,
-JAMB,Mathematics,1991,"Find the range of values of x which satisfy the inequality
-(x/2 + x/3 + x/4) < 1","x < 12/13B.
-x < 13",,x < 9,x < 13/12,,,
 JAMB,Mathematics,1991,"Find the positive number n, such that thrice it s square
 is equal to twelve times the number.",1,2,3,4,,,
 JAMB,Mathematics,1991,Solve the equation (x - 2)(x - 3) = 12,"2,3","3,6","–1,6","1,6",,,
 JAMB,Mathematics,1991,"Simplify   (√1 + x + √x)
 (√ 1 + X - √ x)",1- 2x - 2√x(1 + x),1 +2x +2√x(1+x),√x(1+x),1 + 2x - 2√x (1+x),,,
-JAMB,Mathematics,1991,Evaluate x2(x2 - 1)1/2 – (x2 – 1)1/2,"(x2 – 1)1/2B.
-(x2 – 1)",,(x2 – 1)-1,(x2 – 1)-1/2,,,
 JAMB,Mathematics,1991,"Find the gradient of the line passing through the points
 (-2,0) and (0, -4)",2,–4,–2,4,,,
 JAMB,Mathematics,1991,"At what value of x is the function y = x2 – 2x – 3
@@ -1536,17 +1367,10 @@ JAMB,Mathematics,1991,"A crate of soft drinks contains 10bottles of Coca-cola,
 8 of Fanta and 6 of Sprite. If one bottle s selected at
 random, what is the probability that it is NOT a Coca
 cola bottle?",5/12,1/3,¾,7/1,,,
-JAMB,Mathematics,1992,Find n if 34n = 100112,,,,,,,
 JAMB,Mathematics,1992,"The radius of a circle is given as 5cm subject to an error
 of 0.1cm. what is the percentage error in the area of the
 circle.",1/25,¼,4,25,,,
 JAMB,Mathematics,1992,Evaluate Logban if b = 1/an,n2,n,1/n,1/n,,,
-JAMB,Mathematics,1992,,,,,25,,,
-JAMB,Mathematics,1992,,,,,,,,
-JAMB,Mathematics,1992,,,,,,,,
-JAMB,Mathematics,1992,,,,,,,,
-JAMB,Mathematics,1992,,,,,,,,
-JAMB,Mathematics,1992,,,18,24,27,,,
 JAMB,Mathematics,1992,"Make l the subject of the formula
 s = ut + ½ at2",1/a [u± √(u2−2as)],1/a [-u± √(u2 - 2as],1/a [u±√(u2 + 2as),1/a [-u±√(u2 + 2as)],,,
 JAMB,Mathematics,1992,Factorize 9p2 – q2 + 6pr – 9r2,(3p – 3q + r)(3p – q – 9r),(6p – 3q + 3r)(3p – q – 4r),(3p – q + 3r)(3p + q – 3r),(3p – q + 3r)(3p – q – 3r),,,
@@ -1572,28 +1396,19 @@ x
 -3
 The sketch above is the curve of y = ax2 + bx + c. find a,
 b, and c respectively","1,0,-4","–2,2,-4","0,1,-4","2,-2,-4",,,
-JAMB,Mathematics,1992,,,,24,27,,,
 JAMB,Mathematics,1992,"What is the nth term of the sequence 2,6,12,20,…?",4n – 2,2(3n - 1),n2 + n,n2 + 3n +2,,,
-JAMB,Mathematics,1992,"For an arithmetic sequence, the first term is 2 and the
-common difference is 3. find the sum of the fist 11 terms.",,,,,,,
 JAMB,Mathematics,1992,"If the binary operation * is defined by m*n = mn + m + n
 for any real number m and n, find the identity element
 under this operation.",e = 1,e = -1,e = -2,"e = 0
 Use the matrices below to answer questions 22 and 23.",,,
 JAMB,Mathematics,1992,"When PT is the transpose of P, calculate [PT] when x = 0,
 y = 1 and z = 2",48,24,–24,–48,,,
-JAMB,Mathematics,1992,"PQ is equivalent to
-A
-PPT",,PP-T,QP,PP,,,
-JAMB,Mathematics,1992,,,,,27,,,
-JAMB,Mathematics,1992,,,,,,,,
 JAMB,Mathematics,1992,"P
 S
 R
 In the figure above, PQR is a semicircle while PQ and
 QR are chords. QS is the perpendicular from Q to the
 diameter PR. What is the expression for QS?",QS = PS.SR,QS = √(PS.SR),QS = √2 √(PS.SR),QS = 1/√2√(PS.SR),,,
-JAMB,Mathematics,1992,,,,,,,,
 JAMB,Mathematics,1992,"F
 H
 x
@@ -1609,13 +1424,6 @@ value of x",750,950,1050,1250,,,
 JAMB,Mathematics,1992,"X is a point due east of point Y on a coast Z is another
 point on the coast but 6.3km due south of Y. if the
 distance ZX is 12km, calculate the bearing of Z from X",2400,2100,15008,600,,,
-JAMB,Mathematics,1992,"6 cm
-O
-6 cm
-The above diagram is a circle with centre O. find the
-area of the shaded portion.",9πcm2,9(π  -2)cm2,"18πcm2
-3D.
-36πcm2",,,,
 JAMB,Mathematics,1992,"The locus of a point which is equidistant from two
 given fixed points is the","perpendicular bisector of the straight line
 joining them",parallel line to the straight line joining them,transverse to the straight line joining them,"angle bisector of 900 which the straight line
@@ -1624,10 +1432,6 @@ JAMB,Mathematics,1992,"What is the perpendicular distance of a point (2, 3 )from
 the line 2x – 4y + 3 = 0",√5/2,-√5/20,–5/√13,0,,,
 JAMB,Mathematics,1992,"Find the equation of the line through (5, 7) parallel to
 the line7x + 5y = 12",5x + 7y = 120,7x + 5y = 70,x + y = 7,15x + 17y = 90,,,
-JAMB,Mathematics,1992,"Given that q is an acute angle and sin q = m/n, find cot q.",n2 - m2,"(n + m) (n - m)
-m                                     m
-m",,"n
-n2 - m2                              n2 - m2",,,
 JAMB,Mathematics,1992,"R
 30
 O
@@ -1637,16 +1441,12 @@ X
 Z
 10 cm
 In the figure above, if XZ is 10cm, calculate RY in cm",10,10(1 – 1/Ö3),10(1 - Ö3),10(1 - 1Ö2),,,
-JAMB,Mathematics,1992,,,,,"28
-Q",,,
 JAMB,Mathematics,1992,"If y = x, find d2y/dx2",2 cos x – x sin x,sin x + x cos x,sin x – x cos x,x sin x – 2 cos x,,,
 JAMB,Mathematics,1992,"Ice forms on a refrigerator ice-box at the rate of (4 –
 0.6t)g per minute after t minute. If initially there are 2g
 of ice in the box, find the mass of ice formed in 5 minutes.",19.5,17.0,14.5,12.5,,,
 JAMB,Mathematics,1992,"Obtain a maximum value of the function
 f(x) = x3 – 12x + 11",-5,–2,5,27,,,
-JAMB,Mathematics,1992,,,,36,"28
-Q",,,
 JAMB,Mathematics,1992,Evaluate the integral   π/4π/12 cos 2x dx,-1/2,–1,½,1,,,
 JAMB,Mathematics,1992,"A storekeeper checked his stock of five commodities
 and arrived at the following statistics.
@@ -1686,7 +1486,6 @@ is no difference practically between the above
 definitions when",n  =35,n > 35,n < 35,n = 5,,,
 JAMB,Mathematics,1992,"Two perfect dice are throw together. Determine the
 probability of obtaining a total score of 8",1/12,5/36,1/8,7/36,,,
-JAMB,Mathematics,1992,,,24,–24,–48,,,
 JAMB,Mathematics,1992,"Five people are to be arranged in a row for a group
 photograph. How many arrangements are there if a
 married couple in the group insist on sitting next to
@@ -1699,23 +1498,17 @@ two courses in Physics?",11,12,10,7,,,
 JAMB,Mathematics,1993,Change 7110 to base 8,1078,1068,718,178,,,
 JAMB,Mathematics,1993,Evaluate 3524/0.05 correct to 3 significant figures.,705,70000,70480,70500,,,
 JAMB,Mathematics,1993,"If 9(x-1/2)= 3x2, find the value of x.",½,1,2,3,,,
-JAMB,Mathematics,1993,,,,,4(1+x),,,
 JAMB,Mathematics,1993,Simplify  1/3-2 – 1/3+2,4,2/3,0,-4,,,
 JAMB,Mathematics,1993,"If 2 log3 y+ log3
 x2 = 4, then y is","(4-log3
 x2)/2","4/log3
 x2",2/X,± 9/X,,,
-JAMB,Mathematics,1993,"Solve without using tables
-log5 (62.5)-log5 (1/2)",3,4,5,,,,
-JAMB,Mathematics,1993,,,,,,,,
 JAMB,Mathematics,1993,"Y
 X
 Z
 The shaded portion in the venn diagram above is",XÇZ,XcÇYÇZ,XÇYcÇ Z,XÇYÇZc,,,
-JAMB,Mathematics,1993,,,,,,,,
 JAMB,Mathematics,1993,"Make x the subject of the relation
 1+ax/1-ax = p/q",p+q/a(p-q),p-q /a(p+q),p-q/apq,pq/a(p-q),,,
-JAMB,Mathematics,1993,,,,,27,,,
 JAMB,Mathematics,1993,"Evaluate
 (x+1/x+1)2 – (x-1/x-1) 2",4x2,(2/x+2) 2,4,4(1+x),,,
 JAMB,Mathematics,1993,"Solve the following simultaneous equations for x.
@@ -1723,7 +1516,6 @@ x2 + y – 5= 0
 y – 7x  + 3=0","-2, 4","2, 4","-1, 8","1, -8",,,
 JAMB,Mathematics,1993,"Solve the following equation
 (3x-2)(5x-4)=(3x-2) 2","-3/2, 1",1,"2/3, 1","2/3, 4/5",,,
-JAMB,Mathematics,1993,Q,,,,,,,
 JAMB,Mathematics,1993,"If the function f is defined by
 f(x+2)=2x2 + 7x – 5, find f(-1)",-10,-8,4,10,,,
 JAMB,Mathematics,1993,"Divide the expression
@@ -1738,11 +1530,6 @@ x+1/3 > 1/x+3",3<x<4,-4<x<-3,-2<x<-1,-3<x<0,,,
 JAMB,Mathematics,1993,"A man’s initial salary is #540.00 a month and increases
 after each period of six months by #36.00 a month.
 Find his salary in the eighth month of the third year.",#828.00,#756.00,#720.00,#684.00,,,
-JAMB,Mathematics,1993,"If k+1, 2k-1,3k+1 are three consecutive terms of a
-geometric progression, find the possible values of the
-common ratio.","0,8
-B
--1, 5/3",,"2, 3","1, -1",,,
 JAMB,Mathematics,1993,"A binary operation * is defined on a set of real
 numbers by x*y = xy for all real values of x and y, if
 x*2 = x, find the possible values of x","0, 1","1, 2","2, 2","0,2",,,
@@ -1759,7 +1546,6 @@ respectively as shown in the diagram above. Calculate
 TUV",180,540,900,1080,,,
 JAMB,Mathematics,1993,"A regular polygon has 1500 as the size of each interior
 angle. How many sides has the polygon?",12,10,9,8,,,
-JAMB,Mathematics,1993,,,,,,,,
 JAMB,Mathematics,1993,"P
 O
 S
@@ -1768,7 +1554,6 @@ T
 R
 In the diagram above, PQRS is a circle with O as
 centre and PQ//RT if RTS = 320 , find PSQ",320,450,580,900,,,
-JAMB,Mathematics,1993,,,,,,,,
 JAMB,Mathematics,1993,"O
 O
 x
@@ -1782,7 +1567,6 @@ P
 The figure above represents the graphs of y= x (2-x)
 and y = (x-1) (x-3). What are the x-coordinates of p,
 q and r respectively?","1,3,2","0,0,0","0,2,3","1,2,3",,,
-JAMB,Mathematics,1993,S,,,,,,,
 JAMB,Mathematics,1993,"P
 9 cm
 4 cm
@@ -1858,45 +1642,10 @@ above.",13.2g,15.0g,16.8g,17.5g,,,
 JAMB,Mathematics,1993,"The mean of the ages of ten secondary school pupils
 is 16 but when the age of their teacher is added to it,
 the mean becomes 19. Find the age of the teacher.",27,35,38,49,,,
-JAMB,Mathematics,1993,"1 - 5
-6 - 10
-11 - 15
-16 - 20
-21 - 25
-26 - 30
-31 - 35
-36 - 40
-2
-4
-5
-2
-3
-2
-1
-1
-Find the median of the observations in the table",,,,,,,
 JAMB,Mathematics,1993,"A number is selected at random between 20 and 30
 both numbers inclusive. Find the probability that the
 number is a prime",2/11,5/11,6/11,"8/11
 Mathematics 1994",,,
-JAMB,Mathematics,1993,"47
-1 - 5
-6 - 10
-11 - 15
-16 - 20
-21 - 25
-26 - 30
-31 - 35
-36 - 40
-2
-4
-5
-2
-3
-2
-1
-1
-Find the median of the observations in the table",,,,,,,
 JAMB,Mathematics,1993,"0
 Q
 x
@@ -1914,12 +1663,10 @@ JAMB,Mathematics,1994,"Without using tables, solve the equation
 8x-2 = 2/25",4,6,8,10,,,
 JAMB,Mathematics,1994,"Simply
 √48 – 9/√3 + √75",5√3,6√3,8√3,18√3,,,
-JAMB,Mathematics,1994,,5√3,6√3,8√3,18√3,,,
 JAMB,Mathematics,1994,"In a science class of 42 students, each offers at least
 one of Mathematics and Physics. If 22 students offer
 Physics and 28 students offer Mathematics, find how
 many students offer Physics only?",6,8,12,14,,,
-JAMB,Mathematics,1994,,5√3,6√3,8√3,18√3,,,
 JAMB,Mathematics,1994,Solve for x if 25x + 3(5x) = 4,1 or -4,0,1,-4 or 0,,,
 JAMB,Mathematics,1994,"Simplify
 [(2m - u)2 – (m – 2u)2]
@@ -1934,7 +1681,6 @@ JAMB,Mathematics,1994,"x
 0
 (0.-27)
 The equation of the graph above is",y = (x - 3)3,y = (x + 3)3,y = x3 – 27,y = -x3 + 27,,,
-JAMB,Mathematics,1994,,,,,,,,
 JAMB,Mathematics,1994,"Solve for r in the following equation
 1/(r – 1) + 2/(r + 1) = 3/r",3,4,5,6,,,
 JAMB,Mathematics,1994,Find P if x – 3/(1 - x)(x + 2) = P/(1 – x) + Q/(x + 2),-2/3,-5/3,5/3,2/3,,,
@@ -2001,10 +1747,6 @@ JAMB,Mathematics,1994,"The determinant of the matrix
 is
 (2
 0          -1)",-67,-57,-3,3,,,
-JAMB,Mathematics,1994,,,,,,,,
-JAMB,Mathematics,1994,"Q
-R
-O",,,,,,,
 JAMB,Mathematics,1994,"If three angles of a quadrilateral are (3y – x - z)0, 3x0,
 (2z – 2y - x) 0, find the fourth angle in terms of x, y, and
 z.",(360 – x – y - z)0,(360 + x + y - z)0,(180 – x + y + z)0,(180 + x + y + z)0,,,
@@ -2022,10 +1764,6 @@ T
 P
 In the diagram above, PTS is a tangent to the circle
 TQR at T. calculate < RTS.",1200,700,600,400,,,
-JAMB,Mathematics,1994,"5 cm
-h
-6 cm
-7 cm",,,,,,,
 JAMB,Mathematics,1994,"h
 In the frustum of a cone shown above, the top diameter
 is twice the bottom diameter. If the height of the frustum
@@ -2036,11 +1774,6 @@ equal to 900",The perpendicular,"A right-angled triangle.
 bisector of XYX",A circle,A semi-circle.,,,
 JAMB,Mathematics,1994,"If M(4,q) is the mid-point of the line joining L(p, -2)
 and N(q, p), find the values of p and q.","p = 2, q = 4","p = 3, q = 1","p = 5, q = 3","p = 6, q = 2",,,
-JAMB,Mathematics,1994,"y
-(0,4)
-(0,0)
-(3,0)
-x",,,,,,,
 JAMB,Mathematics,1994,"The angle of depression of a boat from the top of a
 cliff 10m high is 300. how far is the boat from the
 foot of the cliff?",5√3/3m,5√3m,10√3m,10√3/3m,,,
@@ -2085,13 +1818,6 @@ of a data. If the mean is 43/14, find y.",1,2,3,4,,,
 JAMB,Mathematics,1994,"The mean of twelve positive numbers is 3. when
 another number is added, the mean becomes 5. find
 the thirteenth number.",29,26,25,24,,,
-JAMB,Mathematics,1994,"Find the mean deviation of the set of numbers 4, 5, 9
-A
-0",,2,5,"6
-1-5      6-10     11-15    16-20  21-25
-6         15         20           7         2
-Class interval
-Frequency",,,
 JAMB,Mathematics,1994,"Estimate the median of the frequency distribution
 above.",101/2,111/2,121/2,13,,,
 JAMB,Mathematics,1994,"1
@@ -2145,8 +1871,6 @@ leaves a remainder 6 when added",1,2,3,4,,,
 JAMB,Mathematics,1995,"Find r in terms of K, Q and S if s = 2r√ (QπΤ+Κ)",r2     -    k,"r2       -    k
 2πr2Q     Q              4πr2Q",r2     - k,"r2        -  k
 2πr2Q                           4πr2Q",,,
-JAMB,Mathematics,1995,"The graph of f(x) = x2 - 5x + 6 crosses the x-axis at the
-points",,,,,,,
 JAMB,Mathematics,1995,"Factorize completely the expression
 abx2 + 6y – 3ax –2byx",(ax – 2y)(bx - 3),(bx + 3)(2y - ax),(bx + 3)(ax – 2y),(ax – 2y) (ax - b),,,
 JAMB,Mathematics,1995,Solve the following inequality (x - 3)(x - 4) ≤0,3≤ x ≤ 4,3 < x < 4,3 ≤ x < 4,3 < x  ≤4,,,
@@ -2167,13 +1891,6 @@ in a set of integers?",a*b = a + 2b,a*b = a +  b –ab,a*b = a2 + b,a*b = a(b + 
 JAMB,Mathematics,1995,"If a*b = +√ab, Evaluate 2*(12*27)",12,9,6,2,,,
 JAMB,Mathematics,1995,"Find the sum to infinity of the following sequence
 1, 9/10, (9/10)2, (9/10)3",1/10,9/10,10/9,10,,,
-JAMB,Mathematics,1995,"Find the value of K if    2, 1,  1
-2, 1    k
-1, 3   -1    = 23",1,"2
-C
-3
-D
-4",,,,,
 JAMB,Mathematics,1995,"If X =            1,   2         and Y  =   2,      1
 0,  3                           4,      3","(10,  7)","(2,   7)
 (12,  9)
@@ -2187,8 +1904,6 @@ x
 O
 Determine the value of x in the figure above",1340,810,530,"460
 Z",,,
-JAMB,Mathematics,1995,"Y
-X",,,,,,,
 JAMB,Mathematics,1995,"In a triangle XYZ, <YXZ = 440? and <XYZ = 1120.
 calculate the acute angle between the internal triangle
 of <XYZ and <XZY.",420,560,680,780,,,
@@ -2229,24 +1944,6 @@ elevation of the top of the tank is 600. Calculate the
 height of the water tank.",60m,30.3m,20.3m,10.3m,,,
 JAMB,Mathematics,1995,"QRS is a triangle with QS = 12m, <RQS = 300 and
 <QRS = 450,  calculate the length of RS.",18√2m,12√2m,6√2m,3√2m,,,
-JAMB,Mathematics,1995,"Which of the following is a sketch of y = 3 sin x?
-3",,"0
-2
-2
-3
-0
-2
-2
-3
-3
-3",,"0
-0
-2
-2
-3
-2
-2
-3",,,
 JAMB,Mathematics,1995,The derivative of cosec x is,tan x cosec x,– cot x cosec x,tan x sec x,–cot x sec x,,,
 JAMB,Mathematics,1995,"For what value of x is the tangent o the curve y = x2 –
 4x + 3 parallel to the x – axis?",3,2,1,0,,,
@@ -2272,7 +1969,6 @@ French",25,15,10,8,,,
 JAMB,Mathematics,1995,"The mean and the range of the set of numbers
 0.20,1.00,0.90,1.40,0.80,0.80,1.20,and 1.10
 are m and r respectively. Find m + r",1.11,1.65,1.85,2.45,,,
-JAMB,Mathematics,1995,,,,,,,,
 JAMB,Mathematics,1995,"The variance of the scores 1,2,3,4,5 is",1.2,1.4,2.0,"3.0
 Use the table below to answer questions 47 and 48
 Frequency
@@ -2312,93 +2008,18 @@ Interval
 4.5-4.9",,,
 JAMB,Mathematics,1995,find the mode of the distribution,3.2,3.4,3.7,4.2,,,
 JAMB,Mathematics,1995,The median of the distribution is,4.0,3.5,3.2,3.0,,,
-JAMB,Mathematics,1995,"Let P be a probability function on set S, where S =
-(a1,a2,a3,a4) find P(a1) if P(a2) = P(a3) = 1/6 and P(a4)1/5",7/10          B 2/3,,1/3,3/10,,,
 JAMB,Mathematics,1995,"O
 P
 T
 PT is a tangent to the circle TYZX, YT = YX and <
 PTX = 500. calculate <TZY",500,650,850,1300,,,
-JAMB,Mathematics,1997,"4
-15
-10
-5
-3
-1.45-1.95
-1.95-2.45
-2.45-2.95
-2.95-3.45
-3.45-3.95
-3.95-4.45
-4.45-4.95
-1.5-1.9
-2.0-2.4
-2.5-2.9
-3.0-3.4
-3.5-3.9
-4.0-4.4
-4.5-4.9",,,,,,,
-JAMB,Mathematics,1997,"1
-4
-15
-10
-5",,,,,,,
-JAMB,Mathematics,1997,"1.45-1.95
-1.95-2.45
-2.45-2.95
-2.95-3.45
-3.45-3.95
-3.95-4.45
-4.45-4.95
-1.5-1.9
-2.0-2.4
-2.5-2.9
-3.0-3.4
-3.5-3.9
-4.0-4.4
-4.5-4.9",,,,,,,
-JAMB,Mathematics,1997,"15
-10",,,,,,,
-JAMB,Mathematics,1997,"3
-1.45-1.95
-1.95-2.45
-2.45-2.95
-2.95-3.45
-3.45-3.95
-3.95-4.45
-4.45-4.95
-1.5-1.9
-2.0-2.4
-2.5-2.9
-3.0-3.4
-3.5-3.9
-4.0-4.4
-4.5-4.9",,,,,,,
 JAMB,Mathematics,1997,"If 8x/2 = [23/8][43/4], find x",3/8,¾,4/5,5/4,,,
-JAMB,Mathematics,1997,Simplify (2√3+3√5)/(3√5 - 2√3),,,,,,,
 JAMB,Mathematics,1997,"Find the simple interest rate per cent per annum at
 which #1000 accumulates to #1240 in 3 years.",6%,8%,10%,12%,,,
 JAMB,Mathematics,1997,"If U = {S,P,L,E,N,D,O,U,R}
 X = {S,P,E,N,D}
 Y = {P,N,O,U,R}
 Find X∩(Y’UZ).","{P,O,U,R}","{S,P,D,R}","{P,N,D}","{N,D,U}",,,
-JAMB,Mathematics,1997,"5
-3
-1.45-1.95
-1.95-2.45
-2.45-2.95
-2.95-3.45
-3.45-3.95
-3.95-4.45
-4.45-4.95
-1.5-1.9
-2.0-2.4
-2.5-2.9
-3.0-3.4
-3.5-3.9
-4.0-4.4
-4.5-4.9",,,,,,,
-JAMB,Mathematics,1997,,,,,20,,,
 JAMB,Mathematics,1997,"Solve the simultaneous equations
 2/x – 3/y = 2, 4/x + 3/y = 10","x = 3/2, y = ½","x = ½, y = 3/2","x = -1/2, y = -3/2","x = ½, y = - 3/2",,,
 JAMB,Mathematics,1997,"Find the minimum value of x2 – 3x + 2 for all  real
@@ -2408,23 +2029,6 @@ t =
 v
 1 + 1
 f     g",gv – t2/gt2,gt2/gv – t2,v/t1/2  - 1/g,gv/t2 – g,,,
-JAMB,Mathematics,1997,"10
-5
-3
-1.45-1.95
-1.95-2.45
-2.45-2.95
-2.95-3.45
-3.45-3.95
-3.95-4.45
-4.45-4.95
-1.5-1.9
-2.0-2.4
-2.5-2.9
-3.0-3.4
-3.5-3.9
-4.0-4.4
-4.5-4.9",,,,,,,
 JAMB,Mathematics,1997,"Find the value of K if 5+2r/(r+1)(r-2) expressed in partial
 fraction is K/r-2 + L/r+1, where K and L are constants.",3,2,1,-1,,,
 JAMB,Mathematics,1997,"Let f(x) = 2x + 4 and g(x) = 6x + 7 where g(x) > 0.
@@ -2433,7 +2037,6 @@ JAMB,Mathematics,1997,"Find the range of values of x which satisfies the
 inequality 12x2< x + 1",-1/4 < x < 1/3,¼ < x <1/3,-1/3 < x<1/4,-1/4 < x <-1/3,,,
 JAMB,Mathematics,1997,"Sn is the sum of the first n terms of a series given by
 Sn = n2 – 1. find the nth term.",4n + 1,4n – 1,2n + 1,2n – 1,,,
-JAMB,Mathematics,1997,,,,,,,,
 JAMB,Mathematics,1997,"Two binary operations * and Ä are defined as m*n =
 mn – n – 1 and m Ä n = mn + n – 2 for all real numbers
 m, n. find the values of 3Ä (4*5).",60,57,54,42,,,
@@ -2453,7 +2056,6 @@ circle. Determine the angle which the  base of the
 triangle subtends at the centre of the circle.",1280,1160,640,"580
 F
 K",,,
-JAMB,Mathematics,1997,,,,,,,,
 JAMB,Mathematics,1997,"2 cm
 X
 Y
@@ -2469,22 +2071,12 @@ JAMB,Mathematics,1997,"An arc of a circle subtends an angle of 700 at the
 centre. If the radius of the circle is 6cm, calculate the
 area of the sector subtended by the given angle.",22 cm2,"44 cm2
 π",66 cm2,88 cm2,,,
-JAMB,Mathematics,1997,"5 cm
-8 cm
-11 cm
-10 cm
-Find the volume of the prism above.",,,,,,,
 JAMB,Mathematics,1997,"A cone with the sector angle of 450 is cut out of a
 circle of radius r cm. find the base radius of the
 cone.",r/16cm,r/8cm,r/4cm,r/2cm,,,
 JAMB,Mathematics,1997,"A point P moves so that it is equidistant from
 points L and M. if LM is 16cm, find the distance of
 P from LM when P is 10cm from L.",12cm,10cm,8cm,6cm,,,
-JAMB,Mathematics,1997,"The angle between the positive horizontal axis and
-a given line is 1350. find the equation of the line if
-it passes through the point (2, 3).",x – y = 1,x + y = 1,"x + y = 5
-D
-x – y = 5",,,,
 JAMB,Mathematics,1997,"O
 x
 47
@@ -2504,20 +2096,12 @@ instrument from the foot of the building?",20√3m,40√3m,20√3m,40√3m,,,
 JAMB,Mathematics,1997,"In a triangle XYZ, if <XYZ is 600, XY = 3cm and
 YZ = 4cm, calculate the length of the side XZ.",“23cm,“13cm,"2""5cm","2""3cm
 X",,,
-JAMB,Mathematics,1997,"2 cm
-5 cm
-Z
-150
-O
-E
-Y",,,,,,,
 JAMB,Mathematics,1997,"Differentiate    6x3-5x2+1
 3x2",2 + 2/3x3,2 + 1/6x,2-2/3x3,2-1/6x,,,
 JAMB,Mathematics,1997,d/dx cos(3x2 – 2x) is equal to,-sin(6x - 2),-sin(3x2 – 2x),(6x - 2) sin(3x2 – 2x),(6x - 2) sin (3x2 – 2x),,,
 JAMB,Mathematics,1997,"Find the gradient of the curve y = 2 √x – 1/x at the
 point x= 1",0,1,2,3,,,
 JAMB,Mathematics,1997,Integrate 1/x + cos x with respect to x.,-1/x2 + sin x + k,1nx + sin x + k,1nx – sin x + k,-1/x2 – sin x + k,,,
-JAMB,Mathematics,1997,,,,,,,,
 JAMB,Mathematics,1997,"90
 O
 150
@@ -2527,21 +2111,11 @@ French",25,15,10,8,,,
 JAMB,Mathematics,1997,"The mean and the range of the set of numbers
 0.20,1.00,0.90,1.40,0.80,0.80,1.20,and 1.10
 are m and r respectively. Find m + r",1.11,1.65,1.85,2.45,,,
-JAMB,Mathematics,1997,"Class
-1 - 3    4 - 6   7 - 9
-5          8        5
-Frequency
-Find the standard deviation of the data using the table
-above
-A  .5",,√6,5/3,"√5
-Mathematics 1997",,,
 JAMB,Mathematics,1997,"The following are the scores of ten students in a test
 of 20 marks; 15,16,17,13,16,8,5,16,19,17. what is the
 modal score?",13,15,16,19,,,
 JAMB,Mathematics,1997,find the mode of the distribution,3.2,3.4,3.7,4.2,,,
 JAMB,Mathematics,1997,The median of the distribution is,4.0,3.5,3.2,3.0,,,
-JAMB,Mathematics,1997,"Let P be a probability function on set S, where S =
-(a1,a2,a3,a4) find P(a1) if P(a2) = P(a3) = 1/6 and P(a4)1/5",7/10          B 2/3,,1/3,3/10,,,
 JAMB,Mathematics,1997,"A die has four of its faces coloured while and the
 remaining two coloured black . What is the probability
 that when the die is thrown two consecutive times, the
@@ -2565,9 +2139,6 @@ weekly earning in naira?",r(35 + q),q(35r - q),q(35r + r),r(35r - q),,,
 JAMB,Mathematics,1998,"Given the universal set U = {1,2,3,4,5,6,} and the
 sets P = {1,2,3,4,} Q = {3,4,5} and R = {2,4,6}. Find
 PÈ(QÈR).",{4},"{1,2,3,4}","{1,2,3,5,6}","{1,2,3,4,5,6}",,,
-JAMB,Mathematics,1998,"Q
-P
-R",,,,,,,
 JAMB,Mathematics,1998,"When the expression pm2 + qm + 1 is divided by (m
 - 1), it has a remainder 2 and when divided by (m +
 1) the remainder is 4. find p and q respectively","2, -1","-1, 2","3, -2","-2, 3",,,
@@ -2575,7 +2146,6 @@ JAMB,Mathematics,1998,Factorize r2 – r (2p + q)  + 2pq,(r – 2q)(2r - p),(r -
 JAMB,Mathematics,1998,Solve the equation    x -    (x - 2) – 1 = 0,3/2,2/3,4/9,9/4,,,
 JAMB,Mathematics,1998,"Find the range of values of m for which the roots of
 the equation 3x2 – 3mx + (m2 – m - 3) = 0",-1<m<7,-2<m<6,-3<m<9,-4<m<8,,,
-JAMB,Mathematics,1998,,,20,24,25,,,
 JAMB,Mathematics,1998,Divide 2x3 + 11x2 + 17x + 6 by 2x + 1,x2 + 5x + 6,2x2 + 5x + 6,2x2 – 5x + 6,x2 – 5x + 6,,,
 JAMB,Mathematics,1998,"Express in partial fractions
 11x + 2
@@ -2591,7 +2161,6 @@ The shaded area above represents","x≥0, 3y + 2x ≥ 6","x≥ 0, y≥3, 3x +  2
 JAMB,Mathematics,1998,"If p + 1, 2p – 10 ,1 – 4p2 are the consecutive terms of
 an arithmetic progression, find the possible values
 of p.","-4, 2","–2, 4/11","–11/4, 2","5, -3",,,
-JAMB,Mathematics,1998,,,,24,25,,,
 JAMB,Mathematics,1998,"x
 O          p            q          r           s
 p
@@ -2623,17 +2192,6 @@ x,    1,     0
 1-x,  2,    3
 1,   1+ x,   4
 in terms of x is",-3x2 - 17,-3x2 + 9x – 1,3x2 + 17,3x2 – 9x + 5,,,
-JAMB,Mathematics,1998,,,,,,,,
-JAMB,Mathematics,1998,,,,,,,,
-JAMB,Mathematics,1998,"x
-120
-O
-130
-O
-P
-Q
-S
-T",,,,,,,
 JAMB,Mathematics,1998,"R
 S
 T
@@ -2643,7 +2201,6 @@ In the figure above, PQST is a parallelogram and TSR
 is a straight line. If the area of  ∠QRS is 20cm2, find
 the area of the trapezium PQRT.",35cm2,65cm2,70cm2,"140cm2
 X",,,
-JAMB,Mathematics,1998,,,,,,,,
 JAMB,Mathematics,1998,"A chord of a circle radius Ö3cm subtends an angle of
 600 on the circumference of the circle. Find the length
 of the chord.",√3/2 cm,3/2 cm,√3 cm,3 cm,,,
@@ -2654,9 +2211,6 @@ JAMB,Mathematics,1998,"The locus of all points at a distance 8 cm from a
 point N passes through point T and S. if S is
 equidistant from T and N , find the area of triangle
 STN.",4√3 cm2,16√3 cm2,32cm2,64 cm2,,,
-JAMB,Mathematics,1998,"O
-Y
-R",,,,,,,
 JAMB,Mathematics,1998,"The midpoint of the segment of the line y = 4x + 3
 which lies between the x-axis and the y-axis is","(-3/2, 3/2)","(-2/3, 3/2)","(3/8, 3/2)","(-3/8, 3/2)",,,
 JAMB,Mathematics,1998,"Solve the equation
@@ -2698,52 +2252,12 @@ JAMB,Mathematics,1998,"No . of workers
 17        32        25         24
 Estimate the mode of the above frequency
 distribution.",12.2,12.7,12.9,13.4,,,
-JAMB,Mathematics,1998,"Find the variance of the numbers K, K + 1,  K + 2.",,,,,,,
 JAMB,Mathematics,1998,"Find the positive value of x if the standard deviation
 of the numbers 1, x +1, 2x + 1 is √6",1,2,3,4,,,
 JAMB,Mathematics,1998,"A bag contains 16red balls and 20blue balls only. How
 many white balls must be added to the bag so that
 the probability of randomly picking a red ball is equal
 to 2/5?",4,20,24,40,,,
-JAMB,Mathematics,1998,"o
-o
-d
-F
-T
-120
-O
-r
-a
-H
-n
-o
-u
-s
-s
-p
-i
-n
-g
-o
-r
-l
-S
-o
-o
-c
-h
-t
-s
-F
-e
-e
-The pie chart above shows the monthly expenditure
-of a public servant. The monthly expenditure on
-housing is twice that of school fees. How much does
-the worker spend on housing if his monthly income
-is #7.200?
-A
-#1000",,#2000,#3000,#4000,,,
 JAMB,Mathematics,1998,"The bar chart above shows the distribution of marks
 scored by 60 pupils in a test in which the maximum
 score was 10. if the pass mark was 5,  what percentage
@@ -2780,7 +2294,6 @@ evaluate /Q + 2P/",90,96,102,120,,,
 JAMB,Mathematics,1999,"A binary operation * is defined by a*b = ab + b for
 any real number a and b. if the identity element is
 zero, find the inverse of 2 under this operation",2/3,½,–1/2,56/9,,,
-JAMB,Mathematics,1999,,,,11,10,,,
 JAMB,Mathematics,1999,"Tope bought x oranges at #5.00 each and some
 mangoes at #4.00 each. If she bought twice as many
 mangoes as oranges and spent at least #and at most
@@ -2796,10 +2309,6 @@ JAMB,Mathematics,1999,Divide 4x3 – 3x + 1 by 2x - 1,2x2 – x + 1,2x2 – x �
 JAMB,Mathematics,1999,"Three consecutive positive integers k, l and m are
 such that l2 = 3(k + m). find the value of m.",4,5,6,"7
 y",,,
-JAMB,Mathematics,1999,,,,,,,,
-JAMB,Mathematics,1999,,,,18,17,,,
-JAMB,Mathematics,1999,,,,40,75,,,
-JAMB,Mathematics,1999,Express 1/x3 - 1,,,,,,,
 JAMB,Mathematics,1999,"In        MNO, MN = 6 units, MO = 4 units and NO – 12
 units. If the bisector of angle M meets NO at P,
 calculate NP.",4.8 units,7.2 units,8.0 units,18.0 units,,,
@@ -2810,7 +2319,6 @@ JAMB,Mathematics,1999,"3 cm
 6 cm
 Find the value of l in the frustum above.",5cm,6cm,7cm,"8cm
 X",,,
-JAMB,Mathematics,1999,,,19,18,17,,,
 JAMB,Mathematics,1999,"Find a positive value of a if the coordinate of the
 centre of a circle x2 + y2 – 2ax + 4y - a = 0 is (a, -2)
 and the radius is 4 units",1,2,3,4,,,
@@ -2841,7 +2349,6 @@ S
 R
 In the figure above, PQRS is a circle with ST//RQ. Find
 the value of x if PT = PS",700,550,400,350,,,
-JAMB,Mathematics,1999,E,,,,,,,
 JAMB,Mathematics,1999,"If the maximum value of y = 1+ hx – 3x2is 13, find h.",13,12,11,10,,,
 JAMB,Mathematics,1999,"O
 F
@@ -2860,7 +2367,6 @@ enclosed by y = 0, y = 2x and 3 is rotated about the x –
 axis.",81π cubic units,36π cubic units,18π cubic units,9π cubic units,,,
 JAMB,Mathematics,1999,"What is the derivative of t2sin (3t - 5) with respects to the
 variable?",6t cos (3t - 5),2dt sin (3t - 5) – 3t2 cos (3t - 5),2t sin (3t - 5) + 3t2 cos (3t - 5),2t sin (3t - 5) + t2 cos 3t,,,
-JAMB,Mathematics,1999,,,,,75,,,
 JAMB,Mathematics,1999,"Three boys play a game a luck in which their respective
 chances of wining are ½, 1/3 and ¼. What is the
 probability that one and only of the boys wins the game?",1/24,1/12,11/24,23/24,,,
@@ -2882,7 +2388,6 @@ JAMB,Mathematics,1999,"O
 1
 The shaded portion in the graph above is represented
 by","y + x – x3 0, y – x  £ 0","y - + x 3 ³ 0, y – x £ 0","y + x – x3 £ 0, y + x ³ 0","y – x + x3 £ 0, y + x £ 0",,,
-JAMB,Mathematics,1999,Mathematics 2000,,,,,,,
 JAMB,Mathematics,1999,"Marks
 0   1  2    3     4   5     6   7    8    9   10
 The marks scored by students in a test are given in the
@@ -2909,16 +2414,8 @@ is 3. find the fourth number if the mean deviation of the
 first three  numbers is 2.",6,10,"–2/5, 1","2, 3/5",,,
 JAMB,Mathematics,2000,"/6, find the value of r.",1,3,5,6,,,
 JAMB,Mathematics,2000,", find the least possible value of x.",2,3,4,6,,,
-JAMB,Mathematics,2000,,,,5,6,,,
-JAMB,Mathematics,2000,,,,,6,,,
-JAMB,Mathematics,2000,,,,,,,,
-JAMB,Mathematics,2000,,,,,,,,
 JAMB,Mathematics,2000,"If 31410 – 2567 = 340x, find x",2n + 1,2n – 1,4,¼,,,
-JAMB,Mathematics,2000,,,24,62,86,,,
 JAMB,Mathematics,2000,Simplify 3(2n + 1) – 4(2n -1 )/2(n + 1) – 2n,2n + 1,2n - 1,4,¼,,,
-JAMB,Mathematics,2000,,,,,,,,
-JAMB,Mathematics,2000,,,,"–2/5, 1","2, 3/5",,,
-JAMB,Mathematics,2000,,,,16,20,,,
 JAMB,Mathematics,2000,The 3rd term of an,19x  - 17y,8x - 4y,x – y,2x,,,
 JAMB,Mathematics,2000,"Find the inverse of p under the binary operation * by
 p * q= p + q – pq, where p and q are real numbers
@@ -2931,8 +2428,6 @@ PT is the transpose of P, if b = 1, then P is","(0, 1)","(0, 1)
 (-1, 0)","(0, 1)","(1, 1)
 (1, 1)
 (-1,0)",,,
-JAMB,Mathematics,2000,,,,,20,,,
-JAMB,Mathematics,2000,,,,"–2/5, 1","2, 3/5",,,
 JAMB,Mathematics,2000,"Find the values of t for which the determinant of the
 matrix   (t  -4
 0
@@ -2945,13 +2440,11 @@ t+t
 t-2)","0, 2, 3","–4, 2, 3","–4, -2, -3","4, -2, 3",,,
 JAMB,Mathematics,2000,"If (x - 1), (x + 1) and (x - 2) are factors of the
 polynomial ax3 + bx2 + cx – 1, find a, b, c, respectively","-1/2, 1, ½","½, 1, ½","½, 1, -1/2","½, -1, ½",,,
-JAMB,Mathematics,2000,,,,,,,,
 JAMB,Mathematics,2000,Solve the inequality 2 – x > x2,x < -2 or x > 1,x > 2 or x < -1,–1 < x> 2,–2 < x < 1,,,
 JAMB,Mathematics,2000,"If a and b are the roots of the equation 3x2 + 5x – 2 =
 0, find the value of 1/α + 1/β",-5/2,–2/3,½,5/2,,,
 JAMB,Mathematics,2000,"Find the minimum value of the function f(θ ) = 2/3 –
 cosθ for ο ≤ θ ≤ 2π.",½,2/3,1,2,,,
-JAMB,Mathematics,2000,,,,62,86,,,
 JAMB,Mathematics,2000,"P is a point on one side of the straight line UV and P
 moves in the same direction as UV. If the straight
 line ST is on the locus of P and ∠  VUS = 500, find ∠
@@ -2966,9 +2459,6 @@ JAMB,Mathematics,2000,"3y = 4x – 1 and Ky = x + 3 are equations of two
 straight lines. If the two lines are perpendicular to
 each other, find K",-4/3,–3/4,¾,"4/3
 S",,,
-JAMB,Mathematics,2000,"50
-O
-P",,,,,,,
 JAMB,Mathematics,2000,"O
 Q
 In the diagram above, if  ∠ RPS = 500, ∠ RPQ = 300
@@ -2980,9 +2470,6 @@ bisector of PQ",,,
 JAMB,Mathematics,2000,"In a regular polygon, each interior angle doubles its
 corresponding exterior angle. Find the number of
 sides of the polygon.",87,6,4,3,,,
-JAMB,Mathematics,2000,"A predator moves in a circle of radius √2 centre (0,
-0), while a prey moves along the line y = x. if 0≤ x≤
-2, at which point(s) will they meet?","(1, 1) only","(1, 1) and (1, 2)",,,,,
 JAMB,Mathematics,2000,"y
 y= 16
 x
@@ -3012,7 +2499,6 @@ JAMB,Mathematics,2000,"If the standard deviation of the set of numbers 3, 6, x,
 JAMB,Mathematics,2000,"How many two digit numbers can be formed from the
 digits 0, 1, 2,  if a digit can be repeated and no number
 may begin with 0",4,12,16,20,,,
-JAMB,Mathematics,2000,Mathematics 2000,,,,,,,
 JAMB,Mathematics,2000,"The variance of x, 2x, 3x 4x and 5x is",x√2,2x2,x2,3x,,,
 JAMB,Mathematics,2000,"Find the sum of the range and the mode of the set of
 numbers 10, 5, 10, 9, 8, 7, 7, 10, 8, 10, 8, 4, 6, 9, 10,
@@ -3052,8 +2538,6 @@ JAMB,Mathematics,2001,Factorize 4x2 – 9y2 + 20x + 25,(2x – 3y)(2x + 3y),(2x 
 JAMB,Mathematics,2001,"If tow graphs y = px2 and y = 2x2 – 1 intersect at x =
 2, find the value of p in terms of q",(7 + q)/8,(8 – q)/2,(q – 8)/7,7 / (q –1),,,
 JAMB,Mathematics,2001,Solve the equations: m2 + n2 = 29;m + n = 7,"(5, 2) and (5, 3)","(5, 3) and (3, 5)","(2, 3) and (3, 5)","(2, 5) and (5, 2)",,,
-JAMB,Mathematics,2001,"Divide a3x – 26a2x + 156ax – 216 by
-a2x – 24ax + 108",,,,,,,
 JAMB,Mathematics,2001,"Find the integral values of x and y satisfying the
 inequality 3y + 5x  £ 15, given that y > 0, y< 3 and
 x > 0.","(1, 1), (2, 1), (1, 3)","(1, 1), (1, 2), (1, 3)","(1, 1), (1, 2), (2, 1)","(1, 1), (3, 1), (2, 2)
@@ -3071,7 +2555,6 @@ P T
 S -1
 -2
 Triangle SPT is the solution of the linear inequalities",half of the common difference,double of the common difference,the common difference,zero,,,
-JAMB,Mathematics,2001,,,15,16,17,,,
 JAMB,Mathematics,2001,"A man saves #100.00 in his first year of work and
 each year saves #20.00 more than in the preceding
 year. In how many years will he save #580.00",20 years,29 years,58 years,100 years,,,
@@ -3092,28 +2575,9 @@ k2 + k + 1, where I is the 2 x 2 identity matrix, is","(9,   8 )","(10,   7)
 (21, 24)","(7,   2)","(6,    3)
 (12, 21)
 (13, 20)",,,
-JAMB,Mathematics,2001,"Evaluate
--1    -1      -1
-3      1       1
-1      2       1",,,,,,,
-JAMB,Mathematics,2001,"If P =  3     -3      4    then  -2p is
-5      0      6
-1      2
-1","-6, 4, -8
-B  -6,  4,  -8
-5,  0,  6
--10,  0,   6
-7,  5, -1
--14,  5,  -1",,"-6,   -4,    2
-D   -6,  4,  -8
--10,  -2, -12
--10, 0, -12
--14, 10,   2
--14, 40,  2",,,,
 JAMB,Mathematics,2001,"Find the number of sides of a regular polygon whose
 interior angle is twice the exterior angle",2,3,6,"8
 S",,,
-JAMB,Mathematics,2001,T,,,,,,,
 JAMB,Mathematics,2001,"A cylindrical tank has a capacity of 3080m3. what is
 the depth of the tank if the diameter of its base is
 14m?",20m,22m,23m,25m,,,
@@ -3134,9 +2598,6 @@ points Q and R. find QR when PR = 8cm and < PRQ
 = 300",4cm,4√3cm,8cm,8√3cm,,,
 JAMB,Mathematics,2001,"Find the locus of a point which moves such that its
 distance from the line y = 4 is a constant, k.",y = 4 + k,y = k – 4,y = k ± 4,y = 4 ± k,,,
-JAMB,Mathematics,2001,"A straight line makes an angle of 300 with the positive
-x-axis and cuts the y-axis at y = 5. find the equation
-of the straight line.",,,,,,,
 JAMB,Mathematics,2001,"P(-6, 1) and Q(6, 6) are the two ends of the diameter
 of a given circle. Calculate the radius",3.5 units,6.5 units,7.0 units,13.0 units,,,
 JAMB,Mathematics,2001,"Find the value of p if the line joining (p, 4) and (6, -
@@ -3202,33 +2663,12 @@ The histogram above shows the distribution of
 passengers in taxis of a certain motor park. How many
 taxis have more than 4 passenger?",14,15,16,17,,,
 JAMB,Mathematics,2001,Find the square of the mode,25,49,64,121,,,
-JAMB,Mathematics,2001,"Score
-Frequency
-4         7         8       11       13       8
-3         5        2         7         2         1",,,,,,,
 JAMB,Mathematics,2001,"Find the range of 1/6, 1/3, 3/2, 2/3, 8/9 and 4/3",4/3,7/6,5/6,¾,,,
 JAMB,Mathematics,2001,"Find the variance of 2, 6, 8, 6, 2 and 6",√5,√6,5,6,,,
-JAMB,Mathematics,2001,"Cumulative
-frequency",,,,,,,
 JAMB,Mathematics,2001,"Find the number of ways of selecting 8 subjects from
 12 subjects for an examination.",498,496,495,490,,,
 JAMB,Mathematics,2001,"If 6Pr = 6, find the value of 6Pr+1",15,30,33,"35
 Mathematics 2002",,,
-JAMB,Mathematics,2001,,,,64,121,,,
-JAMB,Mathematics,2001,"40
-30
-P
-20
-10
-Q   Q   Q
-0
-5.5
-10.5
-15.5
-20.5
-25.5
-30.5
-Masses (Kg)",,,,,,,
 JAMB,Mathematics,2002,"A trader bought goats for #4 000 each. He sold them
 for #180 000 at a loss of 25%. How many goats did
 he buy?",36,45,50,60,,,
@@ -3240,9 +2680,6 @@ JAMB,Mathematics,2002,"= 0 is
 perpendicular to the line y + 1/4x – 7 =
 0",-8,–4,4,8,,,
 JAMB,Mathematics,2002,Simplify 52.4 – 5.7 – 3.45 – 1.75,42.2,42.1,41.5,41.4,,,
-JAMB,Mathematics,2002,"Without using tables, evaluate
-(343)1/3 x (0.14)-1 x (25)1/2",,,,,,,
-JAMB,Mathematics,2002,,,8,10,12,,,
 JAMB,Mathematics,2002,"Find the value of & if the line 2y - &x + 4 = 0 is
 perpendicular to the line y + 1/4x – 7 =
 0",-8,–4,4,8,,,
@@ -3258,18 +2695,6 @@ XYZW, with centre O and radius 15/2cm. If XY =
 12cm, find the area of the triangle XYZ.",75cm2,54cm2,45cm2,27cm2,,,
 JAMB,Mathematics,2002,"Find the coordinate of the midpoint of x and y
 intercepts of the line 2y = 4x - 8","(-1, -2)","(1, 2)","(2, 0)","(1, -2)",,,
-JAMB,Mathematics,2002,,,,,,,,
-JAMB,Mathematics,2002,"If tan q = 4/3, calculate sin2 θ - cos2 θ.",7/25,9/25,"16/25
-SD.
-24/25
-P",,,,
-JAMB,Mathematics,2002,"x
-Q
-S
-R
-O
-72
-T",,,,,,,
 JAMB,Mathematics,2002,"The locus of a point P which is equidistant from two
 given points S and T is",a perpendicular to ST,a line parallel to ST,the angle bisector of PS and ST,the perpendicular bisector ST,,,
 JAMB,Mathematics,2002,"A solid hemisphere has radius 7cm. Find the total
@@ -3298,9 +2723,6 @@ JAMB,Mathematics,2002,"The mean of a set of six numbers is 60. if the mean of
 the first five is 50, Find the sixth number in the set.",110,105,100,95,,,
 JAMB,Mathematics,2002,"The range of the data k + 2, k – 3, k + 4, k – 2, k, k – 5,
 k + 3, k – 1 and k + 6 is.",6,8,10,11,,,
-JAMB,Mathematics,2002,,,,,,,,
-JAMB,Mathematics,2002,"Music
-History U80",,,,,,,
 JAMB,Mathematics,2002,"Find the mean of the data  7,-3,4,-2,5,-9,4,8,-6,12",1,2,3,4,,,
 JAMB,Mathematics,2002,"The probability of a student passing any examination
 is 2/3. if the student takes three examination, what is
@@ -3322,8 +2744,6 @@ class, what is the probability that he offers Music
 only?",0.13,0.25,0.38,0.50,,,
 JAMB,Mathematics,2002,"Find the maximum value of y in the equation
 y = 1 – 2x – 3x2",5/3,4/3,5/4,¾,,,
-JAMB,Mathematics,2002,If the 9th term of an,"P is five times the 5th term,
-find the relationship between a and d.",,,,,,
 JAMB,Mathematics,2002,"The time taken to do a piece of work is inversely
 proportional to the number of men employed. If it
 takes 45men to do a piece of work in 5 days, how
@@ -3332,17 +2752,14 @@ JAMB,Mathematics,2002,"The binary operation is defined on the set of integers
 p and q by p*q = pq + p + q. find 2 (3*4)",19,38,59,67,,,
 JAMB,Mathematics,2002,"If –2 is the solution of the equation 2x + 1 – 3c = 2c
 + 3x – 7, find the value of c.",1,2,3,4,,,
-JAMB,Mathematics,2002,,,45,50,60,,,
 JAMB,Mathematics,2002,"Use the graph below to find the values of p and q if
 px + qy < 4
 y
 (0,2)
 (-4,0)
 x","p = 1, q = 2","p = 2, q = 1","p = -1, q = 2","p = 2, q = -1",,,
-JAMB,Mathematics,2002,,,,59,67,,,
 JAMB,Mathematics,2002,"Solve for x in the equation
 x3 – 5x2 - x + 5 = 0","1, 1 or 5","–1, 1 or –5","1, 1 or –5","1, -1 or 5",,,
-JAMB,Mathematics,2002,,,120,160,210,,,
 JAMB,Mathematics,2002,"Find the range of values of x for which
 x + 2/4 – 2x – 3/3 <4",x > -3,x < 4,x > -6,x < 8,,,
 JAMB,Mathematics,2002,"If x varies directly as   n and x = 9 when n = 9, find x
@@ -3351,7 +2768,6 @@ JAMB,Mathematics,2002,"The sum of infinity of the series
 1 + 1/3 + 1/9 + 1/27 + ……………… is",3/2,5/2,10/3,11/3,,,
 JAMB,Mathematics,2002,"Make r the subject of the formula
 x/r + a = a/r",a/(x – a),(a/x + a,a2/(x – a),a2/(x + a),,,
-JAMB,Mathematics,2002,,,,50,60,,,
 JAMB,Mathematics,2002,"Evaluate
 sin3xdx",-2/3 cos 3x + c,–1/3 cos 3x + c,1/3 cos  3x + c,2/3 cos 3x + c,,,
 JAMB,Mathematics,2002,"A circle with a radius 5cm has its radius increasing
@@ -3360,14 +2776,6 @@ increase in the area?",5p,4p,2p,p,,,
 JAMB,Mathematics,2002,"If dy/dx = 2x – 3 and y = 3 when x = 0, find y in
 terms of x.",x2 – 3x,x2 – 3x + 3,2x2 – 3x,x2 – 3x – 3,,,
 JAMB,Mathematics,2002,Find the derivative of y = sin2(5x) with respect to x,133,113,63,84,,,
-JAMB,Mathematics,2002,,,,,60,,,
-JAMB,Mathematics,2003,– 3c =,,,,,,,
-JAMB,Mathematics,2003,"c
-+",,,,,,,
-JAMB,Mathematics,2003,"x – 7, find the value of c.",1,2,3,,,,
-JAMB,Mathematics,2003,,,,,,,,
-JAMB,Mathematics,2003,,,,,"61.
-Mathematics 2003",,,
 JAMB,Mathematics,2003,"The sum of four numbers is 12145. what is the
 average expressed in base five?",411,401,141,114,,,
 JAMB,Mathematics,2003,Evaluate log√24 + log1/216 – log432,-2.5,5.5,–5.5,2.5,,,
@@ -3376,8 +2784,6 @@ U = {Even numbers between 0 and 30}
 P  = {Multiples of 6 between 0 and 30}
 Q = {Multiples of 4 between 0 and 30}
 Find (PUQ)c.","{0, 2, 6, 22, 26}","{2, 4, 14, 18, 26}","{2, 10, 14, 22, 26}","{0, 10, 14, 22, 26}",,,
-JAMB,Mathematics,2003,,,,6,"3
-y",,,
 JAMB,Mathematics,2003,"Find (1/0.06 ÷ 1/0.042)-1, correct to two decimal
 places",4.42,3.14,1.53,1.43,,,
 JAMB,Mathematics,2003,"If 92x – 1/27x + 1 = 1, find the value of x.",2,8,5,3,,,
@@ -3389,12 +2795,8 @@ last term is 72, find the number of terms in the series.",7,9,6,8,,,
 JAMB,Mathematics,2003,"The graphs of the function y = x2 + 4 and a straight
 line PQ are drawn to solve the equation  x2 – 3x + 2 =
 0. what is the equation of PQ?",y = 3x + 2,y = 3x – 4,y = 3x + 4,y = 3x – 2,,,
-JAMB,Mathematics,2003,,,,,"20
-P
-N",,,
 JAMB,Mathematics,2003,"Find the values of x and y respectively if 3x – 5y + 5
 = 0 and 4x – 7y + 8 = 0","-4, -5","–5, -4","5, 4","4, 5",,,
-JAMB,Mathematics,2003,,,,,,,,
 JAMB,Mathematics,2003,"Find the range of values of x satisfying the
 inequalities 5 + x ≤ 8 and 13 + ³ 7.",-6 ≤ x ≤ 3,-6 ≤ x ≤ -3,3 ≤ x ≤ 6,–3 ≤ x ≤ 3,,,
 JAMB,Mathematics,2003,"x varies directly as the product of U and V and
@@ -3418,7 +2820,6 @@ proportional to his weigth. If a 20kg person can jump
 1.5 m, find the constant of proportionality.",30,60,15,"20
 P
 N",,,
-JAMB,Mathematics,2003,,,,,17,,,
 JAMB,Mathematics,2003,"The locus of a point P which moves on one side only
 of a straight line XY so that ∠ XPY = 900 is.",the perpendicular bisector of XY,a circle,a semicircle,"an arc of a circle through X,Y
 P
@@ -3427,36 +2828,6 @@ JAMB,Mathematics,2003,"Q
 S
 In the diagram above, PQ is parallel to RS. What is
 the value of α + β + y?",1800,900,2000,3600,,,
-JAMB,Mathematics,2003,"Whicch of the following is the graph of sinθ for
--π  ≤ ο ≤ 3π
-2
-2
-1
-1",,"0
-0
-2
-2
-2
-3
-2
-2
-2
-3
-1
-1",,"1
-1
-0
-0
-2
-2
-2
-3
-2
-2
-2
-3
-1
-1",,,
 JAMB,Mathematics,2003,"R
 O
 Q
@@ -3472,9 +2843,6 @@ cos θ",1,½,4,2/3,,,
 JAMB,Mathematics,2003,"An aeroplane flies due north from airports P to Q
 and then flies due east to R. if Q is equidistant from
 P and R, find the bearing of P and R.",2700,0900,1350,2250,,,
-JAMB,Mathematics,2003,,,60,15,"20
-P
-N",,,
 JAMB,Mathematics,2003,"Find the equation of the locus of a point P(x, y) which
 is equidistant form Q(0,0) and R(2, 1).",2x + y = 5,2x + 2y = 5,4x + 2y = 5,4x – 2y = 5,,,
 JAMB,Mathematics,2003,"An arc of a circle subtends an angle of 300 on the
@@ -3505,19 +2873,11 @@ x","p = 1, q = 2","p = 2, q = 1","p = -1, q = 2","p = 2, q = -1",,,
 JAMB,Mathematics,2003,The inverse of the function f(x) = 3x + 4 is,1/3(x + 4),1/4(x + 3),1/5(x - 5),1/3(x - 4),,,
 JAMB,Mathematics,2003,"Solve for x in the equation
 x3 – 5x2 - x + 5 = 0","1, 1 or 5","–1, 1 or –5","1, 1 or –5","1, -1 or 5",,,
-JAMB,Mathematics,2003,"If P = (2,  1)
-(-3  0)    and I is a 2 x 2 unit matrix, evaluate
-p2 – 2p + 41","(2, 1)","(1, 0)
-(4, 1)
-(0, 1)",,,,,
 JAMB,Mathematics,2003,"Value
 0         1        2          3           4
 1         2        2          1           9
 Frequency
 Find the mean of the distribution above.",4,3,1,2,,,
-JAMB,Mathematics,2003,"O
-M
-Q",,,,,,,
 JAMB,Mathematics,2003,"A bag contains 5 blsck ball and 3 red balls. Two  balls
 are picked at random without replacement. What is
 the probability that a black and a red balls are picked?",5/14,13/28,3/14,15/28,,,
@@ -3550,10 +2910,6 @@ y
 Find x and y respectively in the subtraction above c
 arried out in base 5","2, 4","3, 2","4, 2","4, 3",,,
 JAMB,Mathematics,2004,"Find p, if 4516 – p7 = 3056",6117,1427,1167,627,,,
-JAMB,Mathematics,2004,"1/10 x 2/3 + 1/4
-________________
-A
-2/25",,19/60,7/12,19/35,,,
 JAMB,Mathematics,2004,"A farmer planted 5000 grains of maize and harvested
 5000 cobs, each bearing 500 grains. What is the ratio
 of the number of grains sowed to the number
@@ -3567,8 +2923,6 @@ JAMB,Mathematics,2004,Simplify 1/√3 + 2 in the form a + b√3,-2 -   3,–2+  
 JAMB,Mathematics,2004,"If 6logx2 – 3logx3 = 3log50.2, find x.",3/8,¾,4/3,"8/3
 Q
 P",,,
-JAMB,Mathematics,2004,"R
-The shaded region in the venn diagram above",Pc ∩(QR)B.        P∩Q,,Pc U(Q∩R),Pc∩ (QUR),,,
 JAMB,Mathematics,2004,"In a class of 40 students, each student offers at least
 one of Physics and Chemistry. If the number of
 students that offer Physics is three times the number
@@ -3577,11 +2931,9 @@ Chemistry is twice the number that offer Physics, find
 the number of students that offer Physics only.",25,15,10,5,,,
 JAMB,Mathematics,2004,"Find the values of x where the curve
 y = x3 + 2x2 – 5x – 6 crosses the x-axis.","-2, -1 and 3","-2, 1 and –3","2, -1 and –3","2, 1 and 3",,,
-JAMB,Mathematics,2004,,,,,18,,,
 JAMB,Mathematics,2004,Factorize completely ac – 2bc – a2 + 4b2,(a – 2b)(c  + a – 2b),(a – 2b)(c  - a – 2b),(a – 2b)(c  + a + 2b),(a – 2b)(c  - a + 2b),,,
 JAMB,Mathematics,2004,"y is inversely proportional to x and y = 4 when x = 1/
 2 . find x when y = 10",1/10,1/5,2,10,,,
-JAMB,Mathematics,2004,,,,10,5,,,
 JAMB,Mathematics,2004,"x
 The shaded area in the diagram above is represented
 by","{(x, y) : y + 3x < 6}","{(x, y) : y + 3x < - 6}","{(x, y) : y - 3x < 6}","{(x, y) : y - 3x < -  6}",,,
@@ -3606,11 +2958,6 @@ is",(1  1),"(1  -1)
 JAMB,Mathematics,2004,"If P = 1   0   -1
 3   4    5
 -1    0  1  then /P/ is",-8,0,4,8,,,
-JAMB,Mathematics,2004,"The sum of the interior angles of a  pentagon is 6x +
-6y. find y in terms of x",,,,,,,
-JAMB,Mathematics,2004,,,15,10,5,,,
-JAMB,Mathematics,2004,,,,,,,,
-JAMB,Mathematics,2004,,,,48,78,,,
 JAMB,Mathematics,2004,"An arc of a circle of length 22cm subtends an angle
 of 3x0 at the centre of the circle. Find the value of x
 if the diameter of the circle is 14cm.",300,600,1200,1800,,,
@@ -3623,10 +2970,6 @@ parallel to  LM","line distance 10cm from LM and
 parallel to LM.",,,
 JAMB,Mathematics,2004,"Find the value of α2 + β2 if a + b = and the distance
 between the points (1, α) ands (β, 1) is 3 units.",3,5,11,14,,,
-JAMB,Mathematics,2004,"Find the midpoint of the line joining P(-3, 5) and Q
-(5, -3).",,,,,,,
-JAMB,Mathematics,2004,"15 cm
-X",,,,,,,
 JAMB,Mathematics,2004,"The shadow of a pole 5√3 m high is 5m. find the
 angle of elevation of the sun.",300,450,600,750,,,
 JAMB,Mathematics,2004,"O
@@ -3673,11 +3016,6 @@ The pie chart above shows the distribution of the
 crops harvested from a farmland in a year. If 3000
 tonnes of millet is harvested, what amount of beans
 is harvested?",9000 tonnes,6000 tonnes,1500 tonnes,1200 tonnes,,,
-JAMB,Mathematics,2004,"I.   Rectangular bars of equal width
-II.  The height of each rectangular bar
-is proportional to the frequency of
-the3 corresponding class interval.
-III. Rectangular bars have common",,,,,,,
 JAMB,Mathematics,2004,"The graph above shows the cumulative frequency
 curve of the distribution of marks in a class test. What
 percentage of the students scored more than 20
@@ -3700,7 +3038,6 @@ from nine state commissioners and three members
 of the state house of assembly. In how many ways
 can the members of the committee be chosen so as to
 include one member of the house of assembly?",924 ways,840 ways,462 ways,378 ways,,,
-JAMB,Mathematics,2004,,,,,78,,,
 JAMB,Mathematics,2004,"An unbiased die is rolled 100 times and the outcome
 is tabulated as follows:
 What is the probability of obtaining 5?",1/6,1/5,¼,½,,,

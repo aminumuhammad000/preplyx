@@ -1,4 +1,4 @@
-﻿exam,subject,year,text,option_a,option_b,option_c,option_d,option_e,correct_answer,explanation
+exam,subject,year,text,option_a,option_b,option_c,option_d,option_e,correct_answer,explanation
 JAMB,Physics,1983,"In a resonance tube experiment, a tube of fixed
 length in closed at one end and several turning
 forks of increasing frequency used to obtain
@@ -450,11 +450,6 @@ JAMB,Physics,1984,"Which of the following properties of matter
 CANNOT be utilized for temperature measurement?
 The",Length of a liquid column,Volume of a gas at constant pressure.,Pressure of a gas at constant volume,Resistance of a metallic wire,"Current produced in a photoelectric
 effect.",,
-JAMB,Physics,1984,"The image and object distances of a converging
-mirror are related by the equation 1/ƒ = 1/v + 1/u and
-the magnification of the image is m = v/u. Which
-of the graphs below represents the relation
-between m and v?",,,,m m v v,m m,,
 JAMB,Physics,1984,"v v C..
 m v 31.
 Which of the following statements about the
@@ -768,13 +763,6 @@ magnetic field’s",,
 JAMB,Physics,1985,"Which of the following will convert a milliammeter
 to a voltmeter?",Low series resistance,Low parallel resistance,High series resistance,High parallel resistance,"Parallel resistance equal to milliameter
 resistance.",,
-JAMB,Physics,1985,"Which of the graphs A – E (Fig. 3) represents the
-current-voltage (I – V) relationship for a cell with
-internal resistance?",I V,,"I
-I V
-V",,"I
-I V
-V Fig. 3",,
 JAMB,Physics,1985,"A wire P has half the diameter and half the length
 of a wire Q of similar material. The ratio of the
 resistance of P to that of Q is",8 : 1,4 : 1,2 : 1,1 : 1,1 : 4,,
@@ -902,14 +890,6 @@ JAMB,Physics,1986,"A 1000kg elevator is descending vertically with an
 acceleration of 1.0ms-2, if the acceleration due to
 gravity is 10.0m 5s, the tension in the suspending
 cable is",1.0 N,10.0 N,9 000.0 N,11 000.0 N,,,
-JAMB,Physics,1986,"A ball attached to one end of a string moves
-anticlockwise around a circle whose centre is O. If
-the string suddenly breaks when the ball is at point
-P, along which of the following paths will it move? F3 A
-B 16. O P
-O P C
-D O P
-O P",,,,,,,
 JAMB,Physics,1986,"The mode of heat transfer which does not requires
 material medium is",Conduction,Radiation,Convection,Propagation,,,
 JAMB,Physics,1986,"The expansion of solids can be considered a
@@ -940,12 +920,6 @@ same quantity of heat, the temperature change in
 P is observed to be twice that of Q. The mass of P
 is half that of Q the ratio of the specific heat
 capacity of P to Q is",1 : 4,4 : 1,1 : 1,2 : 1,,,
-JAMB,Physics,1986,Which of the following is true of sound?,Sound travels faster in air at 200C that at 300,"The frequency of a given sound wave
-changes when it crosses the boundary
-separating two media..
-C.
-The wavelength of a given sound wave in air
-decreases as the temperature increases.",,Sound waves cannot be reflected.,,,
 JAMB,Physics,1986,"Reflected ray 60o Incident ray AIR Glass Refracted Ray In Fig. 6, a ray of light in air strikes a glass plate at
 an angle of incidence of 600C. The reflected ray is
 observed to be perpendicular to the refracted ray.
@@ -973,11 +947,6 @@ in the mirror will be",Real inverted and diminished,"Virtual, inverted and enlar
 JAMB,Physics,1986,"A wave of frequency 10 HZ forms a stationary
 wave pattern in a medium where the velocity is
 20cm s-1. the distance between adjacent nodes is",1.0 cm,1.5 cm,2.0 cm,5.0 cm,,,
-JAMB,Physics,1986,"Fig. 7 In Fig. 7, a resonance tube experiment is performed
-using one turning fork. As the water level is
-lowered the first resonance is obtained when the
-length of the air column l = ë/4. The second
-resonance is obtained when l equals",/2,3 /4,,3 /2.,,,
 JAMB,Physics,1986,"Which of the following is true of the loudness of
 sound? It","Depends on the square of the amplitude of
 the vibrating body.","Is proportional to the distance of the observer
@@ -999,12 +968,6 @@ JAMB,Physics,1986,"Which of the following if NOT a part of the a.d.c.
 electric motor?",Field-magnet,Armature,Commutator,Transfomer.,,,
 JAMB,Physics,1986,"Which of the following is stored by a dry Leclanche
 cell?",Electrical power,Kinetic energy,Electric current,Chemical energy.,,,
-JAMB,Physics,1986,"Which of the following arrangements will produce
-an equivalent resistance of 1.5Ù from three 1Ù
-resistors? 1
-1
-1 43. 1
-1 1 1 1 1 1 1",,,,,,,
 JAMB,Physics,1986,Which of the following is true of magnetism?,"Iron fillings cling mainly round the ends
 of a bar magnet.","The freely suspended bar magnet comes
 to rest in the geographic north-south
@@ -1014,10 +977,6 @@ geographic meridian at a locality on the earth is
 the",Longitude of the locality.,Angle of inclination at the locality,Latitude of the locality,Angle of declination of the locality.,,,
 JAMB,Physics,1986,"The sign of the charge on a charged glass rod may
 be determined with",A charged electroscope,An uncharged electroscope,A galvanometer,An electrometer.,,,
-JAMB,Physics,1986,"The diagrams below depict the current induced in
-a coil as a result of the relative motion between it
-and a bar magnet. Which of the diagrams illustrates
-the direction of the induced current? 47. N S N S N S N S",,,,,,,
 JAMB,Physics,1986,"If the inclination at Ibadan is 700S, this means that","The angle between the geographic meridian
 and the magnetic meridian at Ibadan is 70","The earth’s resultant magnetic intensity at
 Ibadan makes angle 70 with the horizontal
@@ -1031,15 +990,6 @@ JAMB,Physics,1986,"Which of the following is most strongly deflected
 by a magnetic field?",gammarays,alphaparticles,beta-particles,X-rays.,,,
 JAMB,Physics,1987,"Which of the following units is equivalent to kg
 ms-1?",Ns-1,Nms,Ns,Js-1,,,
-JAMB,Physics,1987,"A man walks 8km north and then 5km in a direction
-600 east of north. Find the distance from his starting
-point.
-A.11.36km
-B. 12.36km
-C.13.00km
-D14.36km.",,,,,,,
-JAMB,Physics,1987,"8 V E L O C IT Y (m s )
--1 6",,,,,,,
 JAMB,Physics,1987,"2 0 1.0 2.0 3.0 4.0 Q The velocity – time graph above describes the
 motion of a particle between two points P and Q.
 What is the distance between P and Q?",17.0 m,18.0 m,22.5 m,"30.0 m 4.
@@ -1076,19 +1026,6 @@ Its velocity at the foot of the slope 20ms-1. What
 percentage of its initial potential energy is
 converted into kinetic energy?",40 %,35 %,20%,"15 %
 (g = 10ms-2)",,,
-JAMB,Physics,1987,"10 [g= 10 ms ]
--1 Q1
-Q2 Water with high
-Kinetic energy
-Water with low
-Kinetic energy E Electrical Energy Fig. 3.
-Figure 3 above represents the main sequence of
-energy conversion at Kainji dam. The efficiency
-of the system is","Q1 .
-Q2",,"E .
-(Q1 – Q2)","E .
-(Q1 + Q2)",".
-Q1",,
 JAMB,Physics,1987,"The coefficient os static friction between a 40kg
 crate and a concrete surface is 0.25. Find the
 magnitude of the minimum force needed to keep
@@ -1108,9 +1045,6 @@ surface. What is the relative density of the liquid?",0.125,0.250,0.625,2.500.,,
 JAMB,Physics,1987,"The distance between the fixed points of centigrade
 thermometer is 20cm. What is the temperature when
 the mercury level is 4.5cm above the lower mark?",22.50C,29.00C,90.00C,100.00C,,,
-JAMB,Physics,1987,"A metallic strip of iron and brass was heated. Which
-of the following diagrams accurately illustrates the
-shape of the strip after heating? 17. Brass dagram Iron Brass Iron Brass Iron Brass Iron",,,,,,,
 JAMB,Physics,1987,"The length of a side of a metallic cube at 200C is
 5.0cm. Given that the linear expansivity of the
 metal is 4.0 x 10-5 k-1 Find the volume of the cube
@@ -1251,9 +1185,6 @@ disintegrated is","N
 8","5N
 8","7N
 8",,,
-JAMB,Physics,1988,"Which of the following diagrams correctly
-represents the relationship between the time (T)
-of swing of a simple pendulum and its length (l)? 1.",,,,,,,
 JAMB,Physics,1988,"Which of the following are the correct SI units of
 the quantities indicated?
 I
@@ -1307,14 +1238,6 @@ horizontal table with an acceleration of
 is 10m s-2, the coefficient of friction
 between the moving mass and the table
 is",0.02,0.08,0.20,0.80,,,
-JAMB,Physics,1988,"Which of the following graphs correctly describes
-the variation of the mechanical advantage with
-load for a simple machine whose velocity ratio is
-3? 13. MA
-MA Load
-Load MA
-MA Load
-Load",,,,,,,
 JAMB,Physics,1988,"A body whose mass is 2kg and has a volume of
 500cm just floats when completely immersed in a
 liquid. Calculate the density of the liquid.",4.0 x 102kg m-3,4.0 x 103kg m-3,1.0 x 103kg m-3,1.0 x 106kg m-3,,,
@@ -1332,18 +1255,6 @@ JAMB,Physics,1988,"A tap supplies water at 250C while another supplies
 water at 750C. If a man wishes to bathe with water
 at 40C, the ratio of the mass of cold water to the
 mass of hot water required is",1 : 3,15 : 8,7 : 3,3 : 1,,,
-JAMB,Physics,1988,"Which of the following graphs clearly illustrates
-the temperature change which takes place as a
-piece of ice at - 100C is heated slowly? 19. T C
-o
-T C
-o 0
-0 t(min)
-t(min) T C
-o
-T C
-o 0
-0 t(min) t(min)",,,,,,,
 JAMB,Physics,1988,"When heat is applied to one end of a metal rod, the
 molecules at the other end soon begin to vibrate
 with greater amplitude than before because heat
@@ -1432,20 +1343,10 @@ JAMB,Physics,1988,A spectrum of sunlight is said to be impure when,It is made of
 JAMB,Physics,1988,"A cell of internal resistance 2 ohms supplies
 current to a 6-ohm resistor. The efficiency of the
 cell is",12.0 %,25.0 %,33.3 %,75.0 %,,,
-JAMB,Physics,1988,"When a resistance R is across a cell, the voltage
-across the terminals of the cell is reduced to two-
-thirds of its nominal value. The internal resistance
-of the cell is","1 R
-3","1 R
-2","2 R
-3",,R,,
 JAMB,Physics,1988,"R X 41 A E In the circuit above, the ammeter reads a current of
 3 amps. When R is 5 ohms and reads 6 amps when
 R is 2 ohms. The value of the unknown resistance
 X is",1,2,3,4,,,
-JAMB,Physics,1988,"Which of the following combinations of 2 ìF
-capacitors will give an effective capacitance of 3
-ìF across terminal XY?",,,,,,,
 JAMB,Physics,1988,"A household refrigerator is rated 200 watts. If
 electricity costs 5k per kWh, what is the cost of
 operating it fo 20 days?",N 4:80,N 48:00,N 480:00,N 4 800:00,,,
@@ -1513,8 +1414,6 @@ centre R and diameter PS. A circular section, centre
 Q and diameter PR is cut away from it. If PQRS is a
 straight line, where is the centre of gravity of the
 figure?",Q,R,A point between P and R,A point between R and S.,,,
-JAMB,Physics,1989,"Which of the following graphs represents motion
-with uniform velocity?",,,,,,,
 JAMB,Physics,1989,"A simple pendulum of mass m moves along an arc
 of a circle radius R in a vertical plane as shown in
 the figure above. What is the work done by gravity
@@ -1570,9 +1469,6 @@ kinetic energy of the molecules.","Form of energy and is proportional to the
 average kinetic energy of the molecules.","Physical property and is proportional to the
 total kinetic energy of the molecules.","Physical property and is proportional to the
 average energy of the molecules.",,,
-JAMB,Physics,1989,"Which of the following correctly represents the
-variation of the saturated vapour pressure of water
-with temperature?",,,,,,,
 JAMB,Physics,1989,"A vibrator of frequency 60 Hz is used in
 generating transverse stationary waves in a long thin
 wire. If the average distance between successive nodes
@@ -1587,8 +1483,6 @@ JAMB,Physics,1989,"In a sound wave in air, the adjacent rarefactions
 and compressions are separated by a distance of
 17cm. If the velocity of the sound wave is 340ms-1,
 determine the frequency.",10 Hz,20 Hz,1 000 Hz,5 780 Hz,,,
-JAMB,Physics,1989,"In which of the following diagrams is the length of
-the tube equal to one wavelength? 23. diagram",,,,,,,
 JAMB,Physics,1989,"Light of wavelength 5000 x 10-8cm travels in free
 space with a velocity of 3 x 108m s-1. What is its
 wavelength in glass of refractive index 1.5?",3 333 x 10-8cm,5 000 x 10-8cm,6 666 x 10-8cm,7 500 x 10-8cm,,,
@@ -1663,10 +1557,6 @@ constant and above 5A. 4
 4",,,
 JAMB,Physics,1989,"The total power drawn from the cell in the circuit
 diagram above is",12W,24W,32W,40W,,,
-JAMB,Physics,1989,"Which of the following correctly represents the
-relationship between the temperature rise è and
-the current l in and experiment to illustrate the
-beating effect of the electric current?",,,,,,,
 JAMB,Physics,1989,"An ammeter of resistance 0.1 ohms has a full-
 scale
 deflection of 50 mA. Determine the
@@ -1685,30 +1575,6 @@ compass needle will",Settle in any direction,"Settle in a fixed direction only i
 conductor PQ is a magnetic material","Settle in a fixed direction whether
 conductor PQ is a magnetic material or
 not",Be stationary.,,,
-JAMB,Physics,1989,"A radioactive substance has a half-life of 2 years.
-If the initial mass is 40g, which of the following
-rows correctly gives the mass of substance left at
-the times stated?
-2Years
-3year
-4Years
-5Years
-A
-20g
-10g
-B
-30g
-20g
-10g
-0g
-C
-30g
-20g
-15g
-D
-20g
-10g
-0g",,,,,,,
 JAMB,Physics,1989,"When a radiation strikes a metal surface, electrons
 may be ejected from the metal. The maximum kinetic
 energy which may be acquired by an ejected
@@ -1851,8 +1717,6 @@ JAMB,Physics,1990,"A boy looks at the image of an object in a plane
 mirror. He observes two images, a main bright one
 and the other faint. The observed images result
 from",Reflection only,Refraction only,Diffraction and interference,Reflection and infraction.,,,
-JAMB,Physics,1990,"Which of the following diagrams correctly illustrates
-the path of a ray light through a glass prism?",,,,,,,
 JAMB,Physics,1990,"What must be the distance between an object
 and a converging lens of focal length 20cm to
 produce an erect image two times the object
@@ -1901,13 +1765,6 @@ balance point is found to be 55.0cm. what is the
 value of the unknown resistor?",1.10 Ohms,1.64 Ohms,2.44 Ohms,27.50 Ohms,,,
 JAMB,Physics,1990,"The total energy required to send a unit positive
 charge round a complete electrical circuit is the",Kinetic energy,Potential difference,Electromotive force,Electrical energy,,,
-JAMB,Physics,1990,"Which of the following graphs of current against
-voltage illustrates Ohm’s law?
-v
-v I
-I v
-v I
-I",,,,,,,
 JAMB,Physics,1990,"Which of the following is an essential physical
 property of the wires used for making fuses?",Low density,High thermal conductivity,Low electrical resistivity,Low melting point.,,,
 JAMB,Physics,1990,"Which of the following is most suitable for
@@ -1936,11 +1793,6 @@ secondary coils should be minimum.",,,
 JAMB,Physics,1990,"A substance has a half life of 3 min. after 6 min, the
 count rate was observed to be 400. What was its
 count rate at zero time?",200,1 200,1 600,2 400,,,
-JAMB,Physics,1990,"Which of the following graphs represents a voltage
-current characteristics curve for a diode?",,,,,,,
-JAMB,Physics,1990,The photocell works on the principle of the,Voltaic cell,"Emission of electrons by incident
-radiation","Emission of protons by incident
-electrons.",,,,
 JAMB,Physics,1991,"D.
 Photographic plate. 1.
 Which of the following is the most suitable for use
@@ -2001,22 +1853,11 @@ JAMB,Physics,1991,"A thermometer with an arbitrary scale, S, of equal
 divisions registers –300S at the ice point and +900S
 at the steam point. Calculate the Celsius
 temperature corresponding to 600S.",25.00C,50.00C,66.70C,75.00C,,,
-JAMB,Physics,1991,"A brass rod is 2m long at a certain temperature.
-What is the length for a temperature rise of 100K,
-if the expansivity of brass is 18 x 10-6 K-1?",2.0036m,"2.0018m
-B.
-2.1800m",,2.0360m,,,
 JAMB,Physics,1991,"What is the difference in the amount of heat given
 out by 4kg of steam and 4kg of water when both
 are cooled from 1000C to 800C?
 [The specific latent heat of steam is 2,260,000J kg1,
 specific heat capacity of water is 4200J kg-1 K-1]","4,200J","2,260,000J","9,040,000J","9,380,000J",,,
-JAMB,Physics,1991,"The graphs below show the variation of volume
-(V) against temperature (T) in Kelvin for a given
-mass of gas at constant pressure. Which of the
-graphs depicts the behaviour of an ideal gas? V V T T V
-V T
-T",,,,,,,
 JAMB,Physics,1991,"How long does it take a 750-W heater to rise the
 temperature of 1kg to water from 200C to 500C?
 [Specific heat capacity of water = 4200J kg-1 K-1]",84s,112s,168s,280s,,,
@@ -2297,18 +2138,6 @@ the resistance","Directly proportional to the current, resistance
 and the time.","Inversely proportional to the square of the
 resistance, current and the time.","Directly proportional to the square of the
 current, the resistance and the time.",,,
-JAMB,Physics,1992,"PQRS is a rectangular cell with PQ perpendicular
-to the magnetic field as shown in the diagram. If a
-current flows in the direction PQRS, in what
-direction will the coil move?
-a.
-Upwards
-b.
-Downwards
-c.
-Towards the north pole
-d.
-Towards the south pole.",,,,,,,
 JAMB,Physics,1992,"The maximum permissible current through a
 galvanometer G of internal resistance 10Ù is 0.05A.
 A resistance R is used to convert G into a voltmeter
@@ -2319,9 +2148,6 @@ impedance, r.m.s. voltage and resonance frequency
 are respectively equal to","Volt, ampere and hertz","Ohm, volt and hertz","Watt, ohm and radian","Ohm, hertz and joule.",,,
 JAMB,Physics,1992,"In A.C. circuit theory, the root mean square (r.m.s.)
 current, Irms, and the peak (maximum) current I0 are related by",I0 = Irms/ 2,Irms = I0/ 2,Irms = 1/ I0 2,I0 = 1/Irms 2,,,
-JAMB,Physics,1992,"Which of the following graphs correctly illustrates
-the number of remaining atoms during a radioactive
-decay.",,,,,,,
 JAMB,Physics,1992,"The threshold frequency for photoelectric effect
 depends on the",Intensity of incident light,Frequency of incident light,Material of the photocathode,"Potential difference between the cathode
 and the mode",,,
@@ -2374,10 +2200,6 @@ filled with a liquid of density 1000 kgm-3 and sealed.
 What is the maximum pressure this contain can
 exert on a flat surface?
 [g = 10 ms-2]",9 x 104 Nm-2,4 x 104 Nm-2,3 x 104 Nm-2,2 x 104 Nm-2,,,
-JAMB,Physics,1993,"In the figure above the weight X is held in position
-by pulling the rope KLM in the direction LM.
-Which of the following diagrams shows the force
-acting at point L",,,,,,,
 JAMB,Physics,1993,"In the diagram above, a lever of length 200m is
 used to lift a load of mass 180kg. The pivot at P is
 120m from the load. What minimum force, F1 must
@@ -2395,9 +2217,6 @@ JAMB,Physics,1993,"When the volume of a given mass of gas in halved
 and its temperature doubled, the pressure",Remains constant,Increases by a factor of 4,Increases by a factor of 3,Decreases by a factor of 4,,,
 JAMB,Physics,1993,"200g of water at 900C is mixed with 100g of water at
 300C. What is the final temperature?",500C,600C,700C,800C,,,
-JAMB,Physics,1993,"A block of ice at 00C is put in an open vessel and
-heated uniformly until half the water boils off. Which of the following graphs best illustrates the
-change in temperature during the process?",,,,,,,
 JAMB,Physics,1993,"The melting point of a solid is given at 800C. if 105J
 of heat energy is required at this temperature to
 melt 10g of the solid, the specific latent heat of
@@ -2414,10 +2233,6 @@ JAMB,Physics,1993,"Radio waves emitted from an antenna are picked
 up by a radar after reflection from an aircraft in 4 x
 10-ss. How far is the aircraft from the antenna?
 [c = 3 x 108 ms-1]",6.0 x 102 km,1.2 x 103 km,3.0 x 103 km,6.0 x 105 km,,,
-JAMB,Physics,1993,"The fundamental frequency of vibration (f) of a
-wire is measured as a function of the tension (T) in
-the wire. Which of the following curves adequately
-represents the data?",,,,,,,
 JAMB,Physics,1993,"Two mirrors, M1, M2 are inclined at right angles as
 shown above. Calculate the angle of reflection of
 the ray of light at mirror M2.",300,450,600,900,,,
@@ -2464,11 +2279,6 @@ sunlight.",I only,II only,I and III only,II and III only.,,,
 JAMB,Physics,1993,"A field that results from the contact of a positively
 charged ball with the inner wall of an uncharged
 hollow conducting sphere is",Inside the sphere,On the surface of the ball,Inside and outside the sphere,Outside the sphere.,,,
-JAMB,Physics,1993,"A horizontal component of the earth’s magnetic
-field and the magnetic field of a straight wire X
-carries current into the plane of a paper. Which of
-the following figures correctly illustrates the resultant magnetic field pattern in the horizontal
-plane?",,,,,,,
 JAMB,Physics,1993,"Which of the following correctly explain(s) why
 soft iron is preferred to steel in electromagnets?
 I
@@ -2570,9 +2380,6 @@ momentum varies","The linear momentum is constant but the
 energy varies.","Both energy and linear momentum are
 constant.","The speed and the linear velocity are both
 constant.",,,
-JAMB,Physics,1994,"A stone thrown vertically upwards returns to the
-ground. Which of the following figures represents
-the velocity-time graph?",,,,,,,
 JAMB,Physics,1994,"The diagram above shows a uniform wood of
 weight 200 N and length 50 m. it is pivoted at one
 end and suspended by a cord at the other end at
@@ -2589,9 +2396,6 @@ if the coefficient of friction is 0.2",400.0 N,40.0 N,4.0 N,0.4 N,,,
 JAMB,Physics,1994,"Calculate the velocity ratio of a screw jack of pitch
 0.3 cm if the length of the tommy bar is 21 cm.","1
 140",14,70,140,,,
-JAMB,Physics,1994,"Which of the following graphs correctly represents
-the relationship between the load and the velocity
-ratio of a machine?",,,,,,,
 JAMB,Physics,1994,"A spring of length 25 cm is extended to 30 cm by a
 load of 150 N attached to one of its ends. What is
 the energy stored in the spring?",3750 J,2500 J,3.75 J,2.50 J,,,
@@ -2635,9 +2439,6 @@ JAMB,Physics,1994,"When 100 g of liquid L1 at 78oC was mixed Xg of
 liquid L2 at 50oC, the final temperature was 66oC.
 Given that the specific heat capacity of L2 is half
 that of L1, find X.",50 g,100 g,150 g,200 g,,,
-JAMB,Physics,1994,"A volume of water is heated from 0oC to 15oC. Which
-of the following diagrams correctly represents the
-variation of the volume with temperature? .",,,,,,,
 JAMB,Physics,1994,"Heat is supplied to a test tube containing 100 g of
 ice at its melting point. The ice melts completely in
 1 min. what is the power rating of the source of
@@ -2645,14 +2446,6 @@ heat?",336 W,450 W,560 W,"600 W
 (Latent heat of fusion of ice = 336 Jg-1)",,,
 JAMB,Physics,1994,"If a room is saturated with water vapour, the
 temperature of the room must be",at 00C,above the dew point,at 1000C,below or at the dew point.,,,
-JAMB,Physics,1994,"Which of the following graphs represents the
-variation of pressure P against volume V at
-constant temperature?",,,,,,,
-JAMB,Physics,1994,"Two similar kettles containing equal masses of
-boiling water are placed on a table. If the surface
-of one is highly polished and the surface of the
-other is covered with soot, which of the following
-observations is correct?",,,,,,,
 JAMB,Physics,1994,"The equation of a transverse wave traveling along
 a string is given by y = 0.3 sin (0.5x – 50t) where y
 and x are in cm and t is in seconds. Find the
@@ -2692,9 +2485,6 @@ distance u, is such that",u > 2ƒ > ƒ,u < ƒ < 2ƒ,u = ƒ < 2ƒ,ƒ < u < 2ƒ,,,
 JAMB,Physics,1994,"If the Nigerian flag (green, white, green) is viewed
 in pure yellow light, which of the following set of
 colours would be observed on the flag?","Green, yellow, green","Red, yellow, red.","Black, yellow, black.","Green, white, green.",,,
-JAMB,Physics,1994,"Which of the figures below illustrates the
-dispersion of white light through a triangular glass
-prism?",,,,,,,
 JAMB,Physics,1994,"Which of the following has the lowest internal
 resistance when new?",Leclanche cell.,Daniel cell.,Accumulator,Torch battery.,,,
 JAMB,Physics,1994,"When biro pen rubbed on a dry silk cloth is moved
@@ -2752,9 +2542,6 @@ relationship between the vectors?",P = Q + R,P = Q – R,P = R – Q,P + Q + R =
 JAMB,Physics,1995,The value of T in the figure above is,10.0 N,11.8 N,20.0 N,40.0 N,,,
 JAMB,Physics,1995,"When a ball rolls on a smooth level ground, the
 motion of its centre is",Translational,Oscillatory,Random,Rotational,,,
-JAMB,Physics,1995,"The velocity-time graph of a body moving in a
-straight line and decelerating uniformly to rest is
-represented by",,,,,,,
 JAMB,Physics,1995,The acceleration of the system shown above is,2 ms-2,4 ms-2,6 ms-2,8 ms-2,,,
 JAMB,Physics,1995,"What is the acceleration due to gravity ‘g’ on the
 moon, if g is 10ms-2 on the earth?",0.10 ms-2,0.74 ms-2,1.67 ms-2,10.00 ms-2,,,
@@ -2779,21 +2566,8 @@ The frictional force between the box and the floor
 is 100N and the tension on the rope is 300N. How
 much work is done in dragging the box through a
 distance of 4m?",680 J,400 J,200 J,100 J,,,
-JAMB,Physics,1995,"Which of the following statements are TRUE about
-frictional force?
-I
-It is always a disadvantage
-II
-It is sometimes a disadvantage
-III
-It always exists where there is a relative
-motion of two bodies that are in contact.
-IV
-It is sometimes very useful.",,,,,,,
 JAMB,Physics,1995,"The energy contained in a wire when it is extended
 by 0.02m by a force of 500 N is",5 J,10 J,103 J,104 J,,,
-JAMB,Physics,1995,"Which of the following levers has the greatest
-mechanical advantage?",,,,,,,
 JAMB,Physics,1995,"A hydraulic press has a large circular piston of
 radius 0.8m and a circular plunger of radiu 0.2m. A
 force of 500N is exerted by the plunger. Find the
@@ -2833,23 +2607,6 @@ JAMB,Physics,1995,"A quantity of ice at -100C is heated until the
 temperature of the heating vessel is 900C. Which
 of the following constant is NOT required to the
 vessel?",Specific heat capacity of ice,Specific heat capacity of water,Specific latent heat of fusion,Specific latent heat of vaporization.,,,
-JAMB,Physics,1995,"Which of the following statements give ‘the TRUE
-differences between evaporation and boiling
-I
-Evaporation occurs at all temperatures
-while boiling occurs at a fixed temperature
-for a given pressure.
-II
-Evaporation is a surface phenomenon
-while boiling is an interior phenomenon.
-III
-Evaporation is affected by surface areas
-which boiling is not. B.
-I and III only
-C.
-II and III only
-D.
-I, II and III.",,,,,,,
 JAMB,Physics,1995,"A well=lagged bar of length 100cm has its ends
 maintained at 1000C and 400C respectively. What
 is the temperature at a point 60cm from the hotter
@@ -2863,17 +2620,12 @@ JAMB,Physics,1995,"The difference between sound waves and light
 waves is that sound waves","Are transverse while light waves are
 longitudinal.","Require a medium to travel while light
 waves do not.",Can be diffracted but light waves cannot,Cannot be reflected but light waves can.,,,
-JAMB,Physics,1995,"Which of the diagrams below represents the
-second overtone of a vibrating string fixed at both
-ends?",,,,,,,
 JAMB,Physics,1995,"The pitch of an acoustic device can be increased
 by",Increasing the frequency,Increasing the amplitude,Decreasing the loudness,Decreasing the intensity,,,
 JAMB,Physics,1995,Total eclipse of the sun occurs when the,Earth is between the moon and the sun,Sun is between the moon and the earth,Moon is between the sun and the earth,Ozone layer is threatened,,,
 JAMB,Physics,1995,"What is the approximate critical angle for total
 internal reflection for diamond if the refractive
 index of diamond is 2.42?",210,220,230,240,,,
-JAMB,Physics,1995,"Which of the graphs represents the relationship
-between m and v for a converging mirror?",,,,,,,
 JAMB,Physics,1995,"A real object is placed at a distance u cm in front of
 a curved mirror of focal length fcm. If the image is
 upright and magnified, then the mirror is",Convex and u = 2f,"Concave and u= 2f
@@ -3029,8 +2781,6 @@ constant and the volume decreases.","Latent heat is given out, the mass
 increases and the volume remains
 constant.","Latent heat is absorbed, the mass
 decreases and the volume increases.",,,
-JAMB,Physics,1997,"The correct cooling curve for a molten substance
-such as naphthalene is represented by",Temp. oC Time (min),Temp. oC Time (min),Temp. oC Time (min),,,,
 JAMB,Physics,1997,"What happens when a gas expands at a constant
 temperature?",It pressure decreases.,"The total momentum of its molecules
 remains constant.","Its pressure decreases and the total
@@ -3080,24 +2830,6 @@ temperature changes are",X-rays,gamma-rays,ultra-violet rays,infra-red rays.,,,
 JAMB,Physics,1997,"In the diagram above, which of the anglesQ1, Q2,
 Q3, and Q4 is the angle of deviation of a ray of light
 through the glass prism, XYZ?",Q3,Q2,Q1,Q4,,,
-JAMB,Physics,1997,"Which of the figures below showed the correct
-distribution of charges on an isolated positively
-charged hollow metal?",,,"+
-+ +
-+ + +
-+ + + + + + + + + + +
-+
-+ +
-+ + + + +
-+ +
-++
-++
-+++
-+","+
-+ + +
-+
-+ +
-+",,,
 JAMB,Physics,1997,"Three electric cells each of e.m.f. 1.5V and internal
 resistance 1.0 Ohms are connected in parallel
 across an external resistance of T Ohms!. Calculate
@@ -3113,12 +2845,6 @@ if",4.0 X 102 V,4.0 X 104 V,8.0 X 102 V,8.0 X 104 V,,,
 JAMB,Physics,1997,"In a metre bridge experiment, two resistors 2 &!
 and 3 Ohms occupy the left and right gaps respectively. Find the balance point from the left
 side of the bridge.",20 cm,40 cm,60 cm,80 cm,,,
-JAMB,Physics,1997,"Two 50 uF parallel plate capacitors are connected
-in series. The combined capacitor is then
-connected across a 100-V battery. The charge on
-each plate of the capacitor is",5.00 X 10-5,"2.50 X 10-3 C
-C.
-1.25 X 10-3 C",,1.00 X 10-2 C,,,
 JAMB,Physics,1997,"What is the total electrical energy consumed by
 using an electric cooker rated 1000 W for 5 hrs?",5.3 X 103 J,6.5 X 103 J,1.8 X 107 J,2.3 X 107 J,,,
 JAMB,Physics,1997,"The power dissipated in an a.c. circuit with an
@@ -3266,10 +2992,6 @@ construction of a searchlight is the",Concave mirror,Convex mirror,Spherical mir
 JAMB,Physics,1998,"The displacement d produced in a glass block of
 thickness t and refractive index n when an object
 is viewed through it is",t – n,t(1 + 1/n),t(1 – 1/n),t(1/n – 1),,,
-JAMB,Physics,1998,"The correct shape of the graph of uv against
-(u + v) for an object distance u and image distance
-v in n experiment to find the focal length of a convex
-lens is given as",,,,,,,
 JAMB,Physics,1998,"A man wears convex lens glasses of focal length
 30cm in order to correct his eye defect. Instead of
 the optimum 25cm, his least distance of distinct
@@ -3292,9 +3014,6 @@ JAMB,Physics,1998,"An ebonite rod rubbed with fur attracts a glass
 rod rubbed with silk because","Ebonite has a negative charge while glass has
 a positive charge","Ebonite has a positive charge while glass has
 a negative charge",Both have negative charges,Both have positive charges.,,,
-JAMB,Physics,1998,"Which of the following diagrams show the
-correction of the magnetic lines of force of a vertical
-wire XY carrying a current I?",,,,,,,
 JAMB,Physics,1998,"Which of the following can be used to reduce local
 action in a Leclanche cell?",A carbon rod as the positive pole.,Pure zinc as the negative pole.,"Potassium permanganate solution in
 contact with the positive pole.",Common salt solution.,,,
@@ -3679,11 +3398,6 @@ stores in P and Q respectively.",200 uC and 100 uC,100 uC and 200 uC,4 uC and 2 
 JAMB,Physics,2000,"What optical instrument can best be constructed
 with converging lenses of focal lengths 500cm and
 5cm?",Compound microscope,Terrestrial telescope,Astronomical telescope,Galileo’s telescope,,,
-JAMB,Physics,2000,"If a charged ion goes through combined electric
-and magnetic fields, the resultant emergent
-velocity of the ion is",,"B.
-EB","B
-E",E – B,,,
 JAMB,Physics,2000,"In the diagram above, the values of V1 and V2 are
 respectively","1V and 1 V
 3","1 V and 1V
@@ -3799,21 +3513,6 @@ Find the image distance behind the mirror.",8,4,9,"4
 9
 2
 7",,,
-JAMB,Physics,2001,"If a ray traveling in air is incident on a transparent
-medium as shown in the diagram, the refractive
-index of the medium is given as",Cos&,"Sin&
-Sin B SinB",Cos B,"SinB
-Sin &
-Sin& The pressure of a mass of a gas changes from 300Nm-2 to
-120Nm-2 while the temperature drops from 1270C to -73oc.
-The ratio of the final volume to the initial volume is A.
-2 : 5
-B.
-5 ; 4
-C.
-5 ; 2
-D.
-4 ; 5",,,
 JAMB,Physics,2001,The pressure of a mass of a gas changes from 300Nm-2 to 120Nm-2 while the temperature drops from 1270C to -73oC. The ratio of the final volume to the initial volume is,2 : 5,5 : 4,5 : 2,4 : 5,,,
 JAMB,Physics,2001,"A plane sound wave of frequency 85.5 Hz and
 velocity 342 ms-1 is reflected from a vertical wall. At what distance from the wall does the wave have
@@ -3847,17 +3546,6 @@ the electric field created by the storm is",2.0 x 106NC-1,2.5 x 106NC-1,1.0 x 10
 JAMB,Physics,2001,"A working electric motor takes a current of 1.5A
 when the p.d. across it is 250V. If its efficiency is
 80%, the power output is",300.0W,469.0W,133.0W,4.8W,,,
-JAMB,Physics,2001,"The cost of running five 60 W lamps and four 100W
-lamps for 20 hours if electrical energy costs N10.00
-per kWh is
-A
-N 280.00
-B.
-N 160.00
-C.
-N 120.00
-D.
-N 140.00",,,,,,,
 JAMB,Physics,2001,"In a Daniel cell, the depolarize, positive and
 negative electrodes are respectively","Copper sulphate, copper and zinc","Manganese dioxide, carbon and zinc","Sulphuric aicd, lead oxide and lead","Potassium hydroxide, nickel and iron",,,
 JAMB,Physics,2001,"The diagram above shows a closed square box of
@@ -3881,10 +3569,6 @@ JAMB,Physics,2001,What is the angle of dip at the magnetic equator?,450,00,900,1
 JAMB,Physics,2001,"A cell can supply currents of 0.4A and 0.2A through
 a 4.0 Ohms and 10.0 Ohms resistors respectively.
 The internal resistance of the cell is",2.0 Ohms,1.0 Ohms,2.5 Ohms,1.5 Ohms,,,
-JAMB,Physics,2001,"Which of the following graphs correctly represents
-the variation of mass of a given material deposited
-with time for constant current in Faraday’s law of
-electrolysis?",,,,,,,
 JAMB,Physics,2001,"In the diagram above, determine the r.m.s. current",31A,48A,60A,80A,,,
 JAMB,Physics,2001,"The particle emitted when 3
 1
@@ -3893,10 +3577,6 @@ JAMB,Physics,2001,"The particle emitted when 3
 1
 9
 9K is",Gamma,Beta,Electron,Alpha,,,
-JAMB,Physics,2001,"The current through a resistor in a.c. circuit is given
-as 2 sin wt. Determine the d.c. equivalent of the
-current","1 . A
-2",2 2 A,2 A,,2 A,,
 JAMB,Physics,2001,"I
 Low pressure
 II
@@ -3933,13 +3613,6 @@ with velocity v is","Proportional to both the magnitude of the
 charge and the velocity","Independent of the magnitude of the
 charge",Proportional to the velocity v only,"Proportional to the magnitude of the
 charge only.",,,
-JAMB,Physics,2002,"Which of the following is the correct shape of the
-velocity-time graph of a spherical steel ball dropped
-into a viscous fluid in a tall cylinder? m/s
-V m/s V t(s) t(s) V
-V m/s
-m/s t(s)
-t(s)",,,,,,,
 JAMB,Physics,2002,"A particle in circular motion performs 30 oscillations
 in 6 seconds. Its angular velocity is",6 rad s-1,5 rad s-1,10 rad s-1,5 rad s-1,,,
 JAMB,Physics,2002,"A copper cube weights 0.25N in air, 0.17N when
@@ -4084,15 +3757,10 @@ by adding a controlled amount of",Pentavalent atoms,Trivalent atoms,Hexavalent a
 JAMB,Physics,2002,"From the generating station to each substation
 power is transmitted at a very high voltage so as
 to reduce",Heating in the coils,Magnetic flux leakage,Hysteresis loss,Eddy current loss.,,,
-JAMB,Physics,2002,"Which of the following graphs shows the correct
-vector diagram for the circuit above?",,,,,,,
 JAMB,Physics,2002,"The energy associated with the photon of a radio
 transmission at 3 x 105 Hz is",2.00 x 10-29 J,2.00 x 10-28 J,1.30 x 10-29 J,1.30 x 10-28 J,,,
 JAMB,Physics,2002,"The carbon-granule microphone works on the
 principle of change in",Capacitance,Voltage,Inductance,Resistance,,,
-JAMB,Physics,2003,". 1. The figure above shows two velocities v1 and v2.
-Which of the following diagrams correctly
-represents the vector difference w = v1 – v2?",,,,,,,
 JAMB,Physics,2003,"If an object just begins to slide on a surface inclined
 at 300 to the horizontal, the coefficient of friction is","1
 3","1
@@ -4133,11 +3801,6 @@ JAMB,Physics,2003,"A hose of cross-sectional area 0.5m2 is used to
 discharge water from a water thank at a velocity of
 60ms-1 in 20s into a container. If the container is
 filled completely, the volume of the container is",600 m3,6 000 m3,240 m3,2 400 m3,,,
-JAMB,Physics,2003,"A force of 100N is used to kick a football of mass
-0.8kg. Find the velocity with which the ball moves
-if it takes 0.8s to be kicked.",100ms-1,32ms-1,"50ms-1
-C.
-64ms-1",,,,
 JAMB,Physics,2003,"The phenomenon whereby the water droplets in
 the atmosphere combine with dust particles in the
 air to reduce visibility is",Fog,Hail,Mist,Cloud,,,
@@ -4231,11 +3894,6 @@ angle through which the ray is minimally deviated
 in the prism.",37.20,48.60,30.00,42.00,,,
 JAMB,Physics,2003,"The most suitable cell used for short interval
 switches in electric bells is a",Nickel iron accumulator,Lead-acid accumulator,Daniel cell,Leclanche cell,,,
-JAMB,Physics,2003,"An electron of charge 1.6 x 10-19C is accelerated
-between two metal plates. If the kinetic energy of
-the electron is 4.8 x 10-17J, the potential difference
-between the plates is",300V,"30V
-C.400V",,40V,,,
 JAMB,Physics,2003,"A magnetic field is said to exist at a point if a force
 is",Deflection at the point,Strengthened at the point,Exerted on a moving charge at the point,"Exerted on a stationary charged at the
 point",,,
@@ -4290,16 +3948,6 @@ stopping potential",1.09V,2.17V,0.34V,1.49V,,,
 JAMB,Physics,2003,"The force on a charge moving with velocity v in a
 magnetic field B is half of the maximum force when
 the angle between v and B is",00,900,450,300,,,
-JAMB,Physics,2003,"The count rate of a radioactive material is 800
-count/min. If the half-life of the material is 4 days,
-what would the count rate be 16 days later?",50 count/min,"25/ count/min
-B.
-200 count/min",,100 count/min.,,,
-JAMB,Physics,2004,"PHYSICS 2004
-TYPE: S 1. The refractive index of the medium M in the
-diagram above is
-A 2 B. 1 C. 2 3 D. 3
-3 3",,,,,,,
 JAMB,Physics,2004,"What types of mirrors are capable of producing
 parallel beams of light such as those arising from
 the headlamps of a car?",Cylindrical mirrors,B. Parabolic mirrors.,C. spherical mirrors,Plane mirrors.,,,
@@ -4407,9 +4055,6 @@ what is the amount of force required to stretch the
 same material from 20m to 20.05m?",100N,50N,250N,200N,,,
 JAMB,Physics,2004,"Tea pots are often silver-coated to prevent hear
 loss by",Convection and conduction,Radiation only,Conduction only,Convection only.,,,
-JAMB,Physics,2004,"The phase difference between waves P and Q in
-the diagram above is",,"2
-2",,4,,,
 JAMB,Physics,2004,"Metal rods of length 20cm each are laid end to end
 to form a bridge at 250C. What gap will be provided
 between consecutive rails for the bridge to
