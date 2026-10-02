@@ -41,23 +41,31 @@ const staticAllowedSet = new Set([...envOrigins, ...defaultAllowedOrigins]);
 const isOriginAllowed = (origin?: string): boolean => {
   // Allow non-browser requests (mobile apps, Postman, server-to-server, curl)
   if (!origin) return true;
-  // Allow all origins during development and testing
+
+  // Development/Test fallback
   if (process.env.NODE_ENV !== 'production') return true;
+
   // Match explicit list
   if (staticAllowedSet.has(origin)) return true;
 
   try {
     const parsed = new URL(origin);
-    // Allow preplyx.com.ng and any subdomain (dash.preplyx.com.ng, etc.)
-    if (parsed.hostname === 'preplyx.com.ng' || parsed.hostname.endsWith('.preplyx.com.ng')) {
+    const hostname = parsed.hostname.toLowerCase();
+
+    // Allow preplyx.com.ng and any subdomain (dash.preplyx.com.ng, admin.preplyx.com.ng, etc.)
+    if (hostname === 'preplyx.com.ng' || hostname.endsWith('.preplyx.com.ng')) {
       return true;
     }
-    // Allow Vercel preview environments
-    if (parsed.hostname.endsWith('.vercel.app')) {
+    // Allow Vercel preview & production environments
+    if (hostname.endsWith('.vercel.app')) {
+      return true;
+    }
+    // Allow Netlify & Render
+    if (hostname.endsWith('.netlify.app') || hostname.endsWith('.onrender.com')) {
       return true;
     }
     // Allow localhost on any port in case of alternative port usage
-    if (parsed.hostname === 'localhost' || parsed.hostname === '127.0.0.1') {
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
       return true;
     }
   } catch {
@@ -77,9 +85,18 @@ const corsOptions: cors.CorsOptions = {
     }
   },
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
+  methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
+  allowedHeaders: [
+    'Content-Type',
+    'Authorization',
+    'X-Requested-With',
+    'Accept',
+    'Origin',
+    'Access-Control-Request-Method',
+    'Access-Control-Request-Headers',
+  ],
   exposedHeaders: ['Set-Cookie'],
+  maxAge: 86400,
   optionsSuccessStatus: 200,
 };
 

@@ -73,6 +73,11 @@ export const createRateLimiter = (options: RateLimitOptions) => {
       return next();
     }
 
+    // Never rate limit OPTIONS preflight requests
+    if (req.method === 'OPTIONS') {
+      return next();
+    }
+
     const key = `ratelimit:${keyGenerator(req)}`;
     const now = Date.now();
 
