@@ -2,15 +2,16 @@ import { useState, useEffect } from 'react';
 import { 
   Moon, Sun, Bell, Globe, Shield, Lock, User, Palette, BookOpen, 
   Volume2, VolumeX, Save, CheckCircle2, RefreshCw, X, ShieldCheck, 
-  SlidersHorizontal, Building2, Key, ChevronRight, Sparkles, Smartphone, Mail, Play
+  SlidersHorizontal, Building2, Key, ChevronRight, Sparkles, Smartphone, Mail, Play, WifiOff
 } from 'lucide-react';
 import { api } from '../lib/api';
 import { useAuth } from '../context/AuthContext';
 import { getStoredSettings, saveStoredSettings } from '../lib/storage';
 import { testSound, isSoundEnabled, setSoundEnabled } from '../lib/soundEffects';
+import OfflineDownloadManager from '../components/OfflineDownloadManager';
 
 export default function Settings() {
-  const [activeTab, setActiveTab] = useState<'appearance' | 'exam' | 'notifications' | 'account'>('appearance');
+  const [activeTab, setActiveTab] = useState<'appearance' | 'exam' | 'notifications' | 'account' | 'offline'>('appearance');
 
   // Form & Setting states initialized from local storage
   const stored = getStoredSettings();
@@ -269,6 +270,24 @@ export default function Settings() {
               <span>Account & Security</span>
             </div>
             <ChevronRight size={15} opacity={activeTab === 'account' ? 1 : 0.4} />
+          </button>
+
+          <button
+            onClick={() => setActiveTab('offline')}
+            style={{
+              padding: '12px 14px', borderRadius: '12px', border: 'none',
+              fontSize: '13px', fontWeight: 700, cursor: 'pointer', textAlign: 'left',
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              backgroundColor: activeTab === 'offline' ? 'rgba(123, 47, 247, 0.08)' : 'transparent',
+              color: activeTab === 'offline' ? '#7B2FF7' : '#475569',
+              transition: 'all 0.15s ease'
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <WifiOff size={18} color={activeTab === 'offline' ? '#7B2FF7' : '#64748b'} />
+              <span>Offline Downloads</span>
+            </div>
+            <ChevronRight size={15} opacity={activeTab === 'offline' ? 1 : 0.4} />
           </button>
         </div>
 
@@ -635,7 +654,15 @@ export default function Settings() {
             </div>
           )}
 
-
+          {/* TAB 5: OFFLINE DOWNLOADS */}
+          {activeTab === 'offline' && (
+            <div style={{
+              backgroundColor: '#ffffff', borderRadius: '22px', padding: '26px',
+              border: '1px solid var(--glass-border)', boxShadow: 'var(--shadow-soft)'
+            }}>
+              <OfflineDownloadManager />
+            </div>
+          )}
 
         </div>
 

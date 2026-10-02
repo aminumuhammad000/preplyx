@@ -4,8 +4,9 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Download, Wifi, WifiOff, Trash2, CheckCircle, RefreshCw, CloudOff } from 'lucide-react';
-import { listQuestionSets, deleteQuestionSet } from '@/lib/offlineDB';
+import { useNavigate } from 'react-router-dom';
+import { Download, Wifi, WifiOff, Trash2, CheckCircle, RefreshCw, CloudOff, Play } from 'lucide-react';
+import { listQuestionSets, deleteQuestionSet, saveQuestionSet } from '@/lib/offlineDB';
 import type { OfflineQuestionSet } from '@/lib/offlineDB';
 import { api } from '@/lib/api';
 import { useAuth } from '@/context/AuthContext';
@@ -38,6 +39,7 @@ function timeAgo(ts: number) {
 }
 
 export default function OfflineDownloadManager() {
+  const navigate = useNavigate();
   const { token } = useAuth();
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [saved, setSaved] = useState<Record<string, OfflineQuestionSet>>({});
@@ -73,7 +75,6 @@ export default function OfflineDownloadManager() {
       const questions = await api.getQuestions({ exam, subject, year, limit: 50 }, token || undefined);
       if (!questions || questions.length === 0) throw new Error('No questions returned');
 
-      const { saveQuestionSet } = await import('@/lib/offlineDB');
       await saveQuestionSet({
         setId: id,
         exam,
@@ -213,21 +214,34 @@ export default function OfflineDownloadManager() {
                   {isSaved ? (
                     <>
                       <button
+                        onClick={() => navigate(`/dashboard/practice/${encodeURIComponent(exam)}/${encodeURIComponent(subject)}?year=${encodeURIComponent(year)}`)}
+                        style={{
+                          flex: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
+                          padding: '7px 12px', borderRadius: 8, border: 'none',
+                          background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+                          color: '#ffffff', cursor: 'pointer', fontSize: 12, fontWeight: 700,
+                          boxShadow: '0 2px 8px rgba(16, 185, 129, 0.25)'
+                        }}
+                      >
+                        <Play size={12} fill="#ffffff" />
+                        Practice Now
+                      </button>
+                      <button
                         onClick={() => handleDownload(exam, subject, year)}
                         disabled={isDownloading || !isOnline}
+                        title="Refresh question set"
                         style={{
-                          flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5,
-                          padding: '7px', borderRadius: 8, border: '1px solid var(--glass-border)',
+                          padding: '7px 10px', borderRadius: 8, border: '1px solid var(--glass-border)',
                           background: 'transparent', cursor: isOnline ? 'pointer' : 'not-allowed',
-                          fontSize: 12, fontWeight: 600, color: 'var(--color-text-main)', opacity: isOnline ? 1 : 0.5
+                          fontSize: 12, fontWeight: 600, color: 'var(--color-text-main)', opacity: isOnline ? 1 : 0.4
                         }}
                       >
                         {isDownloading ? <RefreshCw size={12} className="um-spin" /> : <RefreshCw size={12} />}
-                        Refresh
                       </button>
                       <button
                         onClick={() => handleDelete(exam, subject, year)}
                         disabled={isDeletingNow}
+                        title="Delete offline set"
                         style={{
                           padding: '7px 10px', borderRadius: 8,
                           border: '1px solid rgba(239,68,68,0.3)',

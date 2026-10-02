@@ -43,6 +43,9 @@ export interface Question {
   options: string[];
   correctAnswer: string;
   explanation?: string;
+  topic?: string;
+  subtopic?: string;
+  source?: string;
 }
 
 class ApiClient {

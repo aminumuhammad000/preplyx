@@ -10,6 +10,7 @@
     "test": "ts-node src/tests/runAutomationTests.ts",
     "lint": "eslint src/**/*.ts",
     "clear:questions": "node scripts/clearDemoQuestions.js",
+    "clear:all-data": "node scripts/clear-all-data-except-users.js",
     "validate:questions": "ts-node scripts/validateQuestions.ts"
   },
   "dependencies": {

@@ -17,13 +17,55 @@ const ALOC_KEY  = import.meta.env.VITE_ALOC_API_KEY as string | undefined;
 // Map Preplyx exam names → ALOC examType values
 const EXAM_MAP: Record<string, string> = {
   JAMB:        'jamb',
+  UTME:        'jamb',
   WAEC:        'waec',
+  WASSCE:      'waec',
   NECO:        'neco',
   'POST-UTME': 'post_utme',
+  POSTUTME:    'post_utme',
 };
 
+// Map Preplyx subject names → ALOC canonical subject slugs
+const SUBJECT_MAP: Record<string, string> = {
+  'english language': 'english-language',
+  'english': 'english-language',
+  'use of english': 'english-language',
+  'mathematics': 'mathematics',
+  'general mathematics': 'mathematics',
+  'maths': 'mathematics',
+  'math': 'mathematics',
+  'physics': 'physics',
+  'chemistry': 'chemistry',
+  'biology': 'biology',
+  'economics': 'economics',
+  'commerce': 'commerce',
+  'accounting': 'accounting',
+  'financial accounting': 'accounting',
+  'principles of accounts': 'accounting',
+  'government': 'government',
+  'geography': 'geography',
+  'history': 'history',
+  'literature in english': 'literature-in-english',
+  'literature': 'literature-in-english',
+  'civic education': 'civic-education',
+  'civics': 'civic-education',
+  'christian religious studies': 'christian-religious-studies',
+  'crs': 'christian-religious-studies',
+  'crk': 'christian-religious-studies',
+  'islamic religious studies': 'islamic-religious-studies',
+  'irs': 'islamic-religious-studies',
+  'irk': 'islamic-religious-studies',
+  'insurance': 'insurance',
+  'computer studies': 'computer-studies',
+};
+
+export function mapSubjectToAloc(subject: string): string {
+  const norm = (subject || '').trim().toLowerCase();
+  if (SUBJECT_MAP[norm]) return SUBJECT_MAP[norm];
+  return norm.replace(/\s+/g, '-');
+}
+
 // ── Preplyx Question shape (matches api.ts Question interface) ────────────────
-// We use this type inline to avoid cross-module import conflicts.
 export interface PrepQuestion {
   id?: string;
   exam: string;
@@ -33,16 +75,27 @@ export interface PrepQuestion {
   options: string[];
   correctAnswer: string;
   explanation?: string;
+  topic?: string;
+  subtopic?: string;
+  source?: string;
 }
 
 // ── ALOC Raw Types ────────────────────────────────────────────────────────────
-
 export interface AlocQuestion {
   id: string;
   text?: string;
   questionHtml?: string;
-  options: { a: string; b: string; c?: string; d?: string };
-  correctAnswer: string;  // "a" | "b" | "c" | "d"
+  options: {
+    A?: string;
+    B?: string;
+    C?: string;
+    D?: string;
+    a?: string;
+    b?: string;
+    c?: string;
+    d?: string;
+  };
+  correctAnswer: string;  // "A" | "B" | "C" | "D" or "a" | "b" | "c" | "d"
   examType?: string;
   subject?: string;
   year?: number;
@@ -50,6 +103,14 @@ export interface AlocQuestion {
   topic?: string;
   subtopic?: string;
   difficultyScore?: number;
+  metadata?: {
+    topic?: string;
+    subtopic?: string;
+    difficultyScore?: number;
+    estimatedTime?: number;
+    tags?: string[];
+    conceptSummary?: string;
+  };
 }
 
 export interface AlocExplanation {
@@ -76,43 +137,55 @@ export interface AlocFetchParams {
 
 /**
  * Convert an ALOC question into Preplyx's PrepQuestion shape.
- * Options are returned as a string[] [optA, optB, optC, optD].
- * correctAnswer is the actual option text (not a letter).
+ * Normalizes options (case-insensitive keys) and maps correctAnswer to 'A' | 'B' | 'C' | 'D'.
  */
 export function normalizeAlocQuestion(
   q: AlocQuestion,
   subject: string,
   examType: string
 ): PrepQuestion {
-  // Strip HTML tags from questionHtml fallback
-  const text = q.text || q.questionHtml?.replace(/<[^>]+>/g, '').trim() || '';
+  // Strip HTML tags if questionHtml fallback is used, while preserving readable content
+  const text = (q.text || q.questionHtml || '').replace(/<[^>]+>/g, '').trim();
 
-  const opts = [
-    q.options?.a || '',
-    q.options?.b || '',
-    q.options?.c || '',
-    q.options?.d || '',
-  ].filter(Boolean);
+  // Extract options whether keys are uppercase (A, B, C, D) or lowercase (a, b, c, d)
+  const optA = (q.options as any)?.A ?? (q.options as any)?.a ?? '';
+  const optB = (q.options as any)?.B ?? (q.options as any)?.b ?? '';
+  const optC = (q.options as any)?.C ?? (q.options as any)?.c ?? '';
+  const optD = (q.options as any)?.D ?? (q.options as any)?.d ?? '';
 
-  // Map letter "a"/"b"/"c"/"d" → actual option text
-  const letterMap: Record<string, string> = {
-    a: q.options?.a || '',
-    b: q.options?.b || '',
-    c: q.options?.c || '',
-    d: q.options?.d || '',
-  };
-  const correctLetter = (q.correctAnswer || 'a').toLowerCase().charAt(0);
-  const correctAnswer = letterMap[correctLetter] || q.correctAnswer || '';
+  const opts = [optA, optB, optC, optD];
+
+  // Resolve correct answer letter A, B, C, or D
+  const rawAns = (q.correctAnswer || '').trim();
+  let correctLetter = 'A';
+  if (['A', 'B', 'C', 'D'].includes(rawAns.toUpperCase())) {
+    correctLetter = rawAns.toUpperCase();
+  } else if (optA && rawAns.toLowerCase() === optA.toLowerCase()) {
+    correctLetter = 'A';
+  } else if (optB && rawAns.toLowerCase() === optB.toLowerCase()) {
+    correctLetter = 'B';
+  } else if (optC && rawAns.toLowerCase() === optC.toLowerCase()) {
+    correctLetter = 'C';
+  } else if (optD && rawAns.toLowerCase() === optD.toLowerCase()) {
+    correctLetter = 'D';
+  }
+
+  const topic = q.metadata?.topic || q.topic || 'General';
+  const subtopic = q.metadata?.subtopic || q.subtopic || '';
+  const explanation = q.explanation || q.metadata?.conceptSummary || '';
 
   return {
     id:            q.id,
-    exam:          examType.toUpperCase(),
+    exam:          (q.examType || examType).toUpperCase(),
     subject:       subject,
     year:          q.year ? String(q.year) : undefined,
     text,
     options:       opts,
-    correctAnswer,
-    explanation:   q.explanation || '',
+    correctAnswer: correctLetter,
+    explanation,
+    topic,
+    subtopic,
+    source:        'ALOC_API',
   };
 }
 
@@ -145,35 +218,68 @@ async function alocRequest<T>(path: string, options: RequestInit = {}): Promise<
 
 /**
  * Fetch questions from ALOC L1 endpoint.
- * Costs 1 credit per request.
+ * Gracefully handles missing years/filters by retrying with random=true so real questions always return.
  */
 export async function fetchAlocQuestions(params: AlocFetchParams): Promise<PrepQuestion[]> {
-  const qs = new URLSearchParams();
-
-  const subjectLower = params.subject.toLowerCase();
-  qs.set('subject', subjectLower);
-
+  const alocSubject = mapSubjectToAloc(params.subject);
   const examTypeMapped =
     EXAM_MAP[params.examType?.toUpperCase() ?? ''] ??
     params.examType?.toLowerCase() ??
     'jamb';
-  qs.set('examType', examTypeMapped);
 
-  if (params.year && params.year !== 'All') {
-    qs.set('year', String(params.year));
+  const makeQuery = (includeYear = true, random = false) => {
+    const qs = new URLSearchParams();
+    qs.set('subject', alocSubject);
+    qs.set('examType', examTypeMapped);
+    if (includeYear && params.year && params.year !== 'All') {
+      qs.set('year', String(params.year));
+    }
+    if (random || params.random) {
+      qs.set('random', 'true');
+    }
+    qs.set('limit', String(Math.min(params.limit ?? 40, 50)));
+    if (params.cursor) qs.set('cursor', params.cursor);
+    return qs.toString();
+  };
+
+  try {
+    // Attempt 1: Specific query (with year if specified)
+    const qs1 = makeQuery(true, false);
+    const data = await alocRequest<{ data: AlocQuestion[] }>(`/questions?${qs1}`);
+    if (data.data && data.data.length > 0) {
+      return data.data.map(q => normalizeAlocQuestion(q, params.subject, examTypeMapped));
+    }
+  } catch (err) {
+    console.warn('[ALOC] Attempt 1 failed:', (err as Error).message);
   }
 
-  qs.set('limit', String(Math.min(params.limit ?? 40, 50)));
-  if (params.random) qs.set('random', 'true');
-  if (params.cursor) qs.set('cursor', params.cursor);
+  // Attempt 2: Fallback query without year constraint (random=true)
+  try {
+    const qs2 = makeQuery(false, true);
+    const data2 = await alocRequest<{ data: AlocQuestion[] }>(`/questions?${qs2}`);
+    if (data2.data && data2.data.length > 0) {
+      return data2.data.map(q => normalizeAlocQuestion(q, params.subject, examTypeMapped));
+    }
+  } catch (err) {
+    console.warn('[ALOC] Attempt 2 fallback failed:', (err as Error).message);
+  }
 
-  const data = await alocRequest<{ data: AlocQuestion[] }>(
-    `/questions?${qs.toString()}`
-  );
+  // Attempt 3: Fallback with examType=jamb
+  try {
+    const qs3 = new URLSearchParams();
+    qs3.set('subject', alocSubject);
+    qs3.set('examType', 'jamb');
+    qs3.set('random', 'true');
+    qs3.set('limit', String(Math.min(params.limit ?? 40, 50)));
+    const data3 = await alocRequest<{ data: AlocQuestion[] }>(`/questions?${qs3.toString()}`);
+    if (data3.data && data3.data.length > 0) {
+      return data3.data.map(q => normalizeAlocQuestion(q, params.subject, 'jamb'));
+    }
+  } catch (err) {
+    console.warn('[ALOC] Attempt 3 fallback failed:', (err as Error).message);
+  }
 
-  return (data.data || []).map(q =>
-    normalizeAlocQuestion(q, params.subject, examTypeMapped)
-  );
+  return [];
 }
 
 // ── L1: Generate Balanced Assessment Paper ────────────────────────────────────
@@ -195,6 +301,7 @@ export interface GenerateAssessmentParams {
 export async function generateAlocAssessment(
   params: GenerateAssessmentParams
 ): Promise<PrepQuestion[]> {
+  const alocSubject = mapSubjectToAloc(params.subject);
   const examTypeMapped =
     EXAM_MAP[params.examType?.toUpperCase() ?? ''] ??
     params.examType?.toLowerCase() ??
@@ -205,7 +312,7 @@ export async function generateAlocAssessment(
     (examTypeMapped === 'waec' ? 'waec_standard_50' : 'jamb_standard_40');
 
   const body = {
-    subject:        params.subject.toLowerCase(),
+    subject:        alocSubject,
     examType:       examTypeMapped,
     preset,
     shuffleOptions: params.shuffleOptions ?? true,

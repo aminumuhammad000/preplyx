@@ -52,6 +52,8 @@ export default function CbtExamRunner() {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmittingExam, setIsSubmittingExam] = useState(false);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [showInsufficientBalance, setShowInsufficientBalance] = useState(false);
+  const [tokenCharged, setTokenCharged] = useState<number | null>(null);
 
   useEffect(() => {
     const handleOnline = () => setIsOnline(true);
@@ -96,6 +98,29 @@ export default function CbtExamRunner() {
 
       try {
         setLoading(true);
+
+        // Deduct token fee before starting if online
+        const sessionPaidKey = `preplyx_paid_${exam}_${subject}_${year}`;
+        const alreadyPaid = sessionStorage.getItem(sessionPaidKey) === 'true';
+
+        if (!alreadyPaid && navigator.onLine && token) {
+          try {
+            const deductRes = await api.deductWallet(token, 20, `CBT Exam Token Fee: ${exam} - ${subject} (${year})`);
+            if (deductRes) {
+              sessionStorage.setItem(sessionPaidKey, 'true');
+              setTokenCharged(20);
+            }
+          } catch (deductErr: any) {
+            const errMsg = (deductErr?.message || '').toLowerCase();
+            if (errMsg.includes('insufficient') || deductErr?.status === 400) {
+              setShowInsufficientBalance(true);
+              setLoading(false);
+              return;
+            }
+            console.warn('[Wallet] Token deduction bypass on offline or network hiccup:', errMsg);
+          }
+        }
+
         const fetchedQuestions = await api.getQuestions({ exam, subject, year, limit: 100 }, token);
         
         const transformedQuestions = (fetchedQuestions || []).map((q: any) => ({
@@ -108,11 +133,12 @@ export default function CbtExamRunner() {
                 { id: 'C', text: q.options[2] },
                 { id: 'D', text: q.options[3] }
               ]
-            : Object.entries(q.options || {}).map(([key, val]) => ({ id: key, text: val })),
+            : Object.entries(q.options || {}).map(([key, val]) => ({ id: key.toUpperCase(), text: val })),
           correctAnswer: q.correctAnswer || q.correct_answer,
           explanation: q.explanation,
           topic: q.topic,
           subtopic: q.subtopic,
+          source: q.source || (q.id && String(q.id).includes('-') ? 'ALOC_API' : 'Past Question Bank'),
           cognitiveTrap: q.cognitiveTrap,
           conceptSummary: q.conceptSummary
         }));
@@ -319,7 +345,18 @@ export default function CbtExamRunner() {
       }
       return prev;
     });
+
+    // Persist answer to IndexedDB for offline sync
+    savePendingAnswer({
+      setId: `${exam}_${subject}_${year}`,
+      questionId: currentQ.id,
+      selectedAnswer: optionId,
+      exam,
+      subject,
+      year
+    }).catch(() => {/* silent fail */});
   };
+
 
   const handleReportQuestion = async () => {
     if (!token || !currentQ) return;
@@ -468,6 +505,17 @@ export default function CbtExamRunner() {
     <div style={{ animation: 'fadeIn 0.4s ease-out', position: 'relative', zIndex: 1 }}>
       <DynamicFocusBackground />
 
+      {/* Offline Indicator Banner */}
+      {!isOnline && (
+        <div style={{
+          position: 'fixed', top: 0, left: 0, right: 0, zIndex: 9999,
+          background: '#f59e0b', color: '#000', textAlign: 'center',
+          padding: '6px', fontSize: '13px', fontWeight: 600
+        }}>
+          📴 Offline — answers are being saved locally and will sync when you reconnect.
+        </div>
+      )}
+
       {/* Submission Failure Retry Banner */}
       {submitError && (
         <div style={{
@@ -524,6 +572,17 @@ export default function CbtExamRunner() {
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+          {tokenCharged && (
+            <div style={{
+              display: 'flex', alignItems: 'center', gap: '5px',
+              padding: '6px 12px', borderRadius: '20px',
+              backgroundColor: 'rgba(123, 47, 247, 0.08)', color: '#7B2FF7',
+              fontSize: '12px', fontWeight: 600, border: '1px solid rgba(123, 47, 247, 0.2)'
+            }} title="Token session fee paid">
+              <span>🪙 {tokenCharged} tokens</span>
+            </div>
+          )}
+
           {lastSaved && (
             <div style={{
               display: 'flex', alignItems: 'center', gap: '5px',
@@ -598,9 +657,20 @@ export default function CbtExamRunner() {
           {currentQ && (
             <>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                <span style={{ fontSize: '14px', fontWeight: 700, color: '#7B2FF7' }}>
-                  Question {currentQIndex + 1} of {questions.length}
-                </span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ fontSize: '14px', fontWeight: 700, color: '#7B2FF7' }}>
+                    Question {currentQIndex + 1} of {questions.length}
+                  </span>
+                  <span style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '4px',
+                    fontSize: '11px', fontWeight: 600, padding: '2px 8px', borderRadius: '999px',
+                    backgroundColor: currentQ.source === 'ALOC_API' ? 'rgba(16, 185, 129, 0.12)' : 'rgba(123, 47, 247, 0.1)',
+                    color: currentQ.source === 'ALOC_API' ? '#059669' : '#7B2FF7',
+                    border: currentQ.source === 'ALOC_API' ? '1px solid rgba(16, 185, 129, 0.25)' : '1px solid rgba(123, 47, 247, 0.2)'
+                  }}>
+                    {currentQ.source === 'ALOC_API' ? '⚡ ALOC Live API' : '📘 Past Questions Bank'}
+                  </span>
+                </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <button
                     onClick={() => { setShowReportModal(true); setReportSuccess(false); }}
@@ -1123,6 +1193,61 @@ export default function CbtExamRunner() {
                 }}
               >
                 Resume Exam
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Insufficient Token Balance Modal */}
+      {showInsufficientBalance && (
+        <div style={{
+          position: 'fixed', inset: 0, zIndex: 10000,
+          backgroundColor: 'rgba(15, 23, 42, 0.75)', backdropFilter: 'blur(8px)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px'
+        }}>
+          <div style={{
+            maxWidth: '440px', width: '100%', backgroundColor: '#ffffff',
+            borderRadius: '20px', padding: '28px', textAlign: 'center',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
+          }}>
+            <div style={{
+              width: '56px', height: '56px', borderRadius: '50%',
+              backgroundColor: 'rgba(239, 68, 68, 0.1)', color: '#ef4444',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              margin: '0 auto 16px', fontSize: '26px'
+            }}>
+              🪙
+            </div>
+            <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#0f172a', margin: '0 0 8px' }}>
+              Exam Token Fee Required
+            </h3>
+            <p style={{ fontSize: '13.5px', color: '#64748b', lineHeight: '1.5', margin: '0 0 20px' }}>
+              Starting this CBT session requires <strong>20 tokens (₦20.00)</strong>. Your wallet has insufficient balance to begin.
+            </p>
+            <div style={{ display: 'flex', gap: '10px' }}>
+              <button
+                type="button"
+                onClick={() => navigate('/dashboard/practice')}
+                style={{
+                  flex: 1, padding: '12px', borderRadius: '10px',
+                  border: '1px solid #e2e8f0', backgroundColor: '#fff',
+                  color: '#475569', fontWeight: 600, cursor: 'pointer', fontSize: '13px'
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={() => navigate('/dashboard/wallet')}
+                style={{
+                  flex: 1, padding: '12px', borderRadius: '10px',
+                  border: 'none', backgroundColor: '#7B2FF7',
+                  color: '#fff', fontWeight: 700, cursor: 'pointer', fontSize: '13px',
+                  boxShadow: '0 4px 12px rgba(123, 47, 247, 0.3)'
+                }}
+              >
+                Fund Wallet
               </button>
             </div>
           </div>

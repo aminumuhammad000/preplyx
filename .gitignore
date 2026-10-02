@@ -27,3 +27,4 @@ dist-ssr
 backend/.env
 backend/data/
 backend/dist/
+*.backup

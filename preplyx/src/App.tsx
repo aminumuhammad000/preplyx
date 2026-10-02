@@ -22,6 +22,7 @@ import History from './pages/History';
 import Challenge from './pages/Challenge';
 import Onboarding from './pages/Onboarding';
 import MistakeCenter from './pages/MistakeCenter';
+import Offline from './pages/Offline';
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
@@ -80,6 +81,7 @@ const router = createBrowserRouter([
               { path: 'profile', element: <Profile /> },
               { path: 'settings', element: <Settings /> },
               { path: 'notifications', element: <Notifications /> },
+              { path: 'offline', element: <Offline /> },
             ],
           },
         ],

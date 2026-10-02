@@ -5,7 +5,7 @@ import { api } from '../lib/api';
 import { 
   LayoutDashboard, BookOpen, Wallet, LineChart, LogOut, Settings, 
   Trophy, Award, Bell, CheckSquare, Menu, X, User, Users,
-  ChevronDown, ChevronLeft, PanelLeft, History as HistoryIcon, Brain
+  ChevronDown, ChevronLeft, PanelLeft, History as HistoryIcon, Brain, WifiOff
 } from 'lucide-react';
 import StreakWidget from './StreakWidget';
 
@@ -143,6 +143,7 @@ export default function DashboardLayout() {
     if (path.startsWith('/dashboard/notifications')) return { title: 'Notifications', badge: 'Alerts' };
     if (path.startsWith('/dashboard/settings')) return { title: 'Settings', badge: 'Account' };
     if (path.startsWith('/dashboard/profile')) return { title: 'Student Profile', badge: 'My Info' };
+    if (path.startsWith('/dashboard/offline')) return { title: 'Offline CBT', badge: 'Local Cache' };
     return { title: 'Dashboard', badge: 'Portal' };
   };
 
@@ -151,6 +152,7 @@ export default function DashboardLayout() {
   const navLinks = [
     { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
     { name: 'Practice CBT', href: '/dashboard/practice', icon: BookOpen },
+    { name: 'Offline CBT', href: '/dashboard/offline', icon: WifiOff },
     { name: 'Mistake Intelligence', href: '/dashboard/mistakes', icon: Brain },
     { name: 'Exam History', href: '/dashboard/history', icon: HistoryIcon },
     { name: 'Challenge Friend', href: '/dashboard/challenge', icon: Users },

@@ -53,6 +53,27 @@ export default function MultiSubjectExam() {
   useEffect(() => {
     setMounted(true);
     const loadSubjectQuestions = async () => {
+      // Deduct token fee before starting if online (50 tokens for multi-subject exam)
+      const sessionPaidKey = `preplyx_multi_paid_${exam}_${subjects.join('_')}_${year}`;
+      const alreadyPaid = sessionStorage.getItem(sessionPaidKey) === 'true';
+
+      if (!alreadyPaid && navigator.onLine && token) {
+        try {
+          const deductRes = await api.deductWallet(token, 50, `Multi-Subject CBT Token Fee: ${exam} (${subjects.length} subjects)`);
+          if (deductRes) {
+            sessionStorage.setItem(sessionPaidKey, 'true');
+            setTokenCharged(50);
+          }
+        } catch (deductErr: any) {
+          const errMsg = (deductErr?.message || '').toLowerCase();
+          if (errMsg.includes('insufficient') || deductErr?.status === 400) {
+            setShowInsufficientBalance(true);
+            return;
+          }
+          console.warn('[Wallet] Multi-subject token deduction bypass on connection hiccup:', errMsg);
+        }
+      }
+
       const map: Record<string, Question[]> = {};
       for (const subject of subjects) {
         try {
@@ -69,6 +90,7 @@ export default function MultiSubjectExam() {
               explanation: q.explanation || '',
               topic: q.topic,
               subtopic: q.subtopic,
+              source: q.source || (q.id && String(q.id).includes('-') ? 'ALOC_API' : 'Past Question Bank'),
               cognitiveTrap: q.cognitiveTrap,
               conceptSummary: q.conceptSummary
             }));
@@ -135,6 +157,8 @@ export default function MultiSubjectExam() {
   const [showCalculator, setShowCalculator] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmittingExam, setIsSubmittingExam] = useState(false);
+  const [showInsufficientBalance, setShowInsufficientBalance] = useState(false);
+  const [tokenCharged, setTokenCharged] = useState<number | null>(null);
 
   // Question Reporting Modal State
   const [showReportModal, setShowReportModal] = useState(false);
@@ -622,6 +646,17 @@ export default function MultiSubjectExam() {
 
           <FocusMusicWidget />
 
+          {tokenCharged && (
+            <div style={{
+              display: 'flex', alignItems: 'center', gap: '5px',
+              padding: '6px 12px', borderRadius: '20px',
+              backgroundColor: 'rgba(123, 47, 247, 0.08)', color: '#7B2FF7',
+              fontSize: '12px', fontWeight: 600, border: '1px solid rgba(123, 47, 247, 0.2)'
+            }} title="Multi-Subject token session fee paid">
+              <span>🪙 {tokenCharged} tokens</span>
+            </div>
+          )}
+
           {/* Timer Display */}
           <div style={{
             display: 'flex', alignItems: 'center', gap: '8px',
@@ -687,12 +722,21 @@ export default function MultiSubjectExam() {
             <>
               {/* Question Header */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
                   <span style={{ fontSize: '14px', fontWeight: 700, color: '#4B0FA3' }}>
                     Question {currentQIndex + 1} of {(currentQuestions || []).length}
                   </span>
                   <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>
                     ({currentSubject})
+                  </span>
+                  <span style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '4px',
+                    fontSize: '11px', fontWeight: 600, padding: '2px 8px', borderRadius: '999px',
+                    backgroundColor: (currentQ as any)?.source === 'ALOC_API' ? 'rgba(16, 185, 129, 0.12)' : 'rgba(123, 47, 247, 0.1)',
+                    color: (currentQ as any)?.source === 'ALOC_API' ? '#059669' : '#7B2FF7',
+                    border: (currentQ as any)?.source === 'ALOC_API' ? '1px solid rgba(16, 185, 129, 0.25)' : '1px solid rgba(123, 47, 247, 0.2)'
+                  }}>
+                    {(currentQ as any)?.source === 'ALOC_API' ? '⚡ ALOC Live API' : '📘 Past Questions Bank'}
                   </span>
                 </div>
 
@@ -1264,6 +1308,61 @@ export default function MultiSubjectExam() {
                 </div>
               </>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* Insufficient Token Balance Modal */}
+      {showInsufficientBalance && (
+        <div style={{
+          position: 'fixed', inset: 0, zIndex: 10000,
+          backgroundColor: 'rgba(15, 23, 42, 0.75)', backdropFilter: 'blur(8px)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px'
+        }}>
+          <div style={{
+            maxWidth: '440px', width: '100%', backgroundColor: '#ffffff',
+            borderRadius: '20px', padding: '28px', textAlign: 'center',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
+          }}>
+            <div style={{
+              width: '56px', height: '56px', borderRadius: '50%',
+              backgroundColor: 'rgba(239, 68, 68, 0.1)', color: '#ef4444',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              margin: '0 auto 16px', fontSize: '26px'
+            }}>
+              🪙
+            </div>
+            <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#0f172a', margin: '0 0 8px' }}>
+              Multi-Subject Exam Fee Required
+            </h3>
+            <p style={{ fontSize: '13.5px', color: '#64748b', lineHeight: '1.5', margin: '0 0 20px' }}>
+              Starting this {subjects.length}-subject exam requires <strong>50 tokens (₦50.00)</strong>. Your wallet has insufficient balance to begin.
+            </p>
+            <div style={{ display: 'flex', gap: '10px' }}>
+              <button
+                type="button"
+                onClick={() => navigate('/dashboard/practice')}
+                style={{
+                  flex: 1, padding: '12px', borderRadius: '10px',
+                  border: '1px solid #e2e8f0', backgroundColor: '#fff',
+                  color: '#475569', fontWeight: 600, cursor: 'pointer', fontSize: '13px'
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={() => navigate('/dashboard/wallet')}
+                style={{
+                  flex: 1, padding: '12px', borderRadius: '10px',
+                  border: 'none', backgroundColor: '#7B2FF7',
+                  color: '#fff', fontWeight: 700, cursor: 'pointer', fontSize: '13px',
+                  boxShadow: '0 4px 12px rgba(123, 47, 247, 0.3)'
+                }}
+              >
+                Fund Wallet
+              </button>
+            </div>
           </div>
         </div>
       )}
