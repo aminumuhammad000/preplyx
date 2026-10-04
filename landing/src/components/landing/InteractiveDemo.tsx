@@ -55,13 +55,13 @@ const InteractiveDemo = () => {
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-wider mb-3 sm:mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            Interactive Practice Demo
+            Interactive Practice Preview
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight mb-3 sm:mb-4">
-            Test Your Knowledge in Real Time
+            See How Understanding Mistakes Changes Your Preparation
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            Experience how our real-time question engine gives immediate feedback, step-by-step explanations, and detailed solution breakdowns.
+            Try answering a sample question below. Preplyx doesn't just show the right letter—it explains the concept clearly so you avoid the same exam trap on test day.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ const InteractiveDemo = () => {
               </div>
               <div className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200/80 w-fit self-start sm:self-auto">
                 <Award className="w-3.5 h-3.5 flex-shrink-0 text-amber-600" />
-                <span>Instant Score Feedback</span>
+                <span>Instant Concept Breakdown</span>
               </div>
             </div>
 

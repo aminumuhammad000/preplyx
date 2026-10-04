@@ -15,12 +15,16 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-wider mb-4 sm:mb-5">
+            Personal Exam Preparation System
+          </div>
+
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-[1.2] mb-4 sm:mb-6">
-            Master WAEC, NECO & JAMB with <span className="text-gradient font-extrabold">confidence</span>.
+            Your Personal Exam Preparation <span className="text-gradient font-extrabold">System</span>.
           </h1>
           
           <p className="text-sm sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto px-2 sm:px-0">
-            Get instant access to thousands of real past questions, detailed step-by-step explanations, and performance analytics.
+            Know what to study, practice effectively, understand your mistakes, and improve before exam day. Built with the realities of Nigerian students in mind.
           </p>
           
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 max-w-xs sm:max-w-none mx-auto">
@@ -28,21 +32,21 @@ const Hero = () => {
               href="https://dash.preplyx.com.ng" 
               className="group inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl font-semibold text-sm sm:text-base text-white bg-primary hover:bg-secondary transition-all duration-200 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98]"
             >
-              <span>Start Practicing</span>
+              <span>Start Preparing</span>
               <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
             <a 
-              href="#exams" 
+              href="#about" 
               className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl font-semibold text-sm sm:text-base text-gray-700 bg-white border border-gray-200 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200 shadow-xs hover:shadow-sm active:scale-[0.98]"
             >
-              Explore CBT Exams
+              How It Works
             </a>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3">
             <span className="text-xs uppercase tracking-wider font-bold text-gray-500">Supported Exams:</span>
             <div className="flex flex-wrap items-center justify-center gap-2">
-              {["JAMB", "WAEC", "NECO"].map((exam) => (
+              {["JAMB UTME", "WAEC SSCE", "NECO SSCE"].map((exam) => (
                 <span key={exam} className="text-xs font-bold text-gray-700 bg-white border border-gray-200 px-3.5 py-1 rounded-full shadow-xs">
                   {exam}
                 </span>

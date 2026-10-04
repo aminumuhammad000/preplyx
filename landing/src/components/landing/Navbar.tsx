@@ -44,7 +44,7 @@ const Navbar = () => {
 
           <div className="hidden md:block">
             <a href="https://dash.preplyx.com.ng" className="bg-primary hover:bg-secondary text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-block">
-              Get Started
+              Start Preparing
             </a>
           </div>
 
@@ -111,7 +111,7 @@ const Navbar = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className="block w-full bg-primary hover:bg-secondary text-white text-center py-3 rounded-xl font-bold transition-all shadow-md active:scale-[0.98]"
                 >
-                  Get Started
+                  Start Preparing
                 </a>
               </div>
             </motion.div>

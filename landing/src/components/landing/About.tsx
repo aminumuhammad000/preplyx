@@ -3,24 +3,24 @@ import { ShieldCheck, Zap, BookOpen, Layers } from 'lucide-react';
 
 const FEATURES = [
   {
+    icon: Zap,
+    title: "1. Know What to Study",
+    description: "Pinpoint weak subjects and start each day with a clear, targeted study mission instead of flipping through bulky textbooks aimlessly."
+  },
+  {
     icon: ShieldCheck,
-    title: "Authentic Exam Environment",
-    description: "Practice with exact CBT timer limits, question structures, and navigation controls used in official JAMB, WAEC, and NECO exams."
+    title: "2. Practice Effectively",
+    description: "Build speed and real exam composure with timed CBT practice matching authentic examination interfaces and subject combinations."
   },
   {
     icon: BookOpen,
-    title: "Verified Past Questions",
-    description: "Access over 15,000 verified past questions spanning 2000 to 2025 with step-by-step explanations and solution guides."
-  },
-  {
-    icon: Zap,
-    title: "Smart Performance Insights",
-    description: "Track speed, accuracy, and topic-by-topic readiness automatically to pinpoint areas needing review before exam day."
+    title: "3. Understand Mistakes",
+    description: "Don't just see the right letter. Discover why wrong choices are tempting, examine step-by-step logic, and fix tricky traps."
   },
   {
     icon: Layers,
-    title: "Offline Study Capability",
-    description: "Download questions and explanations once to continue practicing anytime, anywhere without requiring internet data."
+    title: "4. Prepare Anywhere Offline",
+    description: "Download question packs when you have network and continue practicing smoothly even when mobile data is exhausted or unavailable."
   }
 ];
 
@@ -32,13 +32,13 @@ const About = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
           <span className="text-xs font-bold text-primary uppercase tracking-widest block mb-2 sm:mb-3">
-            About Preplyx
+            The Preplyx Approach
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight mb-3 sm:mb-4 leading-tight">
-            Built for Nigerian Students Aiming for Excellence
+            Prepare Smarter, Not Just Answer More Questions
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            Preplyx is a modern computer-based test platform designed to replace guesswork with structured practice, clear explanations, and reliable exam preparation.
+            Built with the realities of Northern Nigerian students in mind, Preplyx provides a structured exam-preparation system designed to turn past questions into real understanding and higher scores.
           </p>
         </div>
 

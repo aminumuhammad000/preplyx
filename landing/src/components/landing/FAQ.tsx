@@ -7,24 +7,28 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "Is Preplyx free?",
-      answer: "Preplyx offers a generous free tier with access to limited past questions. For full access to all years, offline mode, and advanced analytics, we offer affordable premium plans tailored for students."
+      question: "What makes Preplyx different from other past-question apps?",
+      answer: "Most apps simply show you questions and an answer key. Preplyx is a preparation system: it helps you diagnose what to study, gives you realistic timed CBT practice, explains why you picked the wrong options, and tracks your readiness score before exam day."
     },
     {
-      question: "Does it work offline?",
-      answer: "Yes! Once you download the subject packs on your device, you can practice and read explanations completely offline without any internet connection."
+      question: "How does offline practice work?",
+      answer: "You can download question sets for your subjects directly to your device via the Offline Download Manager. Once saved, you can practice questions and study solution breakdowns smoothly even when you have no active internet connection."
     },
     {
-      question: "Are the questions real?",
-      answer: "Absolutely. All our questions are sourced directly from past WAEC, NECO, and JAMB examinations. They are verified by experienced teachers."
+      question: "Who is Preplyx built for?",
+      answer: "Preplyx is designed for secondary-school students and candidates preparing for JAMB UTME, WAEC SSCE, and NECO SSCE. It was built with the everyday realities of Northern Nigerian students in mind—prioritizing low-data usage, offline practice, clear conceptual explanations, and structured study guidance."
     },
     {
-      question: "Is CBT simulation available?",
-      answer: "Yes, our JAMB practice mode is designed to look and feel exactly like the actual JAMB CBT environment to help you build confidence and speed."
+      question: "Is CBT exam simulation available?",
+      answer: "Yes. Preplyx provides both single-subject drills and authentic 4-subject JAMB UTME simulations with official time limits, question navigators, and authoritative scoring out of 400."
     },
     {
-      question: "Can I use it on Android?",
-      answer: "Yes, Preplyx is available as a mobile app for Android devices. You can also access it on any web browser via your phone, tablet, or laptop."
+      question: "What devices can I use to study with Preplyx?",
+      answer: "Preplyx works smoothly on any smartphone, tablet, or laptop through your web browser. You can also install it directly to your home screen as a fast, lightweight app without taking up large phone storage."
+    },
+    {
+      question: "Is Preplyx free to start?",
+      answer: "Yes! You can create an account and begin practicing immediately. We offer free diagnostic assessments and practice sessions, with affordable student-friendly token options funded directly via Nigerian bank transfer."
     }
   ];
 

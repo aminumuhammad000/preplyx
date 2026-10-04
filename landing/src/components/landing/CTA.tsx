@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Download, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const CTA = () => {
   return (
@@ -21,15 +21,15 @@ const CTA = () => {
                 <span className="text-gradient">Smarter Today</span>
               </h2>
               <p className="text-lg text-gray-300 mb-10 max-w-md leading-relaxed">
-                Join thousands of Nigerian students using Preplyx to prepare for WAEC, NECO, and JAMB. Turn your goals into reality.
+                Know what to study, practice effectively, and understand your mistakes before exam day. Built with the realities of Nigerian students in mind.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <button onClick={() => alert('Download starting...')} className="flex items-center justify-center gap-2 bg-primary hover:bg-secondary text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-[0_0_20px_rgba(123,47,247,0.4)] hover:shadow-[0_0_30px_rgba(123,47,247,0.6)]">
-                  <Download className="w-5 h-5" /> Download APK
-                </button>
-                <a href="https://dash.preplyx.com.ng" className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-sm inline-flex">
-                  Get Started <ArrowRight className="w-5 h-5" />
+                <a href="https://dash.preplyx.com.ng" className="flex items-center justify-center gap-2 bg-primary hover:bg-secondary text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-[0_0_20px_rgba(123,47,247,0.4)] hover:shadow-[0_0_30px_rgba(123,47,247,0.6)]">
+                  Start Preparing <ArrowRight className="w-5 h-5" />
+                </a>
+                <a href="#about" className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-sm inline-flex">
+                  How It Works
                 </a>
               </div>
             </motion.div>

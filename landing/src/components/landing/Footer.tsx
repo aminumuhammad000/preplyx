@@ -33,7 +33,7 @@ const Footer = () => {
               <img src="/logo.svg" alt="Preplyx" className="h-9 w-auto bg-white rounded-lg p-1" />
             </a>
             <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4 max-w-sm">
-              The smartest way to prepare for WAEC, NECO, and JAMB. Join thousands of successful students today.
+              Your personal exam preparation system for JAMB, WAEC, and NECO. Know what to study, practice effectively, understand your mistakes, and improve before exam day.
             </p>
             <div className="flex gap-3">
               <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white">
@@ -54,7 +54,7 @@ const Footer = () => {
               <li><a href="#features" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">Features</a></li>
               <li><a href="#exams" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">Exams & CBT</a></li>
               <li><a href="#practice" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">Practice Demo</a></li>
-              <li><a href="#cta" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">Download App</a></li>
+              <li><a href="https://dash.preplyx.com.ng" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">Start Preparing</a></li>
             </ul>
           </div>
 

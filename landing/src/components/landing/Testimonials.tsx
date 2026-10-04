@@ -3,21 +3,21 @@ import { Star } from 'lucide-react';
 
 const TESTIMONIALS = [
   {
-    quote: "I improved my JAMB score from 180 to 278 using Preplyx. The detailed explanations for each question made a huge difference in my confidence.",
+    quote: "Preplyx helped me realize why I kept picking the wrong options in Chemistry and Physics. Once I understood the distractor traps during practice, my confidence soared.",
     author: "Amina B.",
     location: "Kano",
     rating: 5
   },
   {
-    quote: "The CBT practice helped me become much faster during the exam. The interface felt identical to the actual JAMB computer test.",
-    author: "David O.",
-    location: "Abuja",
+    quote: "Network is often unstable where I live. Being able to download question sets and practice offline without worrying about mobile data made a massive difference.",
+    author: "Ibrahim M.",
+    location: "Kaduna",
     rating: 5
   },
   {
-    quote: "Being able to download questions and practice offline saved me so much mobile data while studying for my WAEC examinations.",
-    author: "Chidera E.",
-    location: "Lagos",
+    quote: "Knowing what to focus on each day instead of randomly reading textbooks gave me structure. I entered the CBT hall calm and finished my questions well on time.",
+    author: "Fatima S.",
+    location: "Sokoto",
     rating: 5
   }
 ];
@@ -30,13 +30,13 @@ const Testimonials = () => {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
           <span className="text-xs font-bold text-primary uppercase tracking-widest block mb-2 sm:mb-3">
-            Testimonials
+            Student Experiences
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight mb-3 sm:mb-4">
-            Trusted by Nigerian Students
+            Real Students Preparing Smarter
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
-            Real feedback from students who built confidence and scored higher with Preplyx.
+            How candidates are replacing last-minute cramming with focused preparation and deeper understanding.
           </p>
         </div>
 

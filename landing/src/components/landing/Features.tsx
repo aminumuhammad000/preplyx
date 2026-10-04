@@ -5,33 +5,33 @@ const Features = () => {
   const features = [
     {
       icon: <BookCopy className="w-6 h-6" />,
-      title: "Real Past Questions",
-      description: "Access thousands of verified, up-to-date past questions for WAEC, NECO, and JAMB."
+      title: "Practice with Exam-Style Questions",
+      description: "Master questions covering major JAMB, WAEC, and NECO subjects, structured according to official syllabus standards."
     },
     {
       icon: <Laptop className="w-6 h-6" />,
-      title: "CBT Practice Mode",
-      description: "Experience the exact look and feel of the JAMB CBT environment before the real exam."
-    },
-    {
-      icon: <LineChart className="w-6 h-6" />,
-      title: "Performance Tracking",
-      description: "Detailed analytics on your strengths and weaknesses to help you focus your study time."
-    },
-    {
-      icon: <WifiOff className="w-6 h-6" />,
-      title: "Offline Reading",
-      description: "Download questions and practice offline. No data connection required to study."
-    },
-    {
-      icon: <Timer className="w-6 h-6" />,
-      title: "Exam Simulation",
-      description: "Strictly timed mock exams to improve your speed and time management skills."
+      title: "Practice Like the Real Exam",
+      description: "Experience the authentic interface, countdown timer, and 4-subject UTME simulation so you feel at home in the CBT hall."
     },
     {
       icon: <Lightbulb className="w-6 h-6" />,
-      title: "Instant Explanations",
-      description: "Step-by-step solutions and explanations for every question you attempt."
+      title: "Understand Your Mistakes",
+      description: "Go beyond answer keys. See why incorrect choices are tempting and review underlying formulas and concepts step-by-step."
+    },
+    {
+      icon: <LineChart className="w-6 h-6" />,
+      title: "Know Where You Are Improving",
+      description: "Track your accuracy trends, time spent per question, and subject readiness scores so you always know where you stand."
+    },
+    {
+      icon: <WifiOff className="w-6 h-6" />,
+      title: "Prepare Even When Offline",
+      description: "Save question sets directly to your device. Keep solving questions and reviewing solutions without burning mobile data."
+    },
+    {
+      icon: <Timer className="w-6 h-6" />,
+      title: "Identify Weak Subjects Early",
+      description: "Calibrate your starting baseline through diagnostic assessment and turn low-scoring topics into confident strengths."
     }
   ];
 
@@ -57,10 +57,10 @@ const Features = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-xs font-bold text-primary uppercase tracking-widest mb-2 sm:mb-3">Why Choose Preplyx</h2>
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-dark mb-3 sm:mb-4">Everything you need to succeed</h3>
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest mb-2 sm:mb-3">The Preparation System</h2>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-dark mb-3 sm:mb-4">Everything You Need to Prepare Properly</h3>
             <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-              Powerful features designed specifically to help Nigerian students pass their exams in one sitting.
+              Features designed to help Nigerian candidates understand concepts, build speed, and improve before exam day.
             </p>
           </motion.div>
         </div>

@@ -4,35 +4,35 @@ import { BookOpen, Award, CheckCircle2, ArrowRight, Monitor, GraduationCap, Flam
 const EXAM_CARDS = [
   {
     id: "jamb",
-    title: "JAMB UTME CBT Simulator",
-    badge: "Most Popular",
+    title: "JAMB UTME CBT Preparation",
+    badge: "UTME Focused",
     badgeColor: "bg-primary/10 text-primary border-primary/20",
     icon: Monitor,
     iconColor: "text-primary bg-primary/10",
-    description: "Full real-time JAMB exam environment with official timer, 4-subject combinations, automatic score calculation out of 400, and instant score slip.",
+    description: "Practice under real JAMB conditions with official 2-hour countdown timers, authentic 4-subject combinations, automatic 400-mark scoring, and mistake review.",
     highlights: [
-      "Real CBT Interface & Keyboard Shortcuts",
-      "Full 4-Subject UTME Mock Tests",
-      "Instant Score Prediction & Percentile Rank",
-      "Step-by-Step Solution Explanations"
+      "Authentic 4-Subject UTME Exam Simulation",
+      "Diagnostic Baseline & Readiness Score",
+      "Cognitive Distractor & Trap Analysis",
+      "Step-by-Step Solutions & Spaced Review"
     ],
-    stats: "300+ Target Score",
+    stats: "Target 280+ Score",
     color: "from-primary/5 to-secondary/5",
     border: "border-primary/20 hover:border-primary/40"
   },
   {
     id: "waec",
-    title: "WAEC SSCE Prep Vault",
+    title: "WAEC SSCE Objective Practice",
     badge: "Curriculum Aligned",
     badgeColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
     icon: GraduationCap,
     iconColor: "text-emerald-600 bg-emerald-50",
-    description: "Master Senior Secondary Certificate Examinations with comprehensive objective practice, theory breakdowns, and detailed diagram explanations.",
+    description: "Strengthen your grasp of Senior Secondary Certificate Examination questions with objective practice, clear explanations, and subject-level accuracy tracking.",
     highlights: [
-      "Year-by-Year Past Questions (2000 - 2025)",
-      "Detailed Diagrams & Step-by-Step Math Solutions",
-      "Topic-by-Topic Mastery Tracking",
-      "WAEC Grading Scheme Alignment"
+      "Syllabus-Aligned Senior Secondary Practice",
+      "Step-by-Step Math & Science Explanations",
+      "Subject Accuracy & Pace Measurement",
+      "Timed Drills to Build Exam-Day Speed"
     ],
     stats: "Aim for A1 Grades",
     color: "from-emerald-500/5 to-teal-500/5",
@@ -40,17 +40,17 @@ const EXAM_CARDS = [
   },
   {
     id: "neco",
-    title: "NECO SSCE Excellence Pack",
+    title: "NECO SSCE Mock Drills",
     badge: "Speed & Accuracy",
     badgeColor: "bg-amber-50 text-amber-700 border-amber-200",
     icon: Flame,
     iconColor: "text-amber-600 bg-amber-50",
-    description: "Sharpen your speed and accuracy with timed mock drills designed specifically for National Examinations Council (NECO) standards.",
+    description: "Sharpen your speed and accuracy with timed mock drills designed specifically around National Examinations Council standards.",
     highlights: [
-      "Speed Drills & Time-Management Analytics",
-      "Weakness Identification & Focus Mode",
-      "All Major Science, Arts & Commercial Subjects",
-      "Unlimited Practice Attempts"
+      "Speed Drills & Time-Management Practice",
+      "Early Weakness Identification",
+      "Covers Science, Arts & Commercial Subjects",
+      "Repeat Practice to Solidify Retention"
     ],
     stats: "100% Exam Readiness",
     color: "from-amber-500/5 to-orange-500/5",
@@ -77,13 +77,13 @@ const Exams = () => {
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-wider mb-3 sm:mb-4">
             <Award className="w-3.5 h-3.5" />
-            CBT Exam Suite
+            National Examination Focus
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight mb-3 sm:mb-4">
-            Built for Nigeria's Top National Exams
+            Prepare for Nigeria's Core Standardized Exams
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            Simulate real exam conditions with authentic past questions, time limits, and intelligent performance insights.
+            Whether targeting 280+ in JAMB UTME or preparing for SSCE subjects, practice under authentic timed conditions with clear syllabus alignment.
           </p>
         </div>
 
@@ -142,7 +142,7 @@ const Exams = () => {
                     href="https://dash.preplyx.com.ng"
                     className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-primary group-hover:text-secondary transition-colors"
                   >
-                    <span>Practice Now</span>
+                    <span>Start Preparing</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
@@ -156,7 +156,7 @@ const Exams = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 mb-3.5 sm:mb-4 px-2">
             <BookOpen className="w-4 h-4 text-primary flex-shrink-0" />
             <h4 className="text-xs sm:text-xs font-bold uppercase tracking-wider text-gray-600 text-center leading-normal">
-              Full Coverage Across All Major Subjects
+              Curriculum Alignment Across Key Nigerian Subjects
             </h4>
           </div>
           <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2">
