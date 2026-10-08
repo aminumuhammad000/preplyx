@@ -62,8 +62,8 @@ export default function MistakeCenter() {
   }, [token, activeTab, selectedSubject]);
 
   const handleRetestSimilar = (mistake: MistakeData) => {
-    // Navigate to practice with subject & topic preselected
-    navigate(`/dashboard/practice?exam=${mistake.exam || 'JAMB'}&subject=${encodeURIComponent(mistake.subject)}&topic=${encodeURIComponent(mistake.topic)}`);
+    // Navigate directly into the CBT exam runner for targeted retesting
+    navigate(`/dashboard/practice/${encodeURIComponent(mistake.exam || 'JAMB')}/${encodeURIComponent(mistake.subject)}?topic=${encodeURIComponent(mistake.topic)}`);
   };
 
   const handleMarkReviewed = async (mistakeId: string, isCorrect: boolean) => {

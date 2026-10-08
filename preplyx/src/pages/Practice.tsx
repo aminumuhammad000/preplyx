@@ -82,13 +82,20 @@ export default function Practice() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const queryExam = searchParams.get('exam');
+  const querySubject = searchParams.get('subject');
   const initialExam = queryExam || 'JAMB';
   const [selectedExam, setSelectedExam] = useState<string>(initialExam);
   const [selectedYear, setSelectedYear] = useState<string>(searchParams.get('year') || 'All');
   const [selectedCategory, setSelectedCategory] = useState<Category>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [selectedSubjects, setSelectedSubjects] = useState<string[]>([]);
+  const [selectedSubjects, setSelectedSubjects] = useState<string[]>(() => querySubject ? [querySubject] : []);
   const [customTime, setCustomTime] = useState<number>(2);
+
+  useEffect(() => {
+    if (querySubject && !selectedSubjects.includes(querySubject)) {
+      setSelectedSubjects([querySubject]);
+    }
+  }, [querySubject]);
 
   useEffect(() => {
     const fetchAllData = async () => {

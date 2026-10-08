@@ -358,7 +358,7 @@ export class OnboardingService {
         targetCount: 10,
         estimatedMinutes: 15,
         completed: false,
-        actionUrl: `/dashboard/practice?exam=${exam}&subject=${encodeURIComponent(primaryWeakSubj)}`,
+        actionUrl: `/dashboard/practice/${exam}/${encodeURIComponent(primaryWeakSubj)}`,
         type: 'weak_topic',
       },
       {
@@ -369,7 +369,7 @@ export class OnboardingService {
         targetCount: 10,
         estimatedMinutes: 15,
         completed: false,
-        actionUrl: `/dashboard/practice?exam=${exam}&subject=${encodeURIComponent(secondaryWeakSubj)}`,
+        actionUrl: `/dashboard/practice/${exam}/${encodeURIComponent(secondaryWeakSubj)}`,
         type: 'subject_practice',
       },
       {
@@ -380,7 +380,7 @@ export class OnboardingService {
         targetCount: 15,
         estimatedMinutes: 15,
         completed: false,
-        actionUrl: `/dashboard/practice?exam=${exam}&subject=English%20Language`,
+        actionUrl: `/dashboard/practice/${exam}/English%20Language`,
         type: 'speed_drill',
       },
       {

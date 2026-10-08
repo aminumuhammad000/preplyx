@@ -679,7 +679,7 @@ export default function Onboarding() {
 
               <button
                 type="button"
-                onClick={() => navigate(`/dashboard/practice?exam=${targetExam}&subject=${encodeURIComponent(startingPoint.recommendedFirstMission.subject)}&topic=${encodeURIComponent(startingPoint.recommendedFirstMission.topic)}`)}
+                onClick={() => navigate(`/dashboard/practice/${encodeURIComponent(targetExam)}/${encodeURIComponent(startingPoint.recommendedFirstMission.subject)}?topic=${encodeURIComponent(startingPoint.recommendedFirstMission.topic)}`)}
                 style={{
                   padding: '12px 24px',
                   borderRadius: '12px',

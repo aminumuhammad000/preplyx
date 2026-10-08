@@ -10,6 +10,7 @@ type User = {
   exam_type?: string;
   targetExam?: string;
   targetScore?: number;
+  subjects?: string[];
   diagnosticCompleted?: boolean;
   dailyStudyMinutes?: number;
   readinessScore?: number;

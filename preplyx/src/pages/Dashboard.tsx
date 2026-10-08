@@ -52,6 +52,36 @@ export default function Dashboard() {
   const targetScore = user?.targetScore || 280;
   const isDiagnosticDone = user?.diagnosticCompleted || !!readiness?.overallScore;
 
+  // Resolve checklist action URLs directly into the CBT exam portal
+  const resolveMissionUrl = (task: any) => {
+    if (!task) return `/dashboard/practice/${encodeURIComponent(targetExam)}/${encodeURIComponent(user?.subjects?.[0] || 'English Language')}`;
+    
+    const rawUrl = task.actionUrl || '';
+    if (rawUrl.includes('/mistakes') || task.type === 'review_mistakes') return '/dashboard/mistakes';
+    if (rawUrl.includes('/challenge') || task.type === 'mock_test') return '/dashboard/challenge';
+
+    // If already in /dashboard/practice/:exam/:subject format
+    if (rawUrl.startsWith('/dashboard/practice/') && rawUrl.split('/').length >= 4) {
+      return rawUrl;
+    }
+
+    // Extract subject and exam from task object or query params
+    let subj = task.subject;
+    let ex = task.exam || targetExam;
+
+    if (rawUrl.includes('?')) {
+      const qParams = new URLSearchParams(rawUrl.split('?')[1]);
+      if (qParams.get('subject')) subj = qParams.get('subject')!;
+      if (qParams.get('exam')) ex = qParams.get('exam')!;
+    }
+
+    if (!subj) {
+      subj = user?.subjects?.[0] || 'English Language';
+    }
+
+    return `/dashboard/practice/${encodeURIComponent(ex)}/${encodeURIComponent(subj)}`;
+  };
+
   return (
     <div style={{ animation: 'fadeIn 0.4s ease-out' }}>
       <PwaInstallPrompt />
@@ -143,7 +173,7 @@ export default function Dashboard() {
 
             {/* Checklist items */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '18px' }}>
-              {(mission?.tasks || [
+              {(mission?.items || mission?.tasks || [
                 {
                   id: 'task_mistakes',
                   title: 'Spaced Retest Review',
@@ -156,7 +186,7 @@ export default function Dashboard() {
                   id: 'task_practice',
                   title: 'Targeted Exam Practice',
                   desc: `Complete 1 timed 20-question session in ${targetExam}`,
-                  actionUrl: '/dashboard/practice',
+                  actionUrl: `/dashboard/practice/${encodeURIComponent(targetExam)}/${encodeURIComponent(user?.subjects?.[0] || 'English Language')}`,
                   icon: 'BookOpen',
                   completed: false
                 },
@@ -171,7 +201,7 @@ export default function Dashboard() {
               ]).map((t: any, idx: number) => (
                 <Link
                   key={t.id || idx}
-                  to={t.actionUrl || '/dashboard/practice'}
+                  to={resolveMissionUrl(t)}
                   style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -196,7 +226,7 @@ export default function Dashboard() {
                         {t.title}
                       </div>
                       <div style={{ fontSize: '11px', color: '#64748b', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        {t.desc}
+                        {t.desc || t.description}
                       </div>
                     </div>
                   </div>
@@ -344,7 +374,7 @@ export default function Dashboard() {
             </p>
           </div>
           <div>
-            <Link to="/dashboard/practice" style={{
+            <Link to="/dashboard/challenge" style={{
               display: 'inline-flex', alignItems: 'center', gap: '6px',
               padding: '9px 18px', borderRadius: '10px',
               background: 'linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)', color: '#fff',
